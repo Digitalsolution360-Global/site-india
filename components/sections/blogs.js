@@ -83,7 +83,7 @@ function BlogSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4'
+            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'
           >
             Our Blog
           </motion.span>
@@ -126,7 +126,7 @@ function BlogSection() {
                     />
                     {/* Category Badge */}
                     <div className='absolute top-4 left-4'>
-                      <span className={`${blog.categoryColor} px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm`}>
+                      <span className={`${blog.categoryColor} px-3 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm`}>
                         {blog.category}
                       </span>
                     </div>
@@ -189,7 +189,7 @@ function BlogSection() {
         >
           <Link
             href='/blogs'
-            className='inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl group'
+            className='inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl group'
           >
             <span>View All Articles</span>
             <IconArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform duration-300' stroke={2} />

@@ -85,7 +85,7 @@ function AboutSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold'
+              className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold'
             >
               About Us
             </motion.span>
@@ -143,7 +143,7 @@ function AboutSection() {
             >
               <Link
                 href='/about'
-                className='inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+                className='inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
               >
                 Learn More About Us
               </Link>
@@ -261,7 +261,7 @@ function AboutSection() {
             whileHover={{ y: -5 }}
             className='bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300'
           >
-            <div className='w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6'>
+            <div className='w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6'>
               <IconTarget className='w-8 h-8 text-blue-600' stroke={1.5} />
             </div>
             <h3 className='text-2xl font-bold text-gray-900 mb-4'>Our Mission</h3>
@@ -275,7 +275,7 @@ function AboutSection() {
             whileHover={{ y: -5 }}
             className='bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300'
           >
-            <div className='w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6'>
+            <div className='w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6'>
               <IconBulb className='w-8 h-8 text-purple-600' stroke={1.5} />
             </div>
             <h3 className='text-2xl font-bold text-gray-900 mb-4'>Our Vision</h3>

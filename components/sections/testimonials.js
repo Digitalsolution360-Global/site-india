@@ -120,7 +120,7 @@ function TestimonialSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4'
+            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'
           >
             Testimonials
           </motion.span>
@@ -179,7 +179,7 @@ function TestimonialSection() {
 
                   {/* Client Info */}
                   <div className='flex items-center gap-4 relative z-10'>
-                    <div className='w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden shrink-0'>
+                    <div className='w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center overflow-hidden shrink-0'>
                       <img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].name}
@@ -214,7 +214,7 @@ function TestimonialSection() {
           <div className='flex justify-center items-center gap-4 mt-8'>
             <button
               onClick={handlePrevious}
-              className='w-12 h-12 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg'
+              className='w-12 h-12 rounded-lg bg-white border-2 border-gray-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg'
               aria-label='Previous testimonial'
             >
               <IconChevronLeft className='w-6 h-6' stroke={2} />
@@ -238,7 +238,7 @@ function TestimonialSection() {
 
             <button
               onClick={handleNext}
-              className='w-12 h-12 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg'
+              className='w-12 h-12 rounded-lg bg-white border-2 border-gray-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg'
               aria-label='Next testimonial'
             >
               <IconChevronRight className='w-6 h-6' stroke={2} />

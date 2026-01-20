@@ -204,7 +204,7 @@ function CTASection() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
+                        className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
                         placeholder='Enter your full name'
                       />
                     </div>
@@ -221,7 +221,7 @@ function CTASection() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
+                        className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
                         placeholder='your.email@example.com'
                       />
                     </div>
@@ -239,7 +239,7 @@ function CTASection() {
                         onChange={handleChange}
                         required
                         pattern='[0-9]{10,15}'
-                        className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
+                        className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900'
                         placeholder='+91 XXXXX XXXXX'
                       />
                     </div>
@@ -248,7 +248,7 @@ function CTASection() {
                     <button
                       type='submit'
                       disabled={isSubmitting}
-                      className='w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
+                      className='w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
                     >
                       {isSubmitting ? 'Submitting...' : 'Request Free Consultation'}
                     </button>

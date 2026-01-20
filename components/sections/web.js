@@ -86,7 +86,7 @@ function WebDevSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4'
+            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'
           >
             Our Tech Stack
           </motion.span>
@@ -126,7 +126,7 @@ function WebDevSection() {
                   <div className={`absolute inset-0 ${tech.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                   
                   {/* Icon Container */}
-                  <div className={`${tech.bgColor} w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative z-10`}>
+                  <div className={`${tech.bgColor} w-16 h-16 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative z-10`}>
                     <Icon className={`${tech.color} text-3xl`} />
                   </div>
 
@@ -153,7 +153,7 @@ function WebDevSection() {
           </p>
           <a
             href='/contact'
-            className='inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+            className='inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
           >
             Start Your Project
           </a>

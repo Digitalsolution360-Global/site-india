@@ -2,16 +2,17 @@
 
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, useAnimationFrame, useMotionValue, useInView } from 'motion/react'
+import { IconUsers, IconBriefcase, IconCalendar, IconThumbUp } from '@tabler/icons-react'
 
 function ClientSection() {
   const statsRef = useRef(null);
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
-  
+
   const [counts, setCounts] = useState({
     clients: 0,
     projects: 0,
-    industries: 0,
-    retention: 0
+    years: 0,
+    satisfaction: 0
   });
 
   useEffect(() => {
@@ -23,8 +24,8 @@ function ClientSection() {
       const targets = {
         clients: 300,
         projects: 500,
-        industries: 15,
-        retention: 98
+        years: 15,
+        satisfaction: 98
       };
 
       let frame = 0;
@@ -36,8 +37,8 @@ function ClientSection() {
         setCounts({
           clients: Math.floor(easeOutQuart * targets.clients),
           projects: Math.floor(easeOutQuart * targets.projects),
-          industries: Math.floor(easeOutQuart * targets.industries),
-          retention: Math.floor(easeOutQuart * targets.retention)
+          years: Math.floor(easeOutQuart * targets.years),
+          satisfaction: Math.floor(easeOutQuart * targets.satisfaction)
         });
 
         if (frame >= totalFrames) {
@@ -76,10 +77,10 @@ function ClientSection() {
     if (!isPaused) {
       // Move left by 1 pixel per frame
       const newValue = xPos.get() - 1;
-      
+
       // Card width (192px) + gap (32px) = 224px per item
       const resetPoint = -(224 * clients.length);
-      
+
       if (newValue <= resetPoint) {
         xPos.set(0);
       } else {
@@ -103,7 +104,7 @@ function ClientSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4'
+            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'
           >
             Our Clients
           </motion.span>
@@ -112,7 +113,7 @@ function ClientSection() {
             Trusted by <span className='text-blue-600'>Leading Brands</span>
           </h2>
           <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
-            We&apos;re proud to partner with incredible businesses across industries, helping them achieve their digital goals.
+            We&apos;re proud to partner with incredible businesses across years, helping them achieve their digital goals.
           </p>
         </motion.div>
       </div>
@@ -134,7 +135,7 @@ function ClientSection() {
               key={index}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className='shrink-0 w-60 bg-white rounded-xl shadow-xl transition-all duration-300 flex items-center justify-center p-4 group cursor-pointer'
+              className='shrink-0 w-60 bg-white rounded-lg shadow-xl transition-all duration-300 flex items-center justify-center p-4 group cursor-pointer'
             >
               <img
                 src={client.logo}
@@ -156,22 +157,57 @@ function ClientSection() {
         className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16'
       >
         <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
-          <div className='bg-white rounded-2xl p-6 shadow-lg text-center'>
-            <p className='text-4xl md:text-5xl font-bold text-blue-600 mb-2'>{counts.clients}+</p>
-            <p className='text-gray-600 font-medium'>Happy Clients</p>
-          </div>
-          <div className='bg-white rounded-2xl p-6 shadow-lg text-center'>
-            <p className='text-4xl md:text-5xl font-bold text-blue-600 mb-2'>{counts.projects}+</p>
-            <p className='text-gray-600 font-medium'>Projects Completed</p>
-          </div>
-          <div className='bg-white rounded-2xl p-6 shadow-lg text-center'>
-            <p className='text-4xl md:text-5xl font-bold text-blue-600 mb-2'>{counts.industries}+</p>
-            <p className='text-gray-600 font-medium'>Industries Served</p>
-          </div>
-          <div className='bg-white rounded-2xl p-6 shadow-lg text-center'>
-            <p className='text-4xl md:text-5xl font-bold text-blue-600 mb-2'>{counts.retention}%</p>
-            <p className='text-gray-600 font-medium'>Client Retention</p>
-          </div>
+          <motion.div
+            whileHover={{ y: -8 }}
+            className='relative text-center bg-white hover:bg-blue-600 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 pt-16 pb-8 px-6 group'
+          >
+            <div className='absolute -top-8 left-1/2 -translate-x-1/2'>
+              <div className='w-16 h-16 bg-blue-600 group-hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300'>
+                <IconUsers className='w-8 h-8 text-white' stroke={2} />
+              </div>
+            </div>
+            <p className='text-4xl md:text-5xl font-bold text-blue-600 group-hover:text-white mb-2 transition-colors duration-300'>{counts.clients}+</p>
+            <p className='text-gray-600 group-hover:text-white font-medium transition-colors duration-300'>Happy Clients</p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -8 }}
+            className='relative text-center bg-white hover:bg-blue-600 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 pt-16 pb-8 px-6 group'
+          >
+            <div className='absolute -top-8 left-1/2 -translate-x-1/2'>
+              <div className='w-16 h-16 bg-blue-600 group-hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300'>
+                <IconBriefcase className='w-8 h-8 text-white' stroke={2} />
+              </div>
+            </div>
+            <p className='text-4xl md:text-5xl font-bold text-blue-600 group-hover:text-white mb-2 transition-colors duration-300'>{counts.projects}+</p>
+            <p className='text-gray-600 group-hover:text-white font-medium transition-colors duration-300'>Projects Completed</p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -8 }}
+            className='relative text-center bg-white hover:bg-blue-600 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 pt-16 pb-8 px-6 group'
+          >
+            <div className='absolute -top-8 left-1/2 -translate-x-1/2'>
+              <div className='w-16 h-16 bg-blue-600 group-hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300'>
+                <IconCalendar className='w-8 h-8 text-white' stroke={2} />
+              </div>
+            </div>
+            <p className='text-4xl md:text-5xl font-bold text-blue-600 group-hover:text-white mb-2 transition-colors duration-300'>{counts.years}+</p>
+            <p className='text-gray-600 group-hover:text-white font-medium transition-colors duration-300'>Years Experience</p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -8 }}
+            className='relative text-center bg-white hover:bg-blue-600 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 pt-16 pb-8 px-6 group'
+          >
+            <div className='absolute -top-8 left-1/2 -translate-x-1/2'>
+              <div className='w-16 h-16 bg-blue-600 group-hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300'>
+                <IconThumbUp className='w-8 h-8 text-white' stroke={2} />
+              </div>
+            </div>
+            <p className='text-4xl md:text-5xl font-bold text-blue-600 group-hover:text-white mb-2 transition-colors duration-300'>{counts.satisfaction}%</p>
+            <p className='text-gray-600 group-hover:text-white font-medium transition-colors duration-300'>Client Satisfaction</p>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -188,7 +224,7 @@ function ClientSection() {
         </p>
         <a
           href='/contact'
-          className='inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+          className='inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
         >
           Start Your Project
         </a>

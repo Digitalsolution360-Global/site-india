@@ -53,7 +53,7 @@ function HeroSection() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className='inline-block'
             >
-              <span className='bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold'>
+              <span className='bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold'>
                 Digital Solutions for Modern Business
               </span>
             </motion.div>
@@ -90,13 +90,13 @@ function HeroSection() {
             >
               <Link
                 href="/contact"
-                className='bg-blue-600 text-white px-6 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl inline-block text-center'
+                className='bg-blue-600 text-white px-6 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl inline-block text-center'
               >
                 Get Started
               </Link>
               <Link
                 href="/portfolio"
-                className='bg-white text-blue-600 border-2 border-blue-600 px-6 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 inline-block text-center'
+                className='bg-white text-blue-600 border-2 border-blue-600 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 inline-block text-center'
               >
                 View Our Work
               </Link>

@@ -81,7 +81,7 @@ function FaqSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4'
+            className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'
           >
             FAQs
           </motion.span>
@@ -120,7 +120,7 @@ function FaqSection() {
                 <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>
                   {faq.question}
                 </span>
-                <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   openIndex === index 
                     ? 'bg-blue-600 rotate-180' 
                     : 'bg-blue-100'
@@ -177,13 +177,13 @@ function FaqSection() {
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <a
               href='/contact'
-              className='inline-block bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-200 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+              className='inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-200 transition-all duration-300 hover:scale-105 hover:shadow-xl'
             >
               Contact Us
             </a>
             <a
               href='tel:+919990556217'
-              className='inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105'
+              className='inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105'
             >
               Call +91 99905 56217
             </a>
