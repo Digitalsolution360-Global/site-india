@@ -17,11 +17,11 @@ export default function Home() {
       <HeroSection/>
       <ServiceSection/>
       <AboutSection/>
+      <ClientSection/>
       <WebDevSection/>
       <CTASection/>
       <TestimonialSection/>
       <BlogSection/>
-      <ClientSection/>
       <FaqSection/>
       <Footer/>
     </>
