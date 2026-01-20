@@ -140,7 +140,7 @@ function Header() {
                         </li> */}
                             <li className='relative'>
                                 <Link
-                                    href="/about"
+                                    href="/about-us"
                                     onMouseEnter={() => setHovered('about')}
                                     className='relative px-0 py-2 inline-block'
                                 >
@@ -344,7 +344,7 @@ function Header() {
                             <nav className='px-4 pb-6'>
                                 <ul className='flex flex-col gap-4 text-lg'>
                                     <li><Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-                                    <li><Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link></li>
+                                    <li><Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>About</Link></li>
                                     <li>
                                         <button
                                             onClick={() => setServicesOpen(!servicesOpen)}
