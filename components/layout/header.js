@@ -57,24 +57,24 @@ function Header() {
 
         try {
             // Save to database
-            await fetch('/api/contacts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    country_code: '+91',
-                    company: null,
-                    website: null,
-                    services: null,
-                    message: null,
-                    source: 'header_quote',
-                    page_url: window.location.pathname
-                })
-            })
+            // await fetch('/api/contacts', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         name: formData.get('name'),
+            //         email: formData.get('email'),
+            //         phone: formData.get('phone'),
+            //         country_code: '+91',
+            //         company: null,
+            //         website: null,
+            //         services: null,
+            //         message: null,
+            //         source: 'header_quote',
+            //         page_url: window.location.pathname
+            //     })
+            // })
 
             // Send email notification
             await fetch('https://formsubmit.co/globalweb3600@gmail.com', {
@@ -260,7 +260,7 @@ function Header() {
                             </li>
                             <li className='relative'>
                                 <Link
-                                    href="/contact"
+                                    href="/contact-us"
                                     onMouseEnter={() => setHovered('contact')}
                                     className='relative px-0 py-2 inline-block'
                                 >
@@ -374,7 +374,7 @@ function Header() {
                                     <li><Link href="/portfolio" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link></li>
                                     <li><Link href="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link></li>
                                     <li><Link href="/blogs" onClick={() => setMobileMenuOpen(false)}>Blogs</Link></li>
-                                    <li><Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+                                    <li><Link href="/contact-us" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
                                 </ul>
 
                                 <div className='flex flex-col gap-3 mt-6'>

@@ -165,7 +165,7 @@ function Footer() {
                         </ul>
 
                         {/* Newsletter */}
-                        <div className='mt-6'>
+                        {/* <div className='mt-6'>
                             <h4 className='text-white font-semibold mb-3'>Subscribe to Newsletter</h4>
                             <form className='flex gap-2'>
                                 <input
@@ -180,7 +180,7 @@ function Footer() {
                                     Subscribe
                                 </button>
                             </form>
-                        </div>
+                        </div> */}
                     </motion.div>
                 </div>
             </div>
