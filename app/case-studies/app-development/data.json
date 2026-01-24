@@ -1,0 +1,129 @@
+{
+    "apps": [
+        {
+            "id": 1,
+            "name": "FitTrack Pro",
+            "description": "Comprehensive fitness tracking app with personalized workout plans, nutrition guidance, and progress analytics. Features AI-powered coaching and community challenges.",
+            "icon": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=80",
+            "screenshot": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80",
+            "category": "Health & Fitness",
+            "platform": "iOS & Android",
+            "stats": {
+                "downloads": "50K+",
+                "rating": "4.7",
+                "reviews": "2,340",
+                "activeUsers": "8K+"
+            },
+            "features": [
+                "Personalized workout plans",
+                "Nutrition tracking & meal plans",
+                "Progress analytics & insights",
+                "Social challenges & leaderboards",
+                "Integration with wearables",
+                "Video exercise tutorials"
+            ],
+            "playStoreUrl": "https://play.google.com/store",
+            "appStoreUrl": "https://apps.apple.com"
+        },
+        {
+            "id": 2,
+            "name": "EduLearn Mobile",
+            "description": "Interactive learning platform offering courses across various subjects with video lectures, quizzes, and certificates. Learn at your own pace with offline access.",
+            "icon": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&q=80",
+            "screenshot": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80",
+            "category": "Education",
+            "platform": "iOS & Android",
+            "stats": {
+                "downloads": "35K+",
+                "rating": "4.6",
+                "reviews": "1,850",
+                "activeUsers": "6K+"
+            },
+            "features": [
+                "1000+ video courses",
+                "Interactive quizzes",
+                "Downloadable certificates",
+                "Offline learning mode",
+                "Progress tracking",
+                "Live doubt sessions"
+            ],
+            "playStoreUrl": "https://play.google.com/store",
+            "appStoreUrl": "https://apps.apple.com"
+        },
+        {
+            "id": 3,
+            "name": "FoodHub Delivery",
+            "description": "Food ordering and delivery app connecting users with local restaurants. Real-time tracking, multiple payment options, and exclusive deals make ordering easy.",
+            "icon": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&q=80",
+            "screenshot": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80",
+            "category": "Food & Beverage",
+            "platform": "iOS & Android",
+            "stats": {
+                "downloads": "75K+",
+                "rating": "4.5",
+                "reviews": "4,200",
+                "activeUsers": "12K+"
+            },
+            "features": [
+                "500+ restaurant partners",
+                "Real-time order tracking",
+                "Multiple payment options",
+                "Personalized recommendations",
+                "Exclusive deals & offers",
+                "Schedule orders in advance"
+            ],
+            "playStoreUrl": "https://play.google.com/store",
+            "appStoreUrl": "https://apps.apple.com"
+        },
+        {
+            "id": 4,
+            "name": "MediCare Plus",
+            "description": "Comprehensive healthcare app for booking appointments, video consultations with doctors, medication reminders, and health records management.",
+            "icon": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&q=80",
+            "screenshot": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80",
+            "category": "Healthcare",
+            "platform": "iOS & Android",
+            "stats": {
+                "downloads": "42K+",
+                "rating": "4.8",
+                "reviews": "2,890",
+                "activeUsers": "7K+"
+            },
+            "features": [
+                "Online doctor consultations",
+                "Appointment booking",
+                "Prescription management",
+                "Medicine reminders",
+                "Health records storage",
+                "Lab test booking"
+            ],
+            "playStoreUrl": "https://play.google.com/store",
+            "appStoreUrl": "https://apps.apple.com"
+        },
+        {
+            "id": 5,
+            "name": "TravelBuddy",
+            "description": "Your complete travel companion for planning trips, booking hotels, discovering attractions, and connecting with fellow travelers worldwide.",
+            "icon": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&q=80",
+            "screenshot": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80",
+            "category": "Travel",
+            "platform": "iOS & Android",
+            "stats": {
+                "downloads": "28K+",
+                "rating": "4.4",
+                "reviews": "1,450",
+                "activeUsers": "5K+"
+            },
+            "features": [
+                "Trip planning tools",
+                "Hotel & flight booking",
+                "Local attractions guide",
+                "Travel community",
+                "Offline maps",
+                "Currency converter"
+            ],
+            "playStoreUrl": "https://play.google.com/store",
+            "appStoreUrl": "https://apps.apple.com"
+        }
+    ]
+}

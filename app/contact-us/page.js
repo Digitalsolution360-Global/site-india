@@ -398,7 +398,7 @@ export default function ContactUsPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className='rounded-2xl overflow-hidden shadow-xl border border-gray-200'
+                        className='rounded-lg overflow-hidden shadow-xl border border-gray-200'
                     >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29209.88710821313!2d86.375184!3d23.774613!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6a3a95555556d%3A0x9ef46a5b1044df98!2sDigitalsolution360%20%7C%20Web%20Designing%20%7C%20Digital%20Marketing%20Services!5e0!3m2!1sen!2sin!4v1769094537277!5m2!1sen!2sin"

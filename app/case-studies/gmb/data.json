@@ -1,0 +1,88 @@
+{
+    "clients": [
+        {
+            "id": 1,
+            "businessName": "Sunrise Dental Clinic",
+            "location": "Mumbai, Maharashtra",
+            "category": "Healthcare",
+            "dashboardImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            "stats": {
+                "views": "12,450",
+                "searches": "3,200",
+                "actions": "890",
+                "rating": "4.8"
+            },
+            "description": "Local dental clinic that achieved top 3 ranking in local search results within 3 months."
+        },
+        {
+            "id": 2,
+            "businessName": "TechFix Solutions",
+            "location": "Bangalore, Karnataka",
+            "category": "Electronics Repair",
+            "dashboardImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            "stats": {
+                "views": "8,920",
+                "searches": "2,100",
+                "actions": "645",
+                "rating": "4.7"
+            },
+            "description": "Electronics repair shop with 220% increase in customer inquiries after GMB optimization."
+        },
+        {
+            "id": 3,
+            "businessName": "Green Valley Restaurant",
+            "location": "Delhi, NCR",
+            "category": "Restaurant",
+            "dashboardImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+            "stats": {
+                "views": "18,340",
+                "searches": "5,600",
+                "actions": "1,250",
+                "rating": "4.9"
+            },
+            "description": "Premium restaurant that saw 165% increase in reservations through optimized GMB profile."
+        },
+        {
+            "id": 4,
+            "businessName": "Fitness Hub Gym",
+            "location": "Pune, Maharashtra",
+            "category": "Fitness Center",
+            "dashboardImage": "https://images.unsplash.com/photo-1554774853-719586f82d77?w=800&q=80",
+            "stats": {
+                "views": "10,200",
+                "searches": "2,850",
+                "actions": "720",
+                "rating": "4.6"
+            },
+            "description": "Local gym with 300% membership increase after implementing GMB strategy."
+        },
+        {
+            "id": 5,
+            "businessName": "Pearl Beauty Salon",
+            "location": "Chennai, Tamil Nadu",
+            "category": "Beauty & Spa",
+            "dashboardImage": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+            "stats": {
+                "views": "9,560",
+                "searches": "2,400",
+                "actions": "580",
+                "rating": "4.8"
+            },
+            "description": "Beauty salon that doubled their walk-in customers through local SEO and GMB."
+        },
+        {
+            "id": 6,
+            "businessName": "AutoCare Service Center",
+            "location": "Hyderabad, Telangana",
+            "category": "Auto Repair",
+            "dashboardImage": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80",
+            "stats": {
+                "views": "11,780",
+                "searches": "3,100",
+                "actions": "890",
+                "rating": "4.7"
+            },
+            "description": "Auto service center achieving consistent top 5 local rankings with optimized GMB."
+        }
+    ]
+}

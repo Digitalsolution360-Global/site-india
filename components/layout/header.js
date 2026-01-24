@@ -212,7 +212,7 @@ function Header() {
                             </li>
                             <li className='relative'>
                                 <Link
-                                    href="/portfolio"
+                                    href="/case-studies"
                                     onMouseEnter={() => setHovered('portfolio')}
                                     className='relative px-0 py-2 inline-block'
                                 >
@@ -371,7 +371,7 @@ function Header() {
                                             )}
                                         </AnimatePresence>
                                     </li>
-                                    <li><Link href="/portfolio" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link></li>
+                                    <li><Link href="/case-studies" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link></li>
                                     <li><Link href="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link></li>
                                     <li><Link href="/blogs" onClick={() => setMobileMenuOpen(false)}>Blogs</Link></li>
                                     <li><Link href="/contact-us" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>

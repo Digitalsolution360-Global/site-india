@@ -1,0 +1,153 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "TechVision SaaS Platform",
+            "url": "https://techvision-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+            "category": "SaaS Product",
+            "technologies": [
+                "Next.js",
+                "React",
+                "Node.js",
+                "MongoDB"
+            ],
+            "duration": "4 months",
+            "features": [
+                "User authentication & authorization",
+                "Real-time data analytics dashboard",
+                "Payment gateway integration",
+                "Multi-tenant architecture"
+            ],
+            "results": {
+                "pageSpeed": "98/100",
+                "conversionRate": "+65%",
+                "userEngagement": "+120%"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Luxury Real Estate Portal",
+            "url": "https://luxuryrealestate-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80",
+            "category": "Real Estate",
+            "technologies": [
+                "WordPress",
+                "PHP",
+                "MySQL",
+                "Google Maps API"
+            ],
+            "duration": "3 months",
+            "features": [
+                "Advanced property search filters",
+                "Virtual property tours integration",
+                "Lead management system",
+                "Multi-language support"
+            ],
+            "results": {
+                "pageSpeed": "95/100",
+                "conversionRate": "+48%",
+                "userEngagement": "+85%"
+            }
+        },
+        {
+            "id": 3,
+            "name": "FitLife E-Commerce",
+            "url": "https://fitlife-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
+            "category": "E-Commerce",
+            "technologies": [
+                "Shopify",
+                "React",
+                "Liquid",
+                "Stripe"
+            ],
+            "duration": "2.5 months",
+            "features": [
+                "Product recommendations AI",
+                "One-click checkout",
+                "Inventory management",
+                "Customer loyalty program"
+            ],
+            "results": {
+                "pageSpeed": "96/100",
+                "conversionRate": "+72%",
+                "userEngagement": "+95%"
+            }
+        },
+        {
+            "id": 4,
+            "name": "EduLearn Online Academy",
+            "url": "https://edulearn-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
+            "category": "Education",
+            "technologies": [
+                "React",
+                "Django",
+                "PostgreSQL",
+                "AWS"
+            ],
+            "duration": "5 months",
+            "features": [
+                "Interactive course builder",
+                "Live video streaming classes",
+                "Student progress tracking",
+                "Certificate generation"
+            ],
+            "results": {
+                "pageSpeed": "94/100",
+                "conversionRate": "+58%",
+                "userEngagement": "+140%"
+            }
+        },
+        {
+            "id": 5,
+            "name": "FoodHub Restaurant Website",
+            "url": "https://foodhub-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80",
+            "category": "Restaurant",
+            "technologies": [
+                "Next.js",
+                "Tailwind CSS",
+                "Firebase"
+            ],
+            "duration": "2 months",
+            "features": [
+                "Online menu with filters",
+                "Table reservation system",
+                "Online ordering integration",
+                "Customer reviews system"
+            ],
+            "results": {
+                "pageSpeed": "99/100",
+                "conversionRate": "+80%",
+                "userEngagement": "+110%"
+            }
+        },
+        {
+            "id": 6,
+            "name": "MediCare Healthcare Platform",
+            "url": "https://medicare-demo.com",
+            "screenshot": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80",
+            "category": "Healthcare",
+            "technologies": [
+                "Angular",
+                "Node.js",
+                "MySQL",
+                "Socket.io"
+            ],
+            "duration": "6 months",
+            "features": [
+                "Online appointment booking",
+                "Telemedicine video consultation",
+                "Electronic health records",
+                "Prescription management"
+            ],
+            "results": {
+                "pageSpeed": "93/100",
+                "conversionRate": "+55%",
+                "userEngagement": "+125%"
+            }
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "brandName": "Urban Fashion Co.",
+            "username": "@urbanfashionco",
+            "category": "Fashion & Lifestyle",
+            "logo": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=200&q=80",
+            "stats": {
+                "followers": "150K+",
+                "engagement": "8.5%",
+                "reach": "2.5M",
+                "posts": "450+"
+            },
+            "platforms": [
+                "Instagram",
+                "Facebook",
+                "Pinterest"
+            ],
+            "duration": "6 months",
+            "keyAchievements": [
+                "Grew from 5K to 150K followers",
+                "Achieved 8.5% engagement rate",
+                "Generated 180% increase in sales from social",
+                "Created viral content with 1M+ views"
+            ],
+            "services": [
+                "Content Creation",
+                "Community Management",
+                "Influencer Partnerships",
+                "Paid Social Ads"
+            ]
+        },
+        {
+            "id": 2,
+            "brandName": "TechGadgets Hub",
+            "username": "@techgadgetshub",
+            "category": "Technology & Electronics",
+            "logo": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=200&q=80",
+            "stats": {
+                "followers": "85K+",
+                "engagement": "6.8%",
+                "reach": "1.8M",
+                "posts": "320+"
+            },
+            "platforms": [
+                "Instagram",
+                "Twitter",
+                "YouTube"
+            ],
+            "duration": "5 months",
+            "keyAchievements": [
+                "Built engaged tech community",
+                "Product reviews driving 45% sales",
+                "YouTube channel with 30K subscribers",
+                "Collaborated with 15+ tech influencers"
+            ],
+            "services": [
+                "Video Content Production",
+                "Social Media Strategy",
+                "Community Engagement",
+                "Brand Partnerships"
+            ]
+        },
+        {
+            "id": 3,
+            "brandName": "Organic Bites Café",
+            "username": "@organicbitescafe",
+            "category": "Food & Beverage",
+            "logo": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&q=80",
+            "stats": {
+                "followers": "65K+",
+                "engagement": "10.2%",
+                "reach": "1.2M",
+                "posts": "280+"
+            },
+            "platforms": [
+                "Instagram",
+                "Facebook",
+                "TikTok"
+            ],
+            "duration": "4 months",
+            "keyAchievements": [
+                "Food content with 10%+ engagement",
+                "150% increase in foot traffic",
+                "User-generated content campaign",
+                "Local food influencer collaborations"
+            ],
+            "services": [
+                "Food Photography",
+                "Instagram Reels Production",
+                "Influencer Marketing",
+                "Local Community Building"
+            ]
+        },
+        {
+            "id": 4,
+            "brandName": "FitZone Wellness",
+            "username": "@fitzonewellness",
+            "category": "Health & Fitness",
+            "logo": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=80",
+            "stats": {
+                "followers": "120K+",
+                "engagement": "7.9%",
+                "reach": "2.1M",
+                "posts": "380+"
+            },
+            "platforms": [
+                "Instagram",
+                "YouTube",
+                "LinkedIn"
+            ],
+            "duration": "6 months",
+            "keyAchievements": [
+                "Built fitness community of 120K",
+                "300% increase in gym memberships",
+                "Workout challenge with 5K participants",
+                "Brand ambassador program launched"
+            ],
+            "services": [
+                "Fitness Content Creation",
+                "Challenge Campaigns",
+                "Community Management",
+                "Paid Advertising"
+            ]
+        },
+        {
+            "id": 5,
+            "brandName": "HomeDecor Studio",
+            "username": "@homedecorstudio",
+            "category": "Home & Interior",
+            "logo": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&q=80",
+            "stats": {
+                "followers": "95K+",
+                "engagement": "9.1%",
+                "reach": "1.6M",
+                "posts": "340+"
+            },
+            "platforms": [
+                "Instagram",
+                "Pinterest",
+                "Facebook"
+            ],
+            "duration": "5 months",
+            "keyAchievements": [
+                "Pinterest driving 40% website traffic",
+                "Interior design inspiration hub",
+                "Collaboration with 20+ designers",
+                "E-commerce sales up 210%"
+            ],
+            "services": [
+                "Professional Photography",
+                "Pinterest Strategy",
+                "Influencer Collaborations",
+                "Social Commerce"
+            ]
+        }
+    ]
+}
