@@ -105,7 +105,7 @@ export default function WebsiteCaseStudiesPage() {
                                             Key Features
                                         </h4>
                                         <ul className='space-y-2'>
-                                            {project.features.slice(0, 4).map((feature, idx) => (
+                                            {project.features.map((feature, idx) => (
                                                 <li key={idx} className='flex items-start gap-2 text-gray-600'>
                                                     <div className='w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 shrink-0' />
                                                     <span>{feature}</span>

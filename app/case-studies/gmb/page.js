@@ -51,10 +51,10 @@ export default function GMBCaseStudiesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className='bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300'
+                                className='bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300'
                             >
                                 {/* Dashboard Image */}
-                                <div className='h-64 overflow-hidden bg-gray-100'>
+                                <div className='h-100 overflow-hidden bg-gray-100'>
                                     <img
                                         src={client.dashboardImage}
                                         alt={`${client.businessName} GMB Dashboard`}

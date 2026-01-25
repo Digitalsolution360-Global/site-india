@@ -25,7 +25,7 @@ export default function CaseStudiesPage() {
             title: 'SEO Project',
             subtitle: 'Organic Growth Through Strategic Optimization',
             description: 'Increased organic traffic by 250% for an e-commerce business through comprehensive SEO strategies, keyword optimization, and technical improvements.',
-            image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=600&q=80',
+            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80',
             icon: IconSearch,
             stats: [
                 { label: 'Traffic Growth', value: '250%' },
@@ -85,7 +85,7 @@ export default function CaseStudiesPage() {
             title: 'Google My Business Promotion',
             subtitle: 'Advanced Local Marketing',
             description: 'Comprehensive GMB campaign with photo optimization, posts, and review management achieving maximum visibility in local searches.',
-            image: 'https://images.unsplash.com/photo-1556741049-0cfed4f6a45d?w=600&q=80',
+            image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80',
             icon: IconTrendingUp,
             stats: [
                 { label: 'Search Visibility', value: '+380%' },

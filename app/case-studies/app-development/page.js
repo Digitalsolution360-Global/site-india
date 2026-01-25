@@ -54,7 +54,7 @@ export default function AppDevelopmentCaseStudiesPage() {
                         >
                             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                                 {/* App Screenshot */}
-                                <div className='lg:col-span-1 bg-linear-to-br from-indigo-500 to-purple-600 p-8 flex items-center justify-center'>
+                                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} lg:col-span-1 bg-linear-to-br from-indigo-500 to-purple-600 p-8 flex items-center justify-center`}>
                                     <div className='relative'>
                                         <img
                                             src={app.screenshot}

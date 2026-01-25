@@ -60,7 +60,7 @@ export default function SocialMediaCaseStudiesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className='bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300'
+                                className='bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300'
                             >
                                 {/* Brand Header */}
                                 <div className='bg-linear-to-r from-pink-500 to-purple-600 p-8 text-white'>

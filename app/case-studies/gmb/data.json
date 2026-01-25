@@ -2,10 +2,10 @@
     "clients": [
         {
             "id": 1,
-            "businessName": "Sunrise Dental Clinic",
+            "businessName": "Andheri Dental Clinic",
             "location": "Mumbai, Maharashtra",
             "category": "Healthcare",
-            "dashboardImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            "dashboardImage": "https://www.digitalsolution360.in/public/frontend/img/case-study/before-after/andheri-dental-clinic-after.webp",
             "stats": {
                 "views": "12,450",
                 "searches": "3,200",
@@ -19,7 +19,7 @@
             "businessName": "TechFix Solutions",
             "location": "Bangalore, Karnataka",
             "category": "Electronics Repair",
-            "dashboardImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            "dashboardImage": "https://www.digitalsolution360.in/public/frontend/img/case-study/before-after/andheri-dental-clinic-after.webp",
             "stats": {
                 "views": "8,920",
                 "searches": "2,100",
