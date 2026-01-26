@@ -1,0 +1,148 @@
+{
+  "jobOpenings": [
+    {
+      "id": 1,
+      "title": "Senior Digital Marketing Strategist",
+      "department": "Marketing",
+      "location": "Dhanbad / Remote",
+      "type": "Full-time",
+      "experience": "3-5 years",
+      "salary": "₹6-10 LPA",
+      "description": "We are looking for an experienced Digital Marketing Strategist to lead campaigns across multiple channels and drive measurable results for our clients.",
+      "responsibilities": [
+        "Develop and execute comprehensive digital marketing strategies",
+        "Manage SEO, SEM, social media, and content marketing campaigns",
+        "Analyze campaign performance and optimize for ROI",
+        "Lead a team of marketing specialists",
+        "Stay updated with latest digital marketing trends"
+      ],
+      "requirements": [
+        "3-5 years of experience in digital marketing",
+        "Proven track record of successful campaigns",
+        "Strong analytical and communication skills",
+        "Experience with Google Analytics, Ads, and SEO tools",
+        "Bachelor's degree in Marketing or related field"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Full Stack Web Developer",
+      "department": "Development",
+      "location": "Bangalore / Hybrid",
+      "type": "Full-time",
+      "experience": "2-4 years",
+      "salary": "₹5-9 LPA",
+      "description": "Join our development team to build cutting-edge web applications using modern technologies like React, Next.js, Node.js, and more.",
+      "responsibilities": [
+        "Develop and maintain web applications",
+        "Write clean, maintainable code",
+        "Collaborate with designers and project managers",
+        "Optimize applications for performance",
+        "Participate in code reviews and technical discussions"
+      ],
+      "requirements": [
+        "2-4 years of experience in web development",
+        "Proficiency in React, Next.js, Node.js",
+        "Experience with databases (MongoDB, MySQL)",
+        "Understanding of RESTful APIs",
+        "Strong problem-solving skills"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "SEO Specialist",
+      "department": "SEO",
+      "location": "Noida / Remote",
+      "type": "Full-time",
+      "experience": "2-3 years",
+      "salary": "₹4-7 LPA",
+      "description": "We need an SEO expert who can drive organic traffic growth through technical SEO, on-page optimization, and link building strategies.",
+      "responsibilities": [
+        "Conduct SEO audits and implement fixes",
+        "Perform keyword research and competitor analysis",
+        "Optimize website content and meta tags",
+        "Build high-quality backlinks",
+        "Monitor rankings and prepare reports"
+      ],
+      "requirements": [
+        "2-3 years of SEO experience",
+        "Knowledge of SEO tools (Ahrefs, SEMrush)",
+        "Understanding of Google algorithms",
+        "Experience with technical SEO",
+        "Excellent analytical skills"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Social Media Manager",
+      "department": "Social Media",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "2-4 years",
+      "salary": "₹4-8 LPA",
+      "description": "Manage social media accounts for multiple clients, create engaging content, and build vibrant online communities.",
+      "responsibilities": [
+        "Create and schedule social media content",
+        "Manage multiple client accounts",
+        "Engage with followers and respond to comments",
+        "Run paid social media campaigns",
+        "Track and report on social media metrics"
+      ],
+      "requirements": [
+        "2-4 years of social media management experience",
+        "Strong content creation skills",
+        "Experience with social media tools",
+        "Understanding of social media advertising",
+        "Creative mindset and excellent communication"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Content Writer",
+      "department": "Content",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "1-3 years",
+      "salary": "₹3-6 LPA",
+      "description": "Create compelling content for blogs, websites, social media, and marketing campaigns across various industries.",
+      "responsibilities": [
+        "Write SEO-optimized blog posts and articles",
+        "Create website copy and landing pages",
+        "Develop social media content",
+        "Research industry topics and trends",
+        "Edit and proofread content"
+      ],
+      "requirements": [
+        "1-3 years of content writing experience",
+        "Excellent writing and grammar skills",
+        "Understanding of SEO best practices",
+        "Ability to write for different audiences",
+        "Bachelor's degree in English, Journalism, or related field"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Graphic Designer",
+      "department": "Design",
+      "location": "Dhanbad / Hybrid",
+      "type": "Full-time",
+      "experience": "2-4 years",
+      "salary": "₹3.5-7 LPA",
+      "description": "Create visually stunning designs for digital marketing campaigns, websites, social media, and brand identities.",
+      "responsibilities": [
+        "Design graphics for social media and websites",
+        "Create brand identities and logos",
+        "Design marketing materials and banners",
+        "Collaborate with marketing team",
+        "Maintain brand consistency across designs"
+      ],
+      "requirements": [
+        "2-4 years of graphic design experience",
+        "Proficiency in Adobe Creative Suite",
+        "Strong portfolio showcasing varied work",
+        "Understanding of design principles",
+        "Creativity and attention to detail"
+      ]
+    }
+  ]
+}
