@@ -185,26 +185,23 @@ function Header() {
                                             exit={{ opacity: 0, y: -10 }}
                                             className='absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl py-2 min-w-[220px]'
                                         >
-                                            <Link href="/digital-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
+                                            <Link href="/digital-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Digital Marketing
                                             </Link>
-                                            <Link href="/web-app-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
+                                            <Link href="/content-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                                Content Marketing
+                                            </Link>
+                                            <Link href="/web-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Website Development
                                             </Link>
-                                            <Link href="/seo" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
+                                            <Link href="/search-engine-optimization-seo" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 SEO Services
                                             </Link>
-                                            <Link href="/brand-creative" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
-                                                Brand & Creative
+                                            <Link href="/social-media" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                                Social Media
                                             </Link>
-                                            <Link href="/media-advertising" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
-                                                Social Media Marketing
-                                            </Link>
-                                            <Link href="/automation-solution" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
-                                                Automation Solutions
-                                            </Link>
-                                            <Link href="/managed-service" className='block px-6 py-3 hover:bg-gray-100 transition-colors'>
-                                                Managed Services
+                                            <Link href="/crm-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                                CRM Development
                                             </Link>
                                         </motion.div>
                                     )}
@@ -361,12 +358,11 @@ function Header() {
                                                     className='ml-4 mt-2 flex flex-col gap-2 overflow-hidden'
                                                 >
                                                     <li><Link href="/digital-marketing" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Digital Marketing</Link></li>
-                                                    <li><Link href="/web-app-development" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Website Development</Link></li>
-                                                    <li><Link href="/seo" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>SEO Services</Link></li>
-                                                    <li><Link href="/brand-creative" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Brand & Creative</Link></li>
-                                                    <li><Link href="/media-advertising" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Social Media Marketing</Link></li>
-                                                    <li><Link href="/automation-solution" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Automation Solutions</Link></li>
-                                                    <li><Link href="/managed-service" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Managed Services</Link></li>
+                                                    <li><Link href="/content-marketing" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Content Marketing</Link></li>
+                                                    <li><Link href="/web-development" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Website Development</Link></li>
+                                                    <li><Link href="/search-engine-optimization-seo" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>SEO Services</Link></li>
+                                                    <li><Link href="/social-media" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>Social Media</Link></li>
+                                                    <li><Link href="/crm-development" onClick={() => setMobileMenuOpen(false)} className='text-gray-600'>CRM Development</Link></li>
                                                 </motion.ul>
                                             )}
                                         </AnimatePresence>
