@@ -185,22 +185,22 @@ function Header() {
                                             exit={{ opacity: 0, y: -10 }}
                                             className='absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl py-2 min-w-[220px]'
                                         >
-                                            <Link href="/digital-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/digital-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Digital Marketing
                                             </Link>
-                                            <Link href="/content-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/content-marketing" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Content Marketing
                                             </Link>
-                                            <Link href="/web-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/web-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Website Development
                                             </Link>
-                                            <Link href="/search-engine-optimization-seo" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/search-engine-optimization-seo" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 SEO Services
                                             </Link>
-                                            <Link href="/social-media" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/social-media" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 Social Media
                                             </Link>
-                                            <Link href="/crm-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
+                                            <Link href="/services/crm-development" className='block px-6 py-3 hover:bg-gray-100 transition-colors cursor-pointer'>
                                                 CRM Development
                                             </Link>
                                         </motion.div>
