@@ -34,12 +34,12 @@ function Footer() {
     ];
 
     const quickLinks = [
-        { name: 'About Us', href: '/about' },
-        { name: 'Portfolio', href: '/portfolio' },
+        { name: 'About Us', href: '/about-us' },
+        { name: 'Services', href: '/services' },
+        { name: 'Portfolio', href: '/case-studies' },
         { name: 'Careers', href: '/careers' },
         { name: 'Blogs', href: '/blogs' },
-        { name: 'Contact', href: '/contact' },
-        { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Contact', href: '/contact-us' },
     ];
 
     const socialLinks = [
