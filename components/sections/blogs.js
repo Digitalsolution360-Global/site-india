@@ -87,11 +87,11 @@ function BlogSection() {
           >
             Our Blog
           </motion.span>
-          
+
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6'>
             Latest Insights & Tips
           </h2>
-          
+
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
             Stay updated with the latest trends, tips, and best practices in digital marketing, web development, and SEO
           </p>

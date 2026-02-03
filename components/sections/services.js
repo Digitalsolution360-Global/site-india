@@ -3,9 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
-import { 
-  IconBrandGoogle, 
-  IconDeviceLaptop, 
+import {
+  IconBrandGoogle,
+  IconDeviceLaptop,
   IconBrandInstagram,
   IconPalette,
   IconRocket,
@@ -112,11 +112,11 @@ function ServiceSection() {
           >
             Our Services
           </motion.span>
-          
+
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6'>
             What We Do Best
           </h2>
-          
+
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
             Comprehensive digital solutions tailored to elevate your business and drive sustainable growth
           </p>
@@ -143,7 +143,7 @@ function ServiceSection() {
                   <div className='bg-white border border-gray-200 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden'>
                     {/* Background Gradient on Hover */}
                     <div className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                    
+
                     {/* Icon Container */}
                     <div className={`${service.bgColor} w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
                       <Icon className={`${service.iconColor} w-8 h-8`} stroke={1.5} />
@@ -154,7 +154,7 @@ function ServiceSection() {
                       <h3 className='text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300'>
                         {service.title}
                       </h3>
-                      
+
                       <p className='text-gray-600 mb-6 leading-relaxed'>
                         {service.description}
                       </p>
@@ -162,17 +162,17 @@ function ServiceSection() {
                       {/* Learn More Link */}
                       <div className='flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300'>
                         Learn More
-                        <svg 
-                          className='w-5 h-5 ml-2' 
-                          fill='none' 
-                          stroke='currentColor' 
+                        <svg
+                          className='w-5 h-5 ml-2'
+                          fill='none'
+                          stroke='currentColor'
                           viewBox='0 0 24 24'
                         >
-                          <path 
-                            strokeLinecap='round' 
-                            strokeLinejoin='round' 
-                            strokeWidth={2} 
-                            d='M17 8l4 4m0 0l-4 4m4-4H3' 
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={2}
+                            d='M17 8l4 4m0 0l-4 4m4-4H3'
                           />
                         </svg>
                       </div>

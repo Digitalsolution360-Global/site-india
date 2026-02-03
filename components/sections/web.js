@@ -2,18 +2,18 @@
 
 import React from 'react'
 import { motion } from 'motion/react'
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiVuedotjs, 
-  SiNodedotjs, 
-  SiLaravel, 
-  SiPhp, 
-  SiRubyonrails, 
-  SiPython, 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiNodedotjs,
+  SiLaravel,
+  SiPhp,
+  SiRubyonrails,
+  SiPython,
   SiWordpress,
-  SiSquarespace, 
-  SiWebflow, 
+  SiSquarespace,
+  SiWebflow,
   SiWix,
   SiContentful,
   SiShopify,
@@ -21,7 +21,8 @@ import {
   SiCraftcms,
   SiOctobercms,
   SiPrestashop,
-  SiStrapi
+  SiStrapi,
+  SiCodeigniter
 } from 'react-icons/si'
 
 function WebDevSection() {
@@ -35,16 +36,17 @@ function WebDevSection() {
     { name: 'Ruby on Rails', icon: SiRubyonrails, color: 'text-red-600', bgColor: 'bg-red-50' },
     { name: 'Python', icon: SiPython, color: 'text-blue-500', bgColor: 'bg-blue-50' },
     { name: 'WordPress', icon: SiWordpress, color: 'text-blue-700', bgColor: 'bg-blue-50' },
-    { name: 'Webflow', icon: SiWebflow, color: 'text-blue-600', bgColor: 'bg-blue-50' },
-    { name: 'Wix', icon: SiWix, color: 'text-black', bgColor: 'bg-gray-100' },
+    // { name: 'Webflow', icon: SiWebflow, color: 'text-blue-600', bgColor: 'bg-blue-50' },
+    // { name: 'Wix', icon: SiWix, color: 'text-black', bgColor: 'bg-gray-100' },
     { name: 'Contentful', icon: SiContentful, color: 'text-blue-500', bgColor: 'bg-blue-50' },
     { name: 'Umbraco', icon: SiUmbraco, color: 'text-blue-600', bgColor: 'bg-blue-50' }, // Using placeholder
-    { name: 'Squarespace', icon: SiSquarespace, color: 'text-black', bgColor: 'bg-gray-100' }, // Using placeholder
+    // { name: 'Squarespace', icon: SiSquarespace, color: 'text-black', bgColor: 'bg-gray-100' }, // Using placeholder
     { name: 'Craft CMS', icon: SiCraftcms, color: 'text-orange-600', bgColor: 'bg-orange-50' }, // Using placeholder
     { name: 'Strapi', icon: SiStrapi, color: 'text-purple-600', bgColor: 'bg-purple-50' },
     { name: 'OctoberCMS', icon: SiOctobercms, color: 'text-red-600', bgColor: 'bg-red-50' }, // Using placeholder
     { name: 'Shopify', icon: SiShopify, color: 'text-green-600', bgColor: 'bg-green-50' },
-    { name: 'PrestaShop', icon: SiPrestashop, color: 'text-pink-600', bgColor: 'bg-pink-50' }
+    { name: 'PrestaShop', icon: SiPrestashop, color: 'text-pink-600', bgColor: 'bg-pink-50' },
+    { name: 'CodeIgniter', icon: SiCodeigniter, color: 'text-red-600', bgColor: 'bg-red-50' } // Using placeholder
   ];
 
   const containerVariants = {
@@ -90,11 +92,11 @@ function WebDevSection() {
           >
             Our Tech Stack
           </motion.span>
-          
+
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6'>
             Technologies We Master
           </h2>
-          
+
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
             We leverage the latest and most powerful technologies to build robust, scalable, and high-performance web solutions
           </p>
@@ -114,17 +116,17 @@ function WebDevSection() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.1, 
+                whileHover={{
+                  scale: 1.1,
                   y: -10,
                   transition: { duration: 0.3 }
                 }}
                 className='group'
               >
-                <div className='bg-white border-2 border-gray-200 rounded-2xl p-6 h-full flex flex-col items-center justify-center gap-4 hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer relative overflow-hidden'>
+                <div className='bg-white border-2 border-gray-200 rounded-2xl p-6 h-full flex flex-col items-center justify-center gap-4 hover:border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer relative overflow-hidden'>
                   {/* Background Gradient on Hover */}
                   <div className={`absolute inset-0 ${tech.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                  
+
                   {/* Icon Container */}
                   <div className={`${tech.bgColor} w-16 h-16 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative z-10`}>
                     <Icon className={`${tech.color} text-3xl`} />

@@ -3,9 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
-import { 
-  IconTarget, 
-  IconBulb, 
+import {
+  IconTarget,
+  IconBulb,
   IconUsers,
   IconTrophy,
   IconChartBar,
@@ -167,7 +167,7 @@ function AboutSection() {
               />
               {/* Gradient Overlay */}
               <div className='absolute inset-0 bg-linear-to-tr from-blue-900/30 to-transparent'></div>
-              
+
               {/* Floating Stats Card */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}

@@ -124,11 +124,11 @@ function TestimonialSection() {
           >
             Testimonials
           </motion.span>
-          
+
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6'>
             What Our Clients Say
           </h2>
-          
+
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
             Don't just take our word for it. Here's what our satisfied clients have to say about working with us.
           </p>
@@ -226,11 +226,10 @@ function TestimonialSection() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
+                  className={`h-3 rounded-full transition-all duration-300 ${index === currentIndex
                       ? 'w-8 bg-blue-600'
                       : 'w-3 bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}

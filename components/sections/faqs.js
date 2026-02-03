@@ -85,11 +85,11 @@ function FaqSection() {
           >
             FAQs
           </motion.span>
-          
+
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6'>
             Frequently Asked Questions
           </h2>
-          
+
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
             Got questions? We've got answers. Find everything you need to know about our services and digital marketing.
           </p>
@@ -120,11 +120,10 @@ function FaqSection() {
                 <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>
                   {faq.question}
                 </span>
-                <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                  openIndex === index 
-                    ? 'bg-blue-600 rotate-180' 
+                <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openIndex === index
+                    ? 'bg-blue-600 rotate-180'
                     : 'bg-blue-100'
-                }`}>
+                  }`}>
                   {openIndex === index ? (
                     <IconMinus className='w-5 h-5 text-white' stroke={2.5} />
                   ) : (
