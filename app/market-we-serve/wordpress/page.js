@@ -6,19 +6,19 @@ import Link from 'next/link'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import {
-    IconSearch,
     IconMapPin,
+    IconSearch,
     IconChevronDown,
     IconChevronUp,
     IconArrowRight,
     IconBuilding,
-    IconSpeakerphone,
-    IconLoader2
+    IconLoader2,
+    IconBrandWordpress
 } from '@tabler/icons-react'
 
 const API_BASE = 'http://localhost:5001/api';
 
-export default function DigitalMarketingMarketPage() {
+export default function WordpressMarketPage() {
     const [expandedState, setExpandedState] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [statesData, setStatesData] = useState([]);
@@ -28,7 +28,7 @@ export default function DigitalMarketingMarketPage() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`${API_BASE}/market/marketing`);
+                const res = await fetch(`${API_BASE}/market/wordpress`);
                 const json = await res.json();
                 if (json.success) {
                     setStatesData(json.data);
@@ -58,7 +58,7 @@ export default function DigitalMarketingMarketPage() {
             {loading ? (
                 <div className='min-h-screen flex items-center justify-center'>
                     <div className='text-center'>
-                        <IconLoader2 className='w-12 h-12 text-orange-600 animate-spin mx-auto mb-4' />
+                        <IconLoader2 className='w-12 h-12 text-indigo-600 animate-spin mx-auto mb-4' />
                         <p className='text-gray-600 text-lg'>Loading locations...</p>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export default function DigitalMarketingMarketPage() {
                 <div className='min-h-screen flex items-center justify-center'>
                     <div className='text-center'>
                         <p className='text-red-600 text-lg mb-4'>{error}</p>
-                        <button onClick={() => window.location.reload()} className='px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700'>
+                        <button onClick={() => window.location.reload()} className='px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700'>
                             Try Again
                         </button>
                     </div>
@@ -77,10 +77,10 @@ export default function DigitalMarketingMarketPage() {
             {/* Hero Section */}
             <section className='relative min-h-[50vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-10 overflow-hidden'>
                 <div className='absolute inset-0 z-0'>
-                    <div className='absolute inset-0 bg-linear-to-r from-orange-900/95 via-orange-800/90 to-transparent z-10' />
+                    <div className='absolute inset-0 bg-linear-to-r from-indigo-900/95 via-indigo-800/90 to-transparent z-10' />
                     <img
-                        src='https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1920&q=80'
-                        alt='Digital Marketing Services'
+                        src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1920&q=80'
+                        alt='WordPress Development Services'
                         className='w-full h-full object-cover'
                     />
                 </div>
@@ -93,7 +93,7 @@ export default function DigitalMarketingMarketPage() {
                     >
                         <Link
                             href='/market-we-serve'
-                            className='inline-flex items-center gap-2 text-orange-200 hover:text-white mb-4 mr-4 transition-colors'
+                            className='inline-flex items-center gap-2 text-indigo-200 hover:text-white mb-4 mr-4 transition-colors'
                         >
                             <IconArrowRight className='w-4 h-4 rotate-180' />
                             Back to All Services
@@ -105,16 +105,16 @@ export default function DigitalMarketingMarketPage() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className='inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 border border-white/30'
                         >
-                            <IconSpeakerphone className='w-4 h-4' />
-                            Digital Marketing
+                            <IconBrandWordpress className='w-4 h-4' />
+                            WordPress Development
                         </motion.span>
 
                         <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>
-                            Digital Marketing Across India
+                            WordPress Development Services Across India
                         </h1>
 
                         <p className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
-                            Full-service digital marketing solutions to grow your brand and drive results in {statesData.length}+ states and {totalCities}+ cities across India.
+                            Expert WordPress theme development, plugin customization, and WooCommerce solutions in {statesData.length}+ states and {totalCities}+ cities across India.
                         </p>
 
                         <div className='flex flex-wrap gap-6'>
@@ -155,7 +155,7 @@ export default function DigitalMarketingMarketPage() {
                                 placeholder='Search for a state or city...'
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className='w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-lg'
+                                className='w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-lg'
                             />
                         </div>
                     </motion.div>
@@ -176,8 +176,8 @@ export default function DigitalMarketingMarketPage() {
                                     className='w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors'
                                 >
                                     <div className='flex items-center gap-4'>
-                                        <div className='w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center'>
-                                            <IconBuilding className='w-5 h-5 text-orange-600' />
+                                        <div className='w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center'>
+                                            <IconBuilding className='w-5 h-5 text-indigo-600' />
                                         </div>
                                         <div>
                                             <h3 className='text-xl font-bold text-gray-900'>{state.name}</h3>
@@ -185,7 +185,7 @@ export default function DigitalMarketingMarketPage() {
                                         </div>
                                     </div>
                                     {expandedState === state.slug ? (
-                                        <IconChevronUp className='w-6 h-6 text-orange-600' />
+                                        <IconChevronUp className='w-6 h-6 text-indigo-600' />
                                     ) : (
                                         <IconChevronDown className='w-6 h-6 text-gray-400' />
                                     )}
@@ -206,11 +206,11 @@ export default function DigitalMarketingMarketPage() {
                                                         <Link
                                                             key={city.slug}
                                                             href={`/${city.slug}`}
-                                                            className='flex items-center gap-2 px-4 py-3 bg-orange-50 border border-orange-200 rounded-lg hover:bg-orange-100 hover:shadow-md transition-all duration-300 group'
+                                                            className='flex items-center gap-2 px-4 py-3 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 hover:shadow-md transition-all duration-300 group'
                                                         >
-                                                            <IconMapPin className='w-4 h-4 text-orange-600' />
-                                                            <span className='text-gray-700 font-medium group-hover:text-orange-700'>{city.name}</span>
-                                                            <IconArrowRight className='w-4 h-4 text-orange-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity' />
+                                                            <IconMapPin className='w-4 h-4 text-indigo-600' />
+                                                            <span className='text-gray-700 font-medium group-hover:text-indigo-700'>{city.name}</span>
+                                                            <IconArrowRight className='w-4 h-4 text-indigo-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity' />
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -237,7 +237,7 @@ export default function DigitalMarketingMarketPage() {
             </section>
 
             {/* CTA Section */}
-            <section className='py-16 px-4 md:px-8 lg:px-16 bg-orange-600'>
+            <section className='py-16 px-4 md:px-8 lg:px-16 bg-indigo-600'>
                 <div className='max-w-4xl mx-auto text-center'>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -246,16 +246,16 @@ export default function DigitalMarketingMarketPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6'>
-                            Ready to Grow Your Business?
+                            Need WordPress Development in Your City?
                         </h2>
-                        <p className='text-xl text-orange-100 mb-8'>
-                            Don't see your city listed? Contact us and we'll create a winning digital marketing strategy for you.
+                        <p className='text-xl text-indigo-100 mb-8'>
+                            Don&apos;t see your city listed? Contact us and we&apos;ll build a stunning WordPress site for you.
                         </p>
                         <Link
                             href='/contact-us'
-                            className='inline-block bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+                            className='inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
-                            Get Free Marketing Audit
+                            Get Started Today
                         </Link>
                     </motion.div>
                 </div>

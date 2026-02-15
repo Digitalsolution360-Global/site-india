@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
 import Header from '@/components/layout/header'
@@ -13,42 +13,96 @@ import {
     IconSpeakerphone,
     IconArrowRight,
     IconBuilding,
-    IconMap
+    IconMap,
+    IconLoader2,
+    IconBrandInstagram,
+    IconPencil,
+    IconBrandWordpress
 } from '@tabler/icons-react'
 
+const API_BASE = 'http://localhost:5001/api';
+
 export default function MarketWeServePage() {
+    const [stats, setStats] = useState({ totalStates: 0, totalCities: 0, categoryStats: {} });
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchStats() {
+            try {
+                const [catRes, statesRes] = await Promise.all([
+                    fetch(`${API_BASE}/categories`),
+                    fetch(`${API_BASE}/states`)
+                ]);
+                const catJson = await catRes.json();
+                const statesJson = await statesRes.json();
+
+                if (catJson.success && statesJson.success) {
+                    const categoryStats = {};
+                    catJson.data.forEach(c => { categoryStats[c.category_name] = c.city_count; });
+                    const totalCities = catJson.data.reduce((sum, c) => sum + c.city_count, 0);
+                    setStats({
+                        totalStates: statesJson.data.length,
+                        totalCities,
+                        categoryStats
+                    });
+                }
+            } catch (err) {
+                console.error('Failed to fetch stats:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchStats();
+    }, []);
+
     const categories = [
         {
             icon: IconBuildingStore,
             title: 'Google My Business',
             slug: 'gmb',
+            dbCategory: 'Google Business',
             description: 'Professional GMB listing, optimization, and management services across India.',
             color: 'blue',
-            stats: { states: 28, cities: '500+' }
-        },
-        {
-            icon: IconSearch,
-            title: 'SEO Services',
-            slug: 'seo',
-            description: 'Result-driven SEO services to boost your online visibility and organic rankings.',
-            color: 'green',
-            stats: { states: 28, cities: '500+' }
-        },
-        {
-            icon: IconCode,
-            title: 'Website Development',
-            slug: 'web',
-            description: 'Custom website design and development solutions for businesses of all sizes.',
-            color: 'purple',
-            stats: { states: 28, cities: '500+' }
         },
         {
             icon: IconSpeakerphone,
             title: 'Digital Marketing',
             slug: 'marketing',
+            dbCategory: 'Digital Marketing',
             description: 'Comprehensive digital marketing strategies to grow your business online.',
             color: 'orange',
-            stats: { states: 28, cities: '500+' }
+        },
+        {
+            icon: IconCode,
+            title: 'Website Development',
+            slug: 'web',
+            dbCategory: 'Web Development',
+            description: 'Custom website design and development solutions for businesses of all sizes.',
+            color: 'purple',
+        },
+        {
+            icon: IconPencil,
+            title: 'Content Writing',
+            slug: 'content-writing',
+            dbCategory: 'Content Writing',
+            description: 'Professional SEO content writing and copywriting services for your business.',
+            color: 'teal',
+        },
+        {
+            icon: IconBrandWordpress,
+            title: 'WordPress Development',
+            slug: 'wordpress',
+            dbCategory: 'Wordpress Development',
+            description: 'Custom WordPress themes, plugins, and WooCommerce solutions.',
+            color: 'indigo',
+        },
+        {
+            icon: IconBrandInstagram,
+            title: 'Social Media',
+            slug: 'social-media',
+            dbCategory: 'Social Media',
+            description: 'Expert social media management and marketing to grow your brand online.',
+            color: 'pink',
         }
     ];
 
@@ -56,7 +110,10 @@ export default function MarketWeServePage() {
         blue: { bg: 'bg-blue-50', icon: 'text-blue-600', border: 'border-blue-200', button: 'bg-blue-600 hover:bg-blue-700' },
         green: { bg: 'bg-green-50', icon: 'text-green-600', border: 'border-green-200', button: 'bg-green-600 hover:bg-green-700' },
         purple: { bg: 'bg-purple-50', icon: 'text-purple-600', border: 'border-purple-200', button: 'bg-purple-600 hover:bg-purple-700' },
-        orange: { bg: 'bg-orange-50', icon: 'text-orange-600', border: 'border-orange-200', button: 'bg-orange-600 hover:bg-orange-700' }
+        orange: { bg: 'bg-orange-50', icon: 'text-orange-600', border: 'border-orange-200', button: 'bg-orange-600 hover:bg-orange-700' },
+        teal: { bg: 'bg-teal-50', icon: 'text-teal-600', border: 'border-teal-200', button: 'bg-teal-600 hover:bg-teal-700' },
+        indigo: { bg: 'bg-indigo-50', icon: 'text-indigo-600', border: 'border-indigo-200', button: 'bg-indigo-600 hover:bg-indigo-700' },
+        pink: { bg: 'bg-pink-50', icon: 'text-pink-600', border: 'border-pink-200', button: 'bg-pink-600 hover:bg-pink-700' }
     };
 
     return (
@@ -102,14 +159,14 @@ export default function MarketWeServePage() {
                             <div className='flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/30'>
                                 <IconBuilding className='w-6 h-6 text-white' />
                                 <div>
-                                    <div className='text-2xl font-bold text-white'>28+</div>
+                                    <div className='text-2xl font-bold text-white'>{loading ? '...' : `${stats.totalStates}+`}</div>
                                     <div className='text-sm text-gray-200'>States & UTs</div>
                                 </div>
                             </div>
                             <div className='flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/30'>
                                 <IconMap className='w-6 h-6 text-white' />
                                 <div>
-                                    <div className='text-2xl font-bold text-white'>500+</div>
+                                    <div className='text-2xl font-bold text-white'>{loading ? '...' : `${stats.totalCities}+`}</div>
                                     <div className='text-sm text-gray-200'>Cities Covered</div>
                                 </div>
                             </div>
@@ -136,7 +193,7 @@ export default function MarketWeServePage() {
                         </p>
                     </motion.div>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         {categories.map((category, index) => {
                             const Icon = category.icon;
                             const colors = colorMap[category.color];
@@ -163,11 +220,11 @@ export default function MarketWeServePage() {
                                             <div className='flex items-center gap-6 pt-4 border-t border-gray-200'>
                                                 <div className='flex items-center gap-2'>
                                                     <IconBuilding className={`w-5 h-5 ${colors.icon}`} />
-                                                    <span className='text-gray-700 font-medium'>{category.stats.states} States</span>
+                                                    <span className='text-gray-700 font-medium'>{stats.totalStates} States</span>
                                                 </div>
                                                 <div className='flex items-center gap-2'>
                                                     <IconMapPin className={`w-5 h-5 ${colors.icon}`} />
-                                                    <span className='text-gray-700 font-medium'>{category.stats.cities} Cities</span>
+                                                    <span className='text-gray-700 font-medium'>{loading ? '...' : (stats.categoryStats[category.dbCategory] || 0)} Cities</span>
                                                 </div>
                                             </div>
                                         </div>

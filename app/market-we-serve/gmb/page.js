@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import Header from '@/components/layout/header'
@@ -12,147 +12,37 @@ import {
     IconChevronDown,
     IconChevronUp,
     IconArrowRight,
-    IconBuilding
+    IconBuilding,
+    IconLoader2
 } from '@tabler/icons-react'
+
+const API_BASE = 'http://localhost:5001/api';
 
 export default function GMBMarketPage() {
     const [expandedState, setExpandedState] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
+    const [statesData, setStatesData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Sample data - will be replaced with DB data
-    const statesData = [
-        {
-            name: 'Maharashtra',
-            slug: 'maharashtra',
-            cities: [
-                { name: 'Mumbai', slug: 'mumbai' },
-                { name: 'Pune', slug: 'pune' },
-                { name: 'Nagpur', slug: 'nagpur' },
-                { name: 'Nashik', slug: 'nashik' },
-                { name: 'Aurangabad', slug: 'aurangabad' },
-                { name: 'Thane', slug: 'thane' },
-                { name: 'Navi Mumbai', slug: 'navi-mumbai' }
-            ]
-        },
-        {
-            name: 'Delhi NCR',
-            slug: 'delhi-ncr',
-            cities: [
-                { name: 'New Delhi', slug: 'new-delhi' },
-                { name: 'Noida', slug: 'noida' },
-                { name: 'Gurgaon', slug: 'gurgaon' },
-                { name: 'Faridabad', slug: 'faridabad' },
-                { name: 'Ghaziabad', slug: 'ghaziabad' },
-                { name: 'Greater Noida', slug: 'greater-noida' }
-            ]
-        },
-        {
-            name: 'Karnataka',
-            slug: 'karnataka',
-            cities: [
-                { name: 'Bangalore', slug: 'bangalore' },
-                { name: 'Mysore', slug: 'mysore' },
-                { name: 'Mangalore', slug: 'mangalore' },
-                { name: 'Hubli', slug: 'hubli' },
-                { name: 'Belgaum', slug: 'belgaum' }
-            ]
-        },
-        {
-            name: 'Tamil Nadu',
-            slug: 'tamil-nadu',
-            cities: [
-                { name: 'Chennai', slug: 'chennai' },
-                { name: 'Coimbatore', slug: 'coimbatore' },
-                { name: 'Madurai', slug: 'madurai' },
-                { name: 'Salem', slug: 'salem' },
-                { name: 'Trichy', slug: 'trichy' }
-            ]
-        },
-        {
-            name: 'Gujarat',
-            slug: 'gujarat',
-            cities: [
-                { name: 'Ahmedabad', slug: 'ahmedabad' },
-                { name: 'Surat', slug: 'surat' },
-                { name: 'Vadodara', slug: 'vadodara' },
-                { name: 'Rajkot', slug: 'rajkot' },
-                { name: 'Gandhinagar', slug: 'gandhinagar' }
-            ]
-        },
-        {
-            name: 'Rajasthan',
-            slug: 'rajasthan',
-            cities: [
-                { name: 'Jaipur', slug: 'jaipur' },
-                { name: 'Jodhpur', slug: 'jodhpur' },
-                { name: 'Udaipur', slug: 'udaipur' },
-                { name: 'Kota', slug: 'kota' },
-                { name: 'Ajmer', slug: 'ajmer' }
-            ]
-        },
-        {
-            name: 'Uttar Pradesh',
-            slug: 'uttar-pradesh',
-            cities: [
-                { name: 'Lucknow', slug: 'lucknow' },
-                { name: 'Kanpur', slug: 'kanpur' },
-                { name: 'Varanasi', slug: 'varanasi' },
-                { name: 'Agra', slug: 'agra' },
-                { name: 'Prayagraj', slug: 'prayagraj' }
-            ]
-        },
-        {
-            name: 'West Bengal',
-            slug: 'west-bengal',
-            cities: [
-                { name: 'Kolkata', slug: 'kolkata' },
-                { name: 'Howrah', slug: 'howrah' },
-                { name: 'Durgapur', slug: 'durgapur' },
-                { name: 'Siliguri', slug: 'siliguri' },
-                { name: 'Asansol', slug: 'asansol' }
-            ]
-        },
-        {
-            name: 'Telangana',
-            slug: 'telangana',
-            cities: [
-                { name: 'Hyderabad', slug: 'hyderabad' },
-                { name: 'Warangal', slug: 'warangal' },
-                { name: 'Nizamabad', slug: 'nizamabad' },
-                { name: 'Karimnagar', slug: 'karimnagar' }
-            ]
-        },
-        {
-            name: 'Kerala',
-            slug: 'kerala',
-            cities: [
-                { name: 'Kochi', slug: 'kochi' },
-                { name: 'Thiruvananthapuram', slug: 'thiruvananthapuram' },
-                { name: 'Kozhikode', slug: 'kozhikode' },
-                { name: 'Thrissur', slug: 'thrissur' }
-            ]
-        },
-        {
-            name: 'Madhya Pradesh',
-            slug: 'madhya-pradesh',
-            cities: [
-                { name: 'Indore', slug: 'indore' },
-                { name: 'Bhopal', slug: 'bhopal' },
-                { name: 'Jabalpur', slug: 'jabalpur' },
-                { name: 'Gwalior', slug: 'gwalior' }
-            ]
-        },
-        {
-            name: 'Punjab',
-            slug: 'punjab',
-            cities: [
-                { name: 'Chandigarh', slug: 'chandigarh' },
-                { name: 'Ludhiana', slug: 'ludhiana' },
-                { name: 'Amritsar', slug: 'amritsar' },
-                { name: 'Jalandhar', slug: 'jalandhar' }
-            ]
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch(`${API_BASE}/market/gmb`);
+                const json = await res.json();
+                if (json.success) {
+                    setStatesData(json.data);
+                } else {
+                    setError('Failed to load data');
+                }
+            } catch (err) {
+                setError('Could not connect to server');
+            } finally {
+                setLoading(false);
+            }
         }
-    ];
+        fetchData();
+    }, []);
 
     const filteredStates = statesData.filter(state =>
         state.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -164,6 +54,25 @@ export default function GMBMarketPage() {
     return (
         <>
             <Header />
+
+            {loading ? (
+                <div className='min-h-screen flex items-center justify-center'>
+                    <div className='text-center'>
+                        <IconLoader2 className='w-12 h-12 text-blue-600 animate-spin mx-auto mb-4' />
+                        <p className='text-gray-600 text-lg'>Loading locations...</p>
+                    </div>
+                </div>
+            ) : error ? (
+                <div className='min-h-screen flex items-center justify-center'>
+                    <div className='text-center'>
+                        <p className='text-red-600 text-lg mb-4'>{error}</p>
+                        <button onClick={() => window.location.reload()} className='px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700'>
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+            ) : (
+            <>
 
             {/* Hero Section */}
             <section className='relative min-h-[50vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-10 overflow-hidden'>
@@ -296,7 +205,7 @@ export default function GMBMarketPage() {
                                                     {state.cities.map((city) => (
                                                         <Link
                                                             key={city.slug}
-                                                            href={`/google-my-business-listing-${city.slug}`}
+                                                            href={`/${city.slug}`}
                                                             className='flex items-center gap-2 px-4 py-3 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 hover:shadow-md transition-all duration-300 group'
                                                         >
                                                             <IconMapPin className='w-4 h-4 text-blue-600' />
@@ -353,6 +262,8 @@ export default function GMBMarketPage() {
             </section>
 
             <Footer />
+            </>
+            )}
         </>
     )
 }

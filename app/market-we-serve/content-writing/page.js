@@ -1,158 +1,48 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import {
-    IconSearch,
     IconMapPin,
+    IconSearch,
     IconChevronDown,
     IconChevronUp,
     IconArrowRight,
     IconBuilding,
-    IconSeo
+    IconLoader2,
+    IconPencil
 } from '@tabler/icons-react'
 
-export default function SEOMarketPage() {
+const API_BASE = 'http://localhost:5001/api';
+
+export default function ContentWritingMarketPage() {
     const [expandedState, setExpandedState] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
+    const [statesData, setStatesData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Sample data - will be replaced with DB data
-    const statesData = [
-        {
-            name: 'Maharashtra',
-            slug: 'maharashtra',
-            cities: [
-                { name: 'Mumbai', slug: 'mumbai' },
-                { name: 'Pune', slug: 'pune' },
-                { name: 'Nagpur', slug: 'nagpur' },
-                { name: 'Nashik', slug: 'nashik' },
-                { name: 'Aurangabad', slug: 'aurangabad' },
-                { name: 'Thane', slug: 'thane' },
-                { name: 'Navi Mumbai', slug: 'navi-mumbai' }
-            ]
-        },
-        {
-            name: 'Delhi NCR',
-            slug: 'delhi-ncr',
-            cities: [
-                { name: 'New Delhi', slug: 'new-delhi' },
-                { name: 'Noida', slug: 'noida' },
-                { name: 'Gurgaon', slug: 'gurgaon' },
-                { name: 'Faridabad', slug: 'faridabad' },
-                { name: 'Ghaziabad', slug: 'ghaziabad' },
-                { name: 'Greater Noida', slug: 'greater-noida' }
-            ]
-        },
-        {
-            name: 'Karnataka',
-            slug: 'karnataka',
-            cities: [
-                { name: 'Bangalore', slug: 'bangalore' },
-                { name: 'Mysore', slug: 'mysore' },
-                { name: 'Mangalore', slug: 'mangalore' },
-                { name: 'Hubli', slug: 'hubli' },
-                { name: 'Belgaum', slug: 'belgaum' }
-            ]
-        },
-        {
-            name: 'Tamil Nadu',
-            slug: 'tamil-nadu',
-            cities: [
-                { name: 'Chennai', slug: 'chennai' },
-                { name: 'Coimbatore', slug: 'coimbatore' },
-                { name: 'Madurai', slug: 'madurai' },
-                { name: 'Salem', slug: 'salem' },
-                { name: 'Trichy', slug: 'trichy' }
-            ]
-        },
-        {
-            name: 'Gujarat',
-            slug: 'gujarat',
-            cities: [
-                { name: 'Ahmedabad', slug: 'ahmedabad' },
-                { name: 'Surat', slug: 'surat' },
-                { name: 'Vadodara', slug: 'vadodara' },
-                { name: 'Rajkot', slug: 'rajkot' },
-                { name: 'Gandhinagar', slug: 'gandhinagar' }
-            ]
-        },
-        {
-            name: 'Rajasthan',
-            slug: 'rajasthan',
-            cities: [
-                { name: 'Jaipur', slug: 'jaipur' },
-                { name: 'Jodhpur', slug: 'jodhpur' },
-                { name: 'Udaipur', slug: 'udaipur' },
-                { name: 'Kota', slug: 'kota' },
-                { name: 'Ajmer', slug: 'ajmer' }
-            ]
-        },
-        {
-            name: 'Uttar Pradesh',
-            slug: 'uttar-pradesh',
-            cities: [
-                { name: 'Lucknow', slug: 'lucknow' },
-                { name: 'Kanpur', slug: 'kanpur' },
-                { name: 'Varanasi', slug: 'varanasi' },
-                { name: 'Agra', slug: 'agra' },
-                { name: 'Prayagraj', slug: 'prayagraj' }
-            ]
-        },
-        {
-            name: 'West Bengal',
-            slug: 'west-bengal',
-            cities: [
-                { name: 'Kolkata', slug: 'kolkata' },
-                { name: 'Howrah', slug: 'howrah' },
-                { name: 'Durgapur', slug: 'durgapur' },
-                { name: 'Siliguri', slug: 'siliguri' },
-                { name: 'Asansol', slug: 'asansol' }
-            ]
-        },
-        {
-            name: 'Telangana',
-            slug: 'telangana',
-            cities: [
-                { name: 'Hyderabad', slug: 'hyderabad' },
-                { name: 'Warangal', slug: 'warangal' },
-                { name: 'Nizamabad', slug: 'nizamabad' },
-                { name: 'Karimnagar', slug: 'karimnagar' }
-            ]
-        },
-        {
-            name: 'Kerala',
-            slug: 'kerala',
-            cities: [
-                { name: 'Kochi', slug: 'kochi' },
-                { name: 'Thiruvananthapuram', slug: 'thiruvananthapuram' },
-                { name: 'Kozhikode', slug: 'kozhikode' },
-                { name: 'Thrissur', slug: 'thrissur' }
-            ]
-        },
-        {
-            name: 'Madhya Pradesh',
-            slug: 'madhya-pradesh',
-            cities: [
-                { name: 'Indore', slug: 'indore' },
-                { name: 'Bhopal', slug: 'bhopal' },
-                { name: 'Jabalpur', slug: 'jabalpur' },
-                { name: 'Gwalior', slug: 'gwalior' }
-            ]
-        },
-        {
-            name: 'Punjab',
-            slug: 'punjab',
-            cities: [
-                { name: 'Chandigarh', slug: 'chandigarh' },
-                { name: 'Ludhiana', slug: 'ludhiana' },
-                { name: 'Amritsar', slug: 'amritsar' },
-                { name: 'Jalandhar', slug: 'jalandhar' }
-            ]
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch(`${API_BASE}/market/content-writing`);
+                const json = await res.json();
+                if (json.success) {
+                    setStatesData(json.data);
+                } else {
+                    setError('Failed to load data');
+                }
+            } catch (err) {
+                setError('Could not connect to server');
+            } finally {
+                setLoading(false);
+            }
         }
-    ];
+        fetchData();
+    }, []);
 
     const filteredStates = statesData.filter(state =>
         state.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -165,13 +55,32 @@ export default function SEOMarketPage() {
         <>
             <Header />
 
+            {loading ? (
+                <div className='min-h-screen flex items-center justify-center'>
+                    <div className='text-center'>
+                        <IconLoader2 className='w-12 h-12 text-teal-600 animate-spin mx-auto mb-4' />
+                        <p className='text-gray-600 text-lg'>Loading locations...</p>
+                    </div>
+                </div>
+            ) : error ? (
+                <div className='min-h-screen flex items-center justify-center'>
+                    <div className='text-center'>
+                        <p className='text-red-600 text-lg mb-4'>{error}</p>
+                        <button onClick={() => window.location.reload()} className='px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700'>
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+            ) : (
+            <>
+
             {/* Hero Section */}
             <section className='relative min-h-[50vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-10 overflow-hidden'>
                 <div className='absolute inset-0 z-0'>
-                    <div className='absolute inset-0 bg-linear-to-r from-green-900/95 via-green-800/90 to-transparent z-10' />
+                    <div className='absolute inset-0 bg-linear-to-r from-teal-900/95 via-teal-800/90 to-transparent z-10' />
                     <img
-                        src='https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1920&q=80'
-                        alt='SEO Services'
+                        src='https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1920&q=80'
+                        alt='Content Writing Services'
                         className='w-full h-full object-cover'
                     />
                 </div>
@@ -184,7 +93,7 @@ export default function SEOMarketPage() {
                     >
                         <Link
                             href='/market-we-serve'
-                            className='inline-flex items-center gap-2 text-green-200 hover:text-white mb-4 mr-4 transition-colors'
+                            className='inline-flex items-center gap-2 text-teal-200 hover:text-white mb-4 mr-4 transition-colors'
                         >
                             <IconArrowRight className='w-4 h-4 rotate-180' />
                             Back to All Services
@@ -196,16 +105,16 @@ export default function SEOMarketPage() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className='inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 border border-white/30'
                         >
-                            <IconSeo className='w-4 h-4' />
-                            SEO Services
+                            <IconPencil className='w-4 h-4' />
+                            Content Writing
                         </motion.span>
 
                         <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>
-                            SEO Services Across India
+                            Content Writing Services Across India
                         </h1>
 
                         <p className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
-                            Result-driven SEO services to boost your online visibility and organic rankings in {statesData.length}+ states and {totalCities}+ cities across India.
+                            Professional content writing, SEO copywriting, and creative content services in {statesData.length}+ states and {totalCities}+ cities across India.
                         </p>
 
                         <div className='flex flex-wrap gap-6'>
@@ -246,7 +155,7 @@ export default function SEOMarketPage() {
                                 placeholder='Search for a state or city...'
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className='w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg'
+                                className='w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-lg'
                             />
                         </div>
                     </motion.div>
@@ -267,8 +176,8 @@ export default function SEOMarketPage() {
                                     className='w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors'
                                 >
                                     <div className='flex items-center gap-4'>
-                                        <div className='w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center'>
-                                            <IconBuilding className='w-5 h-5 text-green-600' />
+                                        <div className='w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center'>
+                                            <IconBuilding className='w-5 h-5 text-teal-600' />
                                         </div>
                                         <div>
                                             <h3 className='text-xl font-bold text-gray-900'>{state.name}</h3>
@@ -276,7 +185,7 @@ export default function SEOMarketPage() {
                                         </div>
                                     </div>
                                     {expandedState === state.slug ? (
-                                        <IconChevronUp className='w-6 h-6 text-green-600' />
+                                        <IconChevronUp className='w-6 h-6 text-teal-600' />
                                     ) : (
                                         <IconChevronDown className='w-6 h-6 text-gray-400' />
                                     )}
@@ -296,12 +205,12 @@ export default function SEOMarketPage() {
                                                     {state.cities.map((city) => (
                                                         <Link
                                                             key={city.slug}
-                                                            href={`/seo-service-${city.slug}`}
-                                                            className='flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 hover:shadow-md transition-all duration-300 group'
+                                                            href={`/${city.slug}`}
+                                                            className='flex items-center gap-2 px-4 py-3 bg-teal-50 border border-teal-200 rounded-lg hover:bg-teal-100 hover:shadow-md transition-all duration-300 group'
                                                         >
-                                                            <IconMapPin className='w-4 h-4 text-green-600' />
-                                                            <span className='text-gray-700 font-medium group-hover:text-green-700'>{city.name}</span>
-                                                            <IconArrowRight className='w-4 h-4 text-green-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity' />
+                                                            <IconMapPin className='w-4 h-4 text-teal-600' />
+                                                            <span className='text-gray-700 font-medium group-hover:text-teal-700'>{city.name}</span>
+                                                            <IconArrowRight className='w-4 h-4 text-teal-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity' />
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -328,7 +237,7 @@ export default function SEOMarketPage() {
             </section>
 
             {/* CTA Section */}
-            <section className='py-16 px-4 md:px-8 lg:px-16 bg-green-600'>
+            <section className='py-16 px-4 md:px-8 lg:px-16 bg-teal-600'>
                 <div className='max-w-4xl mx-auto text-center'>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -337,22 +246,24 @@ export default function SEOMarketPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6'>
-                            Need SEO Services in Your City?
+                            Need Content Writing Services in Your City?
                         </h2>
-                        <p className='text-xl text-green-100 mb-8'>
-                            Don't see your city listed? Contact us and we'll help boost your online presence.
+                        <p className='text-xl text-teal-100 mb-8'>
+                            Don&apos;t see your city listed? Contact us and we&apos;ll craft compelling content for your business.
                         </p>
                         <Link
                             href='/contact-us'
-                            className='inline-block bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
+                            className='inline-block bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
-                            Get Free SEO Audit
+                            Get Started Today
                         </Link>
                     </motion.div>
                 </div>
             </section>
 
             <Footer />
+            </>
+            )}
         </>
     )
 }
