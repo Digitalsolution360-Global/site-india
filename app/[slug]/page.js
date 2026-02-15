@@ -106,7 +106,15 @@ const CATEGORY_CONFIG = {
                 { icon: IconHeadset, title: 'Dedicated Support', desc: 'Personal account manager for your business.' },
                 { icon: IconTrendingUp, title: 'Proven Results', desc: 'Consistent growth in visibility and engagement.' }
             ]
-        }
+        },
+        faqs: [
+            { q: 'What is Google My Business and why does my {cityName} business need it?', a: 'Google My Business (GMB) is a free tool by Google that lets you manage how your business appears on Google Search and Maps. For businesses in {cityName}, an optimized GMB profile ensures you show up when local customers search for your services, driving foot traffic and calls.' },
+            { q: 'How long does it take to set up and verify a GMB profile in {cityName}?', a: 'We typically complete the full setup within 2–3 business days. Google verification via postcard takes 5–14 days, though we also assist with phone or email verification when available for {cityName} businesses.' },
+            { q: 'Can you help manage reviews for my {cityName} business?', a: 'Absolutely. Our review management service includes monitoring new reviews, crafting professional responses, and implementing strategies to encourage satisfied customers in {cityName} to leave positive feedback.' },
+            { q: 'How do you optimize a GMB listing for {cityName}?', a: 'We optimize every element — business description with local keywords, categories, service areas, photos, posts, Q&A, and attributes — all tailored specifically for the {cityName} market to maximize your local visibility.' },
+            { q: 'Do you provide GMB services for multiple locations in {cityName}?', a: 'Yes, we manage multi-location GMB profiles for businesses with several branches across {cityName}. Each location gets individually optimized content, photos, and review management.' },
+            { q: 'What results can I expect from GMB optimization in {cityName}?', a: 'Most {cityName} businesses see a 2–5× increase in profile views, map appearances, and customer actions (calls, direction requests, website visits) within the first 2–3 months of optimization.' }
+        ]
     },
     'Digital Marketing': {
         theme: {
@@ -157,7 +165,15 @@ const CATEGORY_CONFIG = {
                 { icon: IconAd2, title: 'Display Network', desc: 'Banner ads across millions of websites to build brand awareness.' },
                 { icon: IconSearch, title: 'SEO & Content', desc: 'Organic strategies for long-term sustainable growth.' }
             ]
-        }
+        },
+        faqs: [
+            { q: 'What digital marketing services do you offer in {cityName}?', a: 'We provide a full suite of digital marketing services in {cityName} including SEO, Google Ads, social media marketing, content marketing, email campaigns, and performance analytics — all tailored to your local market.' },
+            { q: 'How much should a {cityName} business budget for digital marketing?', a: 'Budgets vary based on goals, competition, and industry. For most {cityName} small businesses, we recommend starting with ₹15,000–₹50,000/month and scaling as you see ROI. We create custom plans that maximize every rupee.' },
+            { q: 'How soon will I see results from digital marketing in {cityName}?', a: 'Paid campaigns (Google/Social Ads) can generate leads within days. SEO and content marketing typically show significant results within 3–6 months. We provide monthly reports so you can track progress for your {cityName} business.' },
+            { q: 'Do you create marketing strategies specific to {cityName}?', a: 'Yes, every strategy is customized for {cityName}. We research local competition, audience behavior, and market trends to create campaigns that resonate with your specific {cityName} customer base.' },
+            { q: 'How do you measure ROI for digital marketing campaigns?', a: 'We track key metrics including leads generated, cost per acquisition, conversion rates, website traffic, and revenue attribution. You get a clear monthly dashboard showing exactly how your {cityName} campaigns are performing.' },
+            { q: 'Can you handle both B2B and B2C marketing in {cityName}?', a: 'Absolutely. We have experience running successful campaigns for both B2B and B2C businesses in {cityName}. Each requires different strategies, platforms, and messaging — and we tailor our approach accordingly.' }
+        ]
     },
     'Web Development': {
         theme: {
@@ -208,7 +224,15 @@ const CATEGORY_CONFIG = {
                 { icon: IconDatabase, title: 'Databases', desc: 'MySQL, MongoDB, PostgreSQL for robust data management.' },
                 { icon: IconServer, title: 'Cloud Hosting', desc: 'AWS, DigitalOcean, and Vercel deployment solutions.' }
             ]
-        }
+        },
+        faqs: [
+            { q: 'How long does it take to build a website for a {cityName} business?', a: 'A standard business website takes 3–6 weeks depending on complexity. E-commerce sites or custom web applications for {cityName} clients may take 6–12 weeks. We provide a detailed timeline during the planning phase.' },
+            { q: 'What technologies do you use for web development in {cityName}?', a: 'We work with modern technologies including React, Next.js, Node.js, WordPress, and more. For {cityName} businesses, we recommend the best tech stack based on your specific needs, budget, and scalability requirements.' },
+            { q: 'Will my website be mobile-friendly and SEO-optimized?', a: 'Every website we build is fully responsive (mobile-first design) and follows SEO best practices. This ensures your {cityName} business ranks well on Google and provides a great experience on all devices.' },
+            { q: 'Do you offer website maintenance for {cityName} businesses?', a: 'Yes, we offer ongoing maintenance packages that include security updates, content changes, performance monitoring, backups, and technical support — keeping your {cityName} website running smoothly 24/7.' },
+            { q: 'How much does a website cost for a {cityName} business?', a: 'Website costs depend on scope and features. A basic business website starts from ₹15,000, while custom e-commerce or web applications can range from ₹50,000–₹2,00,000+. We provide detailed quotes for {cityName} clients after understanding your requirements.' },
+            { q: 'Can you redesign my existing {cityName} business website?', a: 'Absolutely. We offer complete website redesign services that modernize your look, improve performance, and enhance user experience — all while preserving your SEO rankings and existing content for your {cityName} online presence.' }
+        ]
     },
     'Social Media': {
         theme: {
@@ -249,7 +273,15 @@ const CATEGORY_CONFIG = {
             { value: '71%', label: 'consumers buy based on social referrals' },
             { value: '49%', label: 'consumers depend on influencer recommendations' }
         ],
-        extras: null
+        extras: null,
+        faqs: [
+            { q: 'Which social media platforms should my {cityName} business be on?', a: 'It depends on your audience. For most {cityName} businesses, we recommend Instagram and Facebook as a starting point. B2B companies benefit from LinkedIn, while consumer brands can leverage YouTube and Twitter. We help you choose the right mix.' },
+            { q: 'How often should we post on social media?', a: 'We recommend 4–5 posts per week on Instagram/Facebook and 2–3 on LinkedIn for {cityName} businesses. Consistency matters more than frequency — our content calendars ensure you maintain a strong, regular presence.' },
+            { q: 'Do you create the content or do we need to provide it?', a: 'We handle everything — from graphic design and video creation to copywriting and hashtag strategy. Our team creates all social media content for your {cityName} business, though we love incorporating your insights and brand knowledge.' },
+            { q: 'How do you measure social media success for {cityName} businesses?', a: 'We track engagement rates, follower growth, reach, impressions, click-through rates, and lead generation. Monthly reports show you exactly how your {cityName} social media presence is growing and driving business results.' },
+            { q: 'Can social media marketing generate leads for my {cityName} business?', a: 'Yes! With the right strategy, social media is a powerful lead generation tool. We use targeted ads, lead forms, compelling CTAs, and retargeting campaigns to convert your {cityName} social audience into paying customers.' },
+            { q: 'Do you manage paid social media ads for {cityName} businesses?', a: 'Absolutely. We manage full paid social campaigns on Facebook, Instagram, LinkedIn, and YouTube for {cityName} businesses — including audience targeting, creative design, A/B testing, and budget optimization for maximum ROI.' }
+        ]
     },
     'Content Writing': {
         theme: {
@@ -290,7 +322,15 @@ const CATEGORY_CONFIG = {
             { value: '60%', label: 'of consumers are inspired by custom content' },
             { value: '47%', label: 'of buyers read 3-5 pieces before engaging sales' }
         ],
-        extras: null
+        extras: null,
+        faqs: [
+            { q: 'What types of content writing services do you offer in {cityName}?', a: 'We provide blog posts, website copy, product descriptions, social media content, email newsletters, whitepapers, case studies, and more — all crafted specifically for {cityName} businesses and their target audiences.' },
+            { q: 'Is the content SEO-optimized for {cityName} searches?', a: 'Yes, every piece of content is optimized with relevant keywords, local {cityName} search terms, proper heading structure, meta descriptions, and internal linking to improve your search engine rankings.' },
+            { q: 'How do you ensure content quality and originality?', a: 'All content goes through a rigorous process — research, writing, editing, and plagiarism checking. We use professional writers experienced in various industries and every piece is 100% original and tailored for your {cityName} business.' },
+            { q: 'How much content can you produce monthly for my {cityName} business?', a: 'Our packages range from 4–20+ pieces of content per month depending on your needs. For most {cityName} businesses, we recommend 8–12 blog posts/articles per month along with website copy and social content for optimal results.' },
+            { q: 'Do you write in regional languages for {cityName} audiences?', a: 'Yes, we offer content writing in multiple Indian languages including Hindi, along with English. For {cityName} businesses targeting local audiences, multilingual content helps you connect with a wider customer base.' },
+            { q: 'What is your revision policy for content writing?', a: 'We offer 2 rounds of free revisions on every piece of content. Our writers work closely with your {cityName} team to understand your brand voice, ensuring minimal revisions are needed and content meets your expectations.' }
+        ]
     },
     'Wordpress Development': {
         theme: {
@@ -331,7 +371,15 @@ const CATEGORY_CONFIG = {
             { value: '55K+', label: 'plugins available for functionality' },
             { value: '10K+', label: 'free themes to choose from' }
         ],
-        extras: null
+        extras: null,
+        faqs: [
+            { q: 'Why should my {cityName} business choose WordPress?', a: 'WordPress powers 43% of all websites globally. For {cityName} businesses, it offers an easy-to-manage CMS, thousands of plugins, SEO-friendly architecture, and cost-effective development — making it ideal for businesses of all sizes.' },
+            { q: 'Do you build custom themes or use pre-built ones for {cityName} clients?', a: 'We offer both options. For unique brand identities, we build custom themes from scratch. For budget-conscious {cityName} businesses, we customize premium pre-built themes to match your brand — both options deliver professional results.' },
+            { q: 'Can you build an e-commerce store with WooCommerce for my {cityName} business?', a: 'Absolutely. We specialize in WooCommerce development for {cityName} businesses — including product catalog setup, payment gateway integration (Razorpay, PayU, etc.), shipping configuration, and inventory management.' },
+            { q: 'How do you ensure WordPress security for {cityName} business websites?', a: 'We implement multiple security layers — SSL certificates, security plugins, firewall setup, regular malware scanning, automatic backups, and strong access controls. Your {cityName} business website stays protected 24/7.' },
+            { q: 'Will my WordPress site be fast and SEO-friendly?', a: 'Yes. We optimize every WordPress site for speed — caching, image compression, CDN setup, and clean code. Combined with SEO plugins and proper structure, your {cityName} website will rank well and load quickly.' },
+            { q: 'Do you offer WordPress maintenance packages for {cityName} businesses?', a: 'Yes, our maintenance plans include core/plugin updates, daily backups, security monitoring, uptime tracking, and content updates. {cityName} businesses get peace of mind knowing their website is professionally maintained.' }
+        ]
     }
 };
 
@@ -343,6 +391,7 @@ export default function CityServicePage() {
     const [city, setCity] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchCity() {
@@ -764,6 +813,70 @@ export default function CityServicePage() {
                                     </motion.div>
                                 );
                             })}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* FAQ Section */}
+            {config.faqs && (
+                <section className='py-20 px-4 md:px-8 lg:px-16 bg-white'>
+                    <div className='max-w-4xl mx-auto'>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className='text-center mb-12'
+                        >
+                            <span className={`inline-block ${theme.badgeBg} ${theme.badgeText} text-sm font-semibold px-4 py-2 rounded-full mb-4`}>
+                                FAQs
+                            </span>
+                            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>
+                                Frequently Asked Questions
+                            </h2>
+                            <p className='text-xl text-gray-600'>
+                                Common questions about our {city.category_name.toLowerCase()} services in {cityName}
+                            </p>
+                        </motion.div>
+
+                        <div className='space-y-4'>
+                            {config.faqs.map((faq, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                                    className='bg-gray-50 rounded-2xl overflow-hidden'
+                                >
+                                    <button
+                                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                                        className='w-full flex items-center justify-between p-6 text-left'
+                                    >
+                                        <span className='text-lg font-semibold text-gray-900 pr-4'>
+                                            {faq.q.replace(/\{cityName\}/g, cityName)}
+                                        </span>
+                                        <span className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${openFaq === index ? `${theme.badgeBg} ${theme.badgeText}` : 'bg-gray-200 text-gray-600'}`}>
+                                            {openFaq === index ? <IconMinus size={20} /> : <IconPlus size={20} />}
+                                        </span>
+                                    </button>
+                                    <AnimatePresence>
+                                        {openFaq === index && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                <p className='px-6 pb-6 text-gray-600 leading-relaxed'>
+                                                    {faq.a.replace(/\{cityName\}/g, cityName)}
+                                                </p>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </section>
