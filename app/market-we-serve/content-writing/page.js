@@ -239,6 +239,43 @@ export default function ContentWritingMarketPage() {
                         </div>
                     </section>
 
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-teal-100 text-teal-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Content Writing FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our content writing services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'What types of content do you write?', a: 'We write blogs, articles, website copy, product descriptions, social media content, email newsletters, whitepapers, case studies, press releases, and technical documentation. Every piece is tailored to your brand voice, target audience, and business objectives.' },
+                                    { q: 'Is the content SEO-optimized?', a: 'Yes, all our content is written with SEO best practices in mind. We conduct keyword research, optimize heading structures, include strategic internal and external links, write compelling meta descriptions, and ensure the content addresses search intent — all while keeping it natural and engaging for readers.' },
+                                    { q: 'How do you ensure content quality and originality?', a: 'Every piece goes through a rigorous process: research, writing, editing, proofreading, and plagiarism checking using industry-standard tools. We also have subject matter experts review technical content. All content is 100% original and passes Copyscape checks.' },
+                                    { q: 'How many articles/blogs can you deliver per month?', a: 'Our output depends on your package. Standard packages include 8-12 blog posts per month (800-1500 words each). Enterprise clients receive 20-30+ pieces monthly. We also offer on-demand content services for one-time projects. Turnaround is typically 3-5 business days per piece.' },
+                                    { q: 'Can you write content in regional languages?', a: 'Yes! We have writers proficient in Hindi, Tamil, Telugu, Marathi, Bengali, Kannada, Malayalam, Gujarati, and other Indian languages. Multilingual content helps you connect with local audiences more effectively and improves regional SEO performance.' },
+                                    { q: 'What is your content revision policy?', a: 'We offer unlimited revisions until you\'re 100% satisfied. Most content requires just 1-2 rounds of minor edits. We encourage detailed briefs upfront so the first draft is close to your vision. Our collaborative process ensures the final output perfectly matches your expectations.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-teal-600' : 'bg-teal-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-teal-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
                     {/* CTA Section */}
                     <section className='py-16 px-4 md:px-8 lg:px-16 bg-teal-600'>
                         <div className='max-w-4xl mx-auto text-center'>

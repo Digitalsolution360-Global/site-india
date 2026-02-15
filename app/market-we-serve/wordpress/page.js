@@ -239,6 +239,43 @@ export default function WordpressMarketPage() {
                         </div>
                     </section>
 
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>WordPress Development FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our WordPress development services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'Why should I choose WordPress for my website?', a: 'WordPress powers 43% of all websites globally — and for good reason. It\'s highly customizable, SEO-friendly, easy to manage, has a massive plugin ecosystem (55,000+), and scales from simple blogs to complex e-commerce stores. It\'s also cost-effective compared to fully custom-built solutions.' },
+                                    { q: 'Do you build custom WordPress themes or use pre-built ones?', a: 'We do both. For budget-conscious projects, we customize premium themes to match your brand. For businesses needing a unique identity, we build custom themes from scratch using Figma/PSD designs. Custom themes offer better performance, cleaner code, and no unnecessary bloat.' },
+                                    { q: 'Can you build an e-commerce store with WordPress?', a: 'Yes! We specialize in WooCommerce — the most popular WordPress e-commerce solution. We set up product catalogs, payment gateways (Razorpay, PayU, Stripe), shipping integrations, inventory management, and custom checkout flows. WooCommerce powers 28% of all online stores worldwide.' },
+                                    { q: 'How do you ensure WordPress site security?', a: 'Security is built into our development process. We implement SSL certificates, firewall protection, malware scanning, regular core/plugin/theme updates, strong password policies, two-factor authentication, login attempt limiting, and automated backups. We also perform security audits quarterly.' },
+                                    { q: 'Will my WordPress site be fast and SEO-friendly?', a: 'Absolutely. We optimize every site with caching plugins, image compression, CDN integration, lazy loading, database optimization, and clean code practices. Our WordPress sites typically score 90+ on Google PageSpeed Insights and are fully SEO-optimized with proper schema markup.' },
+                                    { q: 'Do you offer WordPress maintenance packages?', a: 'Yes, our maintenance plans include core updates, plugin/theme updates, daily backups, uptime monitoring, security scanning, performance optimization, and priority support. Plans start from ₹3,000/month. Regular maintenance prevents security vulnerabilities and keeps your site running at peak performance.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-indigo-600' : 'bg-indigo-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-indigo-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
                     {/* CTA Section */}
                     <section className='py-16 px-4 md:px-8 lg:px-16 bg-indigo-600'>
                         <div className='max-w-4xl mx-auto text-center'>

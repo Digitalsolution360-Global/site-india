@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -50,7 +50,9 @@ import {
     IconFileDescription,
     IconPencil,
     IconBookmark,
-    IconBrandHtml5
+    IconBrandHtml5,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
