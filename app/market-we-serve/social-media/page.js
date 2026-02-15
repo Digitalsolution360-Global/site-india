@@ -13,7 +13,9 @@ import {
     IconArrowRight,
     IconBuilding,
     IconLoader2,
-    IconBrandInstagram
+    IconBrandInstagram,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -24,6 +26,7 @@ export default function SocialMediaMarketPage() {
     const [statesData, setStatesData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -233,6 +236,43 @@ export default function SocialMediaMarketPage() {
                                     <p className='text-gray-500'>Try searching for a different state or city</p>
                                 </motion.div>
                             )}
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Social Media Marketing FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our social media services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'Which social media platforms should my business be on?', a: 'It depends on your audience. Instagram and Facebook work best for B2C brands targeting consumers. LinkedIn is ideal for B2B companies. YouTube is great for video-heavy industries. We analyze your target demographic and competitors to recommend the right platform mix for maximum ROI.' },
+                                    { q: 'How often should I post on social media?', a: 'Consistency matters more than frequency. For most businesses, we recommend 3-5 posts per week on Instagram, 1-2 daily on Twitter/X, 2-3 per week on LinkedIn, and 1-2 per week on YouTube. We create a content calendar tailored to your audience\'s peak engagement times.' },
+                                    { q: 'Do you create the content or do I need to provide it?', a: 'We handle everything — from strategy and content ideation to graphic design, copywriting, video editing, and publishing. You just need to approve the content calendar and share any brand-specific information. We also encourage sharing behind-the-scenes content for authenticity.' },
+                                    { q: 'How do you measure social media success?', a: 'We track engagement rate, follower growth, reach, impressions, click-through rate, lead generation, and conversion metrics. Monthly reports include a detailed breakdown of what worked, audience insights, competitor benchmarks, and strategic recommendations for the next month.' },
+                                    { q: 'Can social media actually generate leads and sales?', a: 'Absolutely. With the right strategy, social media is a powerful lead generation engine. We use targeted ads, lead magnets, retargeting campaigns, and direct response content to drive measurable business results. Many of our clients generate 30-50% of their leads through social channels.' },
+                                    { q: 'Do you manage paid social media advertising?', a: 'Yes! We manage paid campaigns across Facebook, Instagram, LinkedIn, YouTube, and Twitter/X. Our ad management includes audience research, creative design, A/B testing, budget optimization, and detailed ROI reporting. We typically achieve 2-5X return on ad spend for our clients.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-pink-600' : 'bg-pink-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-pink-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
                     </section>
 

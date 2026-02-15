@@ -13,7 +13,9 @@ import {
     IconArrowRight,
     IconBuilding,
     IconCode,
-    IconLoader2
+    IconLoader2,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -24,6 +26,7 @@ export default function WebDevelopmentMarketPage() {
     const [statesData, setStatesData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -233,6 +236,43 @@ export default function WebDevelopmentMarketPage() {
                                     <p className='text-gray-500'>Try searching for a different state or city</p>
                                 </motion.div>
                             )}
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-purple-100 text-purple-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Website Development FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our web development services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'How long does it take to build a website?', a: 'Timeline depends on complexity. A standard business website takes 2-4 weeks, an e-commerce site 4-8 weeks, and a custom web application 8-16 weeks. We provide a detailed timeline during our initial consultation and keep you updated at every milestone.' },
+                                    { q: 'What technologies do you use for web development?', a: 'We work with modern technologies including React, Next.js, Node.js, WordPress, PHP, Python, and various databases (MySQL, MongoDB, PostgreSQL). We choose the best tech stack based on your project requirements, scalability needs, and long-term maintenance considerations.' },
+                                    { q: 'Will my website be mobile-friendly and SEO-optimized?', a: 'Absolutely. Every website we build is mobile-first and fully responsive across all devices. We also implement SEO best practices including proper meta tags, structured data, fast loading speeds, clean URL structures, and accessibility standards from day one.' },
+                                    { q: 'Do you provide website maintenance and support after launch?', a: 'Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, content updates, bug fixes, regular backups, and technical support. Most clients opt for our monthly maintenance plans to keep their sites running smoothly and securely.' },
+                                    { q: 'How much does a website cost?', a: 'Website costs vary based on requirements. A basic business website starts from ₹15,000-₹30,000, e-commerce sites from ₹40,000-₹1,50,000, and custom web applications from ₹1,00,000+. We provide detailed quotes after understanding your specific needs. No hidden charges.' },
+                                    { q: 'Can you redesign my existing website?', a: 'Yes! We specialize in website redesigns that preserve your SEO rankings while delivering a modern, faster, and more user-friendly experience. We handle everything from design to content migration to proper URL redirects so you don\'t lose any existing search traffic.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-purple-600' : 'bg-purple-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-purple-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
                     </section>
 

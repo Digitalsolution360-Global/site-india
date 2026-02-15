@@ -13,7 +13,9 @@ import {
     IconArrowRight,
     IconBuilding,
     IconSpeakerphone,
-    IconLoader2
+    IconLoader2,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -24,6 +26,7 @@ export default function DigitalMarketingMarketPage() {
     const [statesData, setStatesData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -233,6 +236,43 @@ export default function DigitalMarketingMarketPage() {
                                     <p className='text-gray-500'>Try searching for a different state or city</p>
                                 </motion.div>
                             )}
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Digital Marketing FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our digital marketing services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'What does a digital marketing strategy include?', a: 'A comprehensive digital marketing strategy includes SEO (Search Engine Optimization), PPC advertising (Google Ads, social ads), social media marketing, content marketing, email campaigns, and analytics tracking. We create a customized mix based on your business goals, target audience, budget, and industry competition.' },
+                                    { q: 'How much should I budget for digital marketing?', a: 'Budget depends on your goals, industry, and competition. Small businesses typically start with ₹15,000-₹50,000/month, while mid-size companies invest ₹50,000-₹2,00,000/month. We offer flexible packages and always recommend starting with a focused approach, then scaling based on ROI.' },
+                                    { q: 'How long before I see results from digital marketing?', a: 'PPC ads can generate leads within days. Social media engagement improves within 2-4 weeks. SEO typically takes 3-6 months for significant ranking improvements. Content marketing shows compounding results over 6-12 months. We set clear milestones and provide monthly progress reports.' },
+                                    { q: 'Do you offer digital marketing services in my city?', a: 'Yes! We serve 790+ cities across India with localized digital marketing strategies. Browse the state directory above to find your city. Our local expertise means we understand regional markets, consumer behavior, and competitive landscapes.' },
+                                    { q: 'How do you measure the ROI of digital marketing campaigns?', a: 'We track key metrics including website traffic, lead generation, conversion rates, cost per acquisition, customer lifetime value, and revenue attribution. Our custom dashboards provide real-time visibility into campaign performance, and monthly reports break down exactly where your investment is generating returns.' },
+                                    { q: 'Can you handle both B2B and B2C digital marketing?', a: 'Absolutely. We have specialized teams for both B2B and B2C marketing. B2B strategies focus on LinkedIn, content marketing, and lead nurturing funnels. B2C strategies leverage social media, influencer partnerships, and performance marketing. We tailor the approach to your specific audience and sales cycle.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-orange-600' : 'bg-orange-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-orange-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
                     </section>
 

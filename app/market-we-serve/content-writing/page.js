@@ -13,7 +13,9 @@ import {
     IconArrowRight,
     IconBuilding,
     IconLoader2,
-    IconPencil
+    IconPencil,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -24,6 +26,7 @@ export default function ContentWritingMarketPage() {
     const [statesData, setStatesData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchData() {

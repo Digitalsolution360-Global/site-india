@@ -13,7 +13,9 @@ import {
     IconChevronUp,
     IconArrowRight,
     IconBuilding,
-    IconLoader2
+    IconLoader2,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -24,6 +26,7 @@ export default function GMBMarketPage() {
     const [statesData, setStatesData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -233,6 +236,43 @@ export default function GMBMarketPage() {
                                     <p className='text-gray-500'>Try searching for a different state or city</p>
                                 </motion.div>
                             )}
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <section className='py-20 px-4 md:px-8 lg:px-16'>
+                        <div className='max-w-4xl mx-auto'>
+                            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-center mb-12'>
+                                <span className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Google My Business FAQs</h2>
+                                <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our GMB services across India.</p>
+                            </motion.div>
+                            <div className='space-y-4'>
+                                {[
+                                    { q: 'What is Google My Business and why does my business need it?', a: 'Google My Business (GMB) is a free tool from Google that lets you manage how your business appears on Google Search and Maps. It\'s essential because 46% of all Google searches have local intent — meaning customers near you are actively looking for businesses like yours. A well-optimized GMB listing increases your visibility, builds trust through reviews, and drives foot traffic.' },
+                                    { q: 'How long does it take to set up and verify a GMB listing?', a: 'Initial setup takes 1-2 business days. Google verification typically takes 5-14 days via postcard, though phone or email verification may be available for some businesses. Once verified, we immediately begin optimizing your profile with photos, descriptions, categories, and service details.' },
+                                    { q: 'Can you help manage reviews on my GMB profile?', a: 'Yes! Our review management service includes monitoring all incoming reviews, crafting professional responses (both positive and negative), implementing review generation strategies to increase your review count, and reputation tracking dashboards so you can see improvement over time.' },
+                                    { q: 'How do you optimize a GMB listing for local search?', a: 'We optimize through accurate NAP (Name, Address, Phone) consistency, keyword-rich business descriptions, strategic category selection, regular posts and updates, photo optimization, Q&A management, citation building, and local schema markup. This comprehensive approach ensures maximum visibility in local search results and Google Maps.' },
+                                    { q: 'Do you offer GMB services in my city?', a: 'We offer GMB management services across 800+ cities in 28+ states across India. Browse the directory above to find your city. Even if your specific city isn\'t listed, contact us — we can extend our services to any location in India.' },
+                                    { q: 'What results can I expect from professional GMB management?', a: 'Most clients see a 3-5X increase in listing views within the first 3 months, along with significant improvements in direction requests, phone calls, and website clicks. Results vary based on competition and location, but our data-driven approach consistently delivers measurable growth in local visibility.' }
+                                ].map((faq, index) => (
+                                    <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
+                                        <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
+                                            <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                            <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-blue-600' : 'bg-blue-100'}`}>
+                                                {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-blue-600' stroke={2.5} />}
+                                            </div>
+                                        </button>
+                                        <AnimatePresence>
+                                            {openFaq === index && (
+                                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                                    <div className='px-6 md:px-8 pb-6 pt-2'><p className='text-gray-600 leading-relaxed'>{faq.a}</p></div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
                     </section>
 

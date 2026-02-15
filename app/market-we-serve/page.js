@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
@@ -17,7 +17,9 @@ import {
     IconLoader2,
     IconBrandInstagram,
     IconPencil,
-    IconBrandWordpress
+    IconBrandWordpress,
+    IconPlus,
+    IconMinus
 } from '@tabler/icons-react'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -25,6 +27,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 export default function MarketWeServePage() {
     const [stats, setStats] = useState({ totalStates: 0, totalCities: 0, categoryStats: {} });
     const [loading, setLoading] = useState(true);
+    const [openFaq, setOpenFaq] = useState(null);
 
     useEffect(() => {
         async function fetchStats() {
@@ -291,6 +294,62 @@ export default function MarketWeServePage() {
                                 ))}
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQs Section */}
+            <section className='py-20 px-4 md:px-8 lg:px-16'>
+                <div className='max-w-4xl mx-auto'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className='text-center mb-12'
+                    >
+                        <span className='inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold mb-4'>FAQs</span>
+                        <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>Frequently Asked Questions</h2>
+                        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Everything you need to know about our pan-India digital services.</p>
+                    </motion.div>
+
+                    <div className='space-y-4'>
+                        {[
+                            { q: 'What digital services does DigitalSolution 360 offer across India?', a: 'We provide six core services pan-India: Google My Business management, Digital Marketing, Website Development, Content Writing, WordPress Development, and Social Media Marketing. Each service is available across 28+ states and thousands of cities.' },
+                            { q: 'How do I find services available in my city?', a: 'Simply select a service category on this page, then browse by state to find your city. Each city page provides detailed information about the services we offer in that specific location, along with locally optimized strategies.' },
+                            { q: 'Do you provide localized strategies for different cities?', a: 'Absolutely. We tailor our approach to each city\'s unique market dynamics, local competition, consumer behavior, and regional language preferences. Our local expertise ensures your business connects effectively with the right audience.' },
+                            { q: 'What makes DigitalSolution 360 different from other agencies?', a: 'Our extensive pan-India coverage, local market expertise, dedicated account managers, transparent pricing, and proven track record across 4,600+ cities set us apart. We combine national-level strategy with local-level execution.' },
+                            { q: 'How do I get started with your services?', a: 'Getting started is simple — browse the service categories above, find your city, and click "Get Started" or contact us directly. We offer free consultations to understand your business needs and recommend the best strategy.' },
+                            { q: 'Can I avail multiple services for my business?', a: 'Yes! Many of our clients use a combination of our services for maximum impact. For example, pairing Website Development with SEO and Social Media Marketing creates a comprehensive digital presence. We offer bundled packages at discounted rates.' }
+                        ].map((faq, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'
+                            >
+                                <button
+                                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                                    className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'
+                                >
+                                    <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
+                                    <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index ? 'bg-blue-600' : 'bg-blue-100'}`}>
+                                        {openFaq === index ? <IconMinus className='w-5 h-5 text-white' stroke={2.5} /> : <IconPlus className='w-5 h-5 text-blue-600' stroke={2.5} />}
+                                    </div>
+                                </button>
+                                <AnimatePresence>
+                                    {openFaq === index && (
+                                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className='overflow-hidden'>
+                                            <div className='px-6 md:px-8 pb-6 pt-2'>
+                                                <p className='text-gray-600 leading-relaxed'>{faq.a}</p>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
