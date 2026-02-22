@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
+import { Editor, EditorProvider, Toolbar, BtnBold, BtnItalic, BtnUnderline, BtnStrikeThrough, BtnBulletList, BtnNumberedList, BtnLink, BtnClearFormatting } from 'react-simple-wysiwyg';
 
 const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -336,8 +337,12 @@ export default function CrudTablePage() {
         return String(val);
     };
 
+    const isRichText = (col) => {
+        return col === 'descritpion' || col.includes('description') || col.includes('content') || col === 'message' || col === 'comment_body';
+    };
+
     const isLongText = (col) => {
-        return col.includes('description') || col.includes('descritpion') || col === 'message' || col === 'comment_body' || col.includes('meta_');
+        return col.includes('meta_');
     };
 
     return (
@@ -546,7 +551,28 @@ export default function CrudTablePage() {
                         {editableCols.map(col => (
                             <div key={col}>
                                 <label className="block text-white/50 text-xs font-medium uppercase tracking-wider mb-1.5">{col.replace(/_/g, ' ')}</label>
-                                {isLongText(col) ? (
+                                {isRichText(col) && !isLongText(col) ? (
+                                    <div className="bg-white text-black rounded-lg overflow-hidden border border-white/10">
+                                        <EditorProvider>
+                                            <Editor 
+                                                value={editData[col] || ''} 
+                                                onChange={e => setEditData({ ...editData, [col]: e.target.value })}
+                                                containerProps={{ style: { height: '300px' } }}
+                                            >
+                                                <Toolbar>
+                                                    <BtnBold />
+                                                    <BtnItalic />
+                                                    <BtnUnderline />
+                                                    <BtnStrikeThrough />
+                                                    <BtnBulletList />
+                                                    <BtnNumberedList />
+                                                    <BtnLink />
+                                                    <BtnClearFormatting />
+                                                </Toolbar>
+                                            </Editor>
+                                        </EditorProvider>
+                                    </div>
+                                ) : isLongText(col) ? (
                                     <textarea
                                         value={editData[col] || ''}
                                         onChange={e => setEditData({ ...editData, [col]: e.target.value })}
@@ -601,7 +627,28 @@ export default function CrudTablePage() {
                     {editableCols.map(col => (
                         <div key={col}>
                             <label className="block text-white/50 text-xs font-medium uppercase tracking-wider mb-1.5">{col.replace(/_/g, ' ')}</label>
-                            {isLongText(col) ? (
+                            {isRichText(col) && !isLongText(col) ? (
+                                <div className="bg-white text-black rounded-lg overflow-hidden border border-white/10">
+                                    <EditorProvider>
+                                        <Editor 
+                                            value={createData[col] || ''} 
+                                            onChange={e => setCreateData({ ...createData, [col]: e.target.value })}
+                                            containerProps={{ style: { height: '300px' } }}
+                                        >
+                                            <Toolbar>
+                                                <BtnBold />
+                                                <BtnItalic />
+                                                <BtnUnderline />
+                                                <BtnStrikeThrough />
+                                                <BtnBulletList />
+                                                <BtnNumberedList />
+                                                <BtnLink />
+                                                <BtnClearFormatting />
+                                            </Toolbar>
+                                        </Editor>
+                                    </EditorProvider>
+                                </div>
+                            ) : isLongText(col) ? (
                                 <textarea
                                     value={createData[col] || ''}
                                     onChange={e => setCreateData({ ...createData, [col]: e.target.value })}
