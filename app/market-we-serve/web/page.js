@@ -190,12 +190,12 @@ export default function WebDevelopmentMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Web Development']}
                         title='Our Web Development Services'
                         subtitle='From stunning websites to powerful web applications — we build digital solutions that deliver results.'
                         accentColor='purple'
-                    />
+                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>

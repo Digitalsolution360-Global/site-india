@@ -191,12 +191,12 @@ export default function WordpressMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Wordpress Development']}
                         title='Our WordPress Development Services'
                         subtitle='Expert WordPress solutions from custom themes to complete e-commerce stores across India.'
                         accentColor='indigo'
-                    />
+                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>

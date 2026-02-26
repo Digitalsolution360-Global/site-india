@@ -190,12 +190,12 @@ export default function DigitalMarketingMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Digital Marketing']}
                         title='Our Digital Marketing Services'
                         subtitle='Comprehensive digital marketing solutions to grow your brand and drive results across India.'
                         accentColor='orange'
-                    />
+                    /> */}
 
                     {/* Search & Directory - 70/30 Layout */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>

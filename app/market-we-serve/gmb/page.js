@@ -191,12 +191,12 @@ export default function GMBMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Google Business']}
                         title='Our Google My Business Services'
                         subtitle='Maximize your local visibility and customer engagement with expert GMB management across India.'
                         accentColor='blue'
-                    />
+                    /> */}
 
                     {/* Search & Directory - 70/30 Layout */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>

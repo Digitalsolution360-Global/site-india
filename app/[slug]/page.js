@@ -822,8 +822,8 @@ export default function CityServicePage() {
                                     className='group rounded-xl bg-white/5 backdrop-blur-sm p-6 text-white ring-1 ring-white/10 hover:ring-teal-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'
                                 >
                                     <div className='h-0.5 w-12 bg-linear-to-r from-teal-400 to-cyan-400 rounded-full mb-4' />
-                                    <h3 className='text-lg font-semibold mb-3'>{card.title}</h3>
-                                    <p className='text-slate-300 text-sm leading-relaxed'>{card.desc}</p>
+                                    <h3 className='text-lg font-semibold mb-3'>{card.title.replace(/\{cityName\}/g, cityName)}</h3>
+                                    <p className='text-slate-300 text-sm leading-relaxed'>{card.desc.replace(/\{cityName\}/g, cityName)}</p>
                                 </motion.div>
                             ))}
                         </div>

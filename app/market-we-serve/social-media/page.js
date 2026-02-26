@@ -190,12 +190,12 @@ export default function SocialMediaMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Social Media']}
                         title='Our Social Media Marketing Services'
                         subtitle='Build your brand, engage your audience, and drive results across all social media platforms.'
                         accentColor='pink'
-                    />
+                    /> */}
 
                     {/* Search & Directory - 70/30 Layout */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>

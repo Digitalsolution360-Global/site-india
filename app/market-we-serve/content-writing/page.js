@@ -191,12 +191,12 @@ export default function ContentWritingMarketPage() {
                         </div>
                     </section>
 
-                    <MarketServiceCards
+                    {/* <MarketServiceCards
                         cards={SERVICE_CARDS['Content Writing']}
                         title='Our Content Writing Services'
                         subtitle='Professional content writing solutions that drive traffic, engage audiences, and boost conversions.'
                         accentColor='teal'
-                    />
+                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
