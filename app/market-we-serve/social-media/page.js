@@ -25,8 +25,6 @@ import {
     IconUser,
     IconMail
 } from '@tabler/icons-react'
-import MarketServiceCards from '@/components/sections/MarketServiceCards'
-import { SERVICE_CARDS } from '@/components/services/serviceContent'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -39,6 +37,7 @@ export default function SocialMediaMarketPage() {
     const [openFaq, setOpenFaq] = useState(null);
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
+    const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -57,6 +56,21 @@ export default function SocialMediaMarketPage() {
             }
         }
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function fetchFaqs() {
+            try {
+                const res = await fetch(`${API_BASE}/faqs?category=${encodeURIComponent('Social Media')}&page_slug=market`);
+                const json = await res.json();
+                if (json.success) {
+                    setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                }
+            } catch (err) {
+                console.error('Failed to fetch FAQs:', err);
+            }
+        }
+        fetchFaqs();
     }, []);
 
     const filteredStates = statesData.filter(state =>
@@ -189,13 +203,6 @@ export default function SocialMediaMarketPage() {
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* <MarketServiceCards
-                        cards={SERVICE_CARDS['Social Media']}
-                        title='Our Social Media Marketing Services'
-                        subtitle='Build your brand, engage your audience, and drive results across all social media platforms.'
-                        accentColor='pink'
-                    /> */}
 
                     {/* Search & Directory - 70/30 Layout */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
@@ -378,14 +385,7 @@ export default function SocialMediaMarketPage() {
                                 <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our social media services across India.</p>
                             </motion.div>
                             <div className='space-y-4'>
-                                {[
-                                    { q: 'Which social media platforms should my business be on?', a: 'It depends on your audience. Instagram and Facebook work best for B2C brands targeting consumers. LinkedIn is ideal for B2B companies. YouTube is great for video-heavy industries. We analyze your target demographic and competitors to recommend the right platform mix for maximum ROI.' },
-                                    { q: 'How often should I post on social media?', a: 'Consistency matters more than frequency. For most businesses, we recommend 3-5 posts per week on Instagram, 1-2 daily on Twitter/X, 2-3 per week on LinkedIn, and 1-2 per week on YouTube. We create a content calendar tailored to your audience\'s peak engagement times.' },
-                                    { q: 'Do you create the content or do I need to provide it?', a: 'We handle everything — from strategy and content ideation to graphic design, copywriting, video editing, and publishing. You just need to approve the content calendar and share any brand-specific information. We also encourage sharing behind-the-scenes content for authenticity.' },
-                                    { q: 'How do you measure social media success?', a: 'We track engagement rate, follower growth, reach, impressions, click-through rate, lead generation, and conversion metrics. Monthly reports include a detailed breakdown of what worked, audience insights, competitor benchmarks, and strategic recommendations for the next month.' },
-                                    { q: 'Can social media actually generate leads and sales?', a: 'Absolutely. With the right strategy, social media is a powerful lead generation engine. We use targeted ads, lead magnets, retargeting campaigns, and direct response content to drive measurable business results. Many of our clients generate 30-50% of their leads through social channels.' },
-                                    { q: 'Do you manage paid social media advertising?', a: 'Yes! We manage paid campaigns across Facebook, Instagram, LinkedIn, YouTube, and Twitter/X. Our ad management includes audience research, creative design, A/B testing, budget optimization, and detailed ROI reporting. We typically achieve 2-5X return on ad spend for our clients.' }
-                                ].map((faq, index) => (
+                                {faqs.map((faq, index) => (
                                     <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
                                         <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
                                             <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>

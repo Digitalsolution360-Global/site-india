@@ -18,6 +18,8 @@ const TABLE_META = {
     schedule_meetings: { displayName: 'Meetings', pk: 'id' },
     comments: { displayName: 'Comments', pk: 'id' },
     metrocitys: { displayName: 'Metro Cities', pk: 'metrocity_id' },
+    faqs: { displayName: 'FAQs', pk: 'id' },
+    service_cards: { displayName: 'Service Cards', pk: 'id' },
     settings: { displayName: 'Settings', pk: 'id' },
     users: { displayName: 'Users', pk: 'id' },
 };
@@ -551,8 +553,8 @@ export default function CrudTablePage() {
                                 {isRichText(col) && !isLongText(col) ? (
                                     <div className="bg-white text-black rounded-lg overflow-hidden border border-white/10">
                                         <EditorProvider>
-                                            <Editor 
-                                                value={editData[col] || ''} 
+                                            <Editor
+                                                value={editData[col] || ''}
                                                 onChange={e => setEditData({ ...editData, [col]: e.target.value })}
                                                 containerProps={{ style: { height: '300px' } }}
                                             >
@@ -627,8 +629,8 @@ export default function CrudTablePage() {
                             {isRichText(col) && !isLongText(col) ? (
                                 <div className="bg-white text-black rounded-lg overflow-hidden border border-white/10">
                                     <EditorProvider>
-                                        <Editor 
-                                            value={createData[col] || ''} 
+                                        <Editor
+                                            value={createData[col] || ''}
                                             onChange={e => setCreateData({ ...createData, [col]: e.target.value })}
                                             containerProps={{ style: { height: '300px' } }}
                                         >

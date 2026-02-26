@@ -25,8 +25,6 @@ import {
     IconUser,
     IconMail
 } from '@tabler/icons-react'
-import MarketServiceCards from '@/components/sections/MarketServiceCards'
-import { SERVICE_CARDS } from '@/components/services/serviceContent'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -39,6 +37,7 @@ export default function WebDevelopmentMarketPage() {
     const [openFaq, setOpenFaq] = useState(null);
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
+    const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -57,6 +56,21 @@ export default function WebDevelopmentMarketPage() {
             }
         }
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function fetchFaqs() {
+            try {
+                const res = await fetch(`${API_BASE}/faqs?category=${encodeURIComponent('Web Development')}&page_slug=market`);
+                const json = await res.json();
+                if (json.success) {
+                    setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                }
+            } catch (err) {
+                console.error('Failed to fetch FAQs:', err);
+            }
+        }
+        fetchFaqs();
     }, []);
 
     const filteredStates = statesData.filter(state =>
@@ -189,13 +203,6 @@ export default function WebDevelopmentMarketPage() {
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* <MarketServiceCards
-                        cards={SERVICE_CARDS['Web Development']}
-                        title='Our Web Development Services'
-                        subtitle='From stunning websites to powerful web applications — we build digital solutions that deliver results.'
-                        accentColor='purple'
-                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
@@ -391,14 +398,7 @@ export default function WebDevelopmentMarketPage() {
                                 <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our web development services across India.</p>
                             </motion.div>
                             <div className='space-y-4'>
-                                {[
-                                    { q: 'How long does it take to build a website?', a: 'Timeline depends on complexity. A standard business website takes 2-4 weeks, an e-commerce site 4-8 weeks, and a custom web application 8-16 weeks. We provide a detailed timeline during our initial consultation and keep you updated at every milestone.' },
-                                    { q: 'What technologies do you use for web development?', a: 'We work with modern technologies including React, Next.js, Node.js, WordPress, PHP, Python, and various databases (MySQL, MongoDB, PostgreSQL). We choose the best tech stack based on your project requirements, scalability needs, and long-term maintenance considerations.' },
-                                    { q: 'Will my website be mobile-friendly and SEO-optimized?', a: 'Absolutely. Every website we build is mobile-first and fully responsive across all devices. We also implement SEO best practices including proper meta tags, structured data, fast loading speeds, clean URL structures, and accessibility standards from day one.' },
-                                    { q: 'Do you provide website maintenance and support after launch?', a: 'Yes, we offer ongoing maintenance packages that include security updates, performance monitoring, content updates, bug fixes, regular backups, and technical support. Most clients opt for our monthly maintenance plans to keep their sites running smoothly and securely.' },
-                                    { q: 'How much does a website cost?', a: 'Website costs vary based on requirements. A basic business website starts from ₹15,000-₹30,000, e-commerce sites from ₹40,000-₹1,50,000, and custom web applications from ₹1,00,000+. We provide detailed quotes after understanding your specific needs. No hidden charges.' },
-                                    { q: 'Can you redesign my existing website?', a: 'Yes! We specialize in website redesigns that preserve your SEO rankings while delivering a modern, faster, and more user-friendly experience. We handle everything from design to content migration to proper URL redirects so you don\'t lose any existing search traffic.' }
-                                ].map((faq, index) => (
+                                {faqs.map((faq, index) => (
                                     <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
                                         <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
                                             <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>

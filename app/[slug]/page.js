@@ -61,7 +61,6 @@ import {
     IconPhone,
     IconUser
 } from '@tabler/icons-react';
-import { SERVICE_CARDS, SERVICE_FAQS } from '@/components/services/serviceContent';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -136,17 +135,6 @@ const CATEGORY_CONFIG = {
                 { icon: IconTrendingUp, title: 'Proven Results', desc: 'Consistent growth in visibility and engagement.' }
             ]
         },
-        faqs: [
-            { q: 'Is Google My Business a free service?', a: 'Google My Business is absolutely a free service, but creating an appearance over there is a technical task. There are many steps from getting profile verification on GMB to phone number add-on. All things can\'t be managed by self. You can consult the best GMB management company in India. We will help you in all steps and create your powerful presence over there. We will create a GMB profile, Phone no. Verification support, Profile completion, positive reviews and being on top of google. We will help you in your all fields. Contact us today for GMB Management Services.' },
-            { q: 'What is Google my Business SEO?', a: 'Google My Business (GMB) SEO refers to the process of optimizing your Google My Business profile to improve its visibility in local search results. This optimization aims to enhance your business\'s online presence and attract more customers who are searching for products or services like yours in a specific geographic area.' },
-            { q: 'How can I improve my GMB profile?', a: 'Improving your Google My Business (GMB) profile with the assistance of a GMB management service provider involves several key strategies. They start by ensuring your profile is fully optimized with accurate business information, high-quality photos, and a compelling business description. GMB management services implement local SEO techniques to enhance your profile\'s visibility in local searches, including keyword optimization and citation building.' },
-            { q: 'How to get top listing on Google?', a: 'Achieving a top listing on Google involves strategic efforts with the assistance of a GMB management service provider company. They start by thoroughly optimizing your Google My Business (GMB) profile with accurate business information, high-quality visuals, and a compelling description. These companies implement local SEO strategies, including keyword optimization, citation building, and NAP consistency across online platforms.' },
-            { q: 'How do I set up a Google My Business listing?', a: 'To set up a Google My Business listing in India, begin by signing in to your Google account and visiting the Google My Business website. Click on "Manage now," enter your business name, and choose the appropriate category. Fill in your business address, phone number, and website details. Verify your business either by postcard (which Google sends to your address) or via phone if eligible. Once verified, complete your profile with photos, business hours, and a description. Regularly update your listing with new posts, reviews, and relevant information to enhance visibility and engagement locally.' },
-            { q: 'How do I manage reviews on Google My Business?', a: 'Managing reviews on Google My Business is crucial for maintaining a positive online reputation. Start by regularly monitoring incoming reviews through the Google My Business dashboard or mobile app. For each review, whether positive or negative, respond promptly and professionally. Thank customers for positive feedback and address any concerns or issues raised in negative reviews with empathy and a willingness to resolve problems. Engaging with reviewers shows potential customers that you value feedback and are committed to customer satisfaction.' },
-            { q: 'What are the benefits of using a Google Listing Service?', a: 'Using a Google Listing Service, such as Google My Business, offers several significant benefits for businesses. Firstly, it enhances online visibility by ensuring your business appears prominently in Google Search and Maps, making it easier for potential customers to find and contact you. Secondly, it provides a platform to showcase essential business information such as contact details, hours of operation, and customer reviews, helping to build trust and credibility. Thirdly, Google Listings allows businesses to engage directly with customers through features like posts, messages, and reviews, fostering customer loyalty and improving overall customer service. Lastly, utilizing a Google Listing Service is generally free, making it a cost-effective way to enhance your online presence and attract more customers without additional advertising expenses.' },
-            { q: 'What should I do if my Google My Business listing is suspended?', a: 'If your Google My Business listing is suspended, it\'s crucial to first understand the reason provided by Google through their notification or email. Common reasons include policy violations, inaccurate information, or suspected fraud. Begin by reviewing Google\'s guidelines for business listings and correcting any violations or inaccuracies promptly. Next, if you believe the suspension is unwarranted or if you\'ve rectified the issues, submit an appeal through the Google My Business dashboard. Provide any necessary documentation to support your case and explain the actions taken to comply with Google\'s policies.' },
-            { q: 'Why is my Google My Business listing not appearing in search results?', a: 'If your Google My Business listing is not appearing in search results, several reasons could be causing this issue. Firstly, ensure that your listing is verified and accurately filled out with complete business information, including address, phone number, and business hours. Check that your business category and description are relevant and specific. It\'s also essential to consider your location and whether you\'ve optimized your listing for local searches with appropriate keywords. Additionally, if your listing has recently been updated or verified, it may take some time for Google to index and display it in search results.' }
-        ]
     },
     'Digital Marketing': {
         theme: {
@@ -200,15 +188,7 @@ const CATEGORY_CONFIG = {
                 { icon: IconAd2, title: 'Display Network', desc: 'Banner ads across millions of websites to build brand awareness.' },
                 { icon: IconSearch, title: 'SEO & Content', desc: 'Organic strategies for long-term sustainable growth.' }
             ]
-        },
-        faqs: [
-            { q: 'Which is best digital marketing company in {cityName}?', a: 'Finding the best digital marketing company in {cityName}. You can definitely opt for Digitalsolution360. We are the best online marketing company for SEO Services, SMO Services, SMM Services, Youtube Marketing and all.' },
-            { q: 'How much does a digital marketing package cost in {cityName}?', a: 'Usually there are a lot of companies with different price charts. You can go with us because we are best digital marketing company in {cityName}. Our services prices start with just 5,000 for SMO, minimum price for SEO will be 9,999/-' },
-            { q: 'How can I get started with your digital marketing services in {cityName}?', a: 'Getting started with our digital marketing services is easy! Simply reach out to us through our contact page or schedule a consultation with our team. We\'ll discuss your requirements, provide a personalized proposal, and guide you through the process of achieving your digital marketing goals in {cityName}.' },
-            { q: 'How do you determine the cost for SEO services in {cityName}?', a: 'The cost of our SEO services in {cityName} is determined based on factors such as keyword competitiveness, website size, current optimization status, and desired ranking goals. We offer transparent pricing with clear deliverables to ensure you get the best value for your investment. We can serve you SEO Services at just 9,999 INR.' },
-            { q: 'Do you offer package deals for digital marketing services in {cityName}?', a: 'Yes, we do offer package deals for our digital marketing services to provide comprehensive solutions at competitive prices. These packages are designed to meet the diverse needs of businesses in {cityName} and can be customized based on your budget and objectives.' },
-            { q: 'Would my business benefit from Digital Marketing Services?', a: 'Every single brand has to have an online representation of the business. However, your digital footprint won\'t have any impact if you don\'t market it successfully. Every business would benefit from an ongoing, comprehensive digital marketing strategy and the support of an expert marketing team.' }
-        ]
+        }
     },
     'Web Development': {
         theme: {
@@ -262,14 +242,7 @@ const CATEGORY_CONFIG = {
                 { icon: IconDatabase, title: 'Databases', desc: 'MySQL, MongoDB, PostgreSQL for robust data management.' },
                 { icon: IconServer, title: 'Cloud Hosting', desc: 'AWS, DigitalOcean, and Vercel deployment solutions.' }
             ]
-        },
-        faqs: [
-            { q: 'What services does your web development company provide?', a: 'We offer a wide range of web development services, including website design, development, e-commerce solutions, CMS development, custom web applications, and more.' },
-            { q: 'How long does it take to build a website?', a: 'The timeline for website development depends on the complexity and requirements of the project. We work closely with our clients to determine realistic timelines and deliver high-quality websites within the agreed-upon timeframes.' },
-            { q: 'Do you offer responsive design for mobile devices?', a: 'Yes, all our websites are designed and developed to be fully responsive, ensuring optimal viewing experiences on various devices, including mobile phones, tablets, and desktop computers.' },
-            { q: 'Can you help with website maintenance and updates?', a: 'Absolutely! We provide ongoing website maintenance and support services to ensure your website remains secure, up-to-date, and performs optimally. From content updates to regular backups and security enhancements, we\'ve got you covered.' },
-            { q: 'Are your websites optimized for search engines?', a: 'Yes, we prioritize search engine optimization (SEO) during the development process. Our websites are built with SEO best practices in mind, ensuring they are properly structured, have optimized content, and are easily discoverable by search engines.' }
-        ]
+        }
     },
     'Social Media': {
         theme: {
@@ -313,19 +286,7 @@ const CATEGORY_CONFIG = {
             { value: '71%', label: 'consumers buy based on social referrals' },
             { value: '49%', label: 'consumers depend on influencer recommendations' }
         ],
-        extras: null,
-        faqs: [
-            { q: 'How soon can I see results from social media advertising?', a: 'Many businesses see engagement like clicks or inquiries within the first few weeks, but bigger results like sales growth usually take a few months of consistent effort and optimization.' },
-            { q: 'Why is Facebook advertising management important for businesses?', a: 'Managing Facebook ads the right way ensures that your budget is spent wisely. With proper targeting, tracking, and optimization, businesses can reach the right audience, gain qualified leads, and see a better return on every penny invested.' },
-            { q: 'Can small businesses in {cityName} hire Digital Solution 360?', a: 'Yes, small businesses can hire us and get all the advantages related to SMM campaigns.' },
-            { q: 'Do you create content along with managing campaigns?', a: 'Yes, our team takes care of everything—from writing captions and designing creatives to producing ad copies and videos.' },
-            { q: 'Which platforms are most effective for SMM marketing?', a: 'Facebook and Instagram work well for most consumer-focused brands, while LinkedIn is powerful for professional and B2B marketing. The right platform really depends on your audience and goals.' },
-            { q: 'What services does a social media digital agency provide?', a: 'At Digital Solution 360, we are experts at providing the best brands\' online presence. We elevate your online reach across different social media platforms like Instagram, Facebook, Twitter, LinkedIn, etc. Our services include content creation, paid advertising campaigns, audience targeting, analytics tracking, and engagement strategies — all meant to boost brand awareness and customer interaction effectively.' },
-            { q: 'What is the best way to advertise on social media for my business?', a: 'The best way to represent your business on social media is to get to know your targeted audience. Based on the niche of your business, our experts prepare engaging, visually appealing ads with clear calls-to-action. We combine various methods such as retargeting, A/B testing and influencer collaborations to improve ad performance and increase ROI.' },
-            { q: 'How can I build my brand on social media effectively?', a: 'Building your brand on social media requires different types of proven methods and a sustainable team. At Digital Solution 360, we strongly focus on consistent posting of valuable content, authentic engagement with your audience, and maintaining a clear brand voice across all channels. We use story-telling, influencer partnerships, and interactive features to create a loyal community and long-term customer relationships.' },
-            { q: 'Which social media platform is best for small businesses?', a: 'Different businesses require different platforms to grow their reputation across social media. For a small business, it depends on the customer\'s demands. When you invest in Digital Solution 360, we prepare a customized solution that gives you benefits like reaching younger audiences, trend-oriented customizations, optimal engagement and growth, and smooth social media management.' },
-            { q: 'Why should I consider social media outsourcing companies?', a: 'Outsourcing in social media requires expert guidance and a team of experienced members. At Digital Solution 360, we provide on-paper and proven solutions on social media outsourcing specific to businesses and regions. Our experts handle content creation, scheduling, community engagement, and analytics, freeing your internal team from various stresses related to social media marketing.' }
-        ]
+        extras: null
     },
     'Content Writing': {
         theme: {
@@ -369,15 +330,7 @@ const CATEGORY_CONFIG = {
             { value: '60%', label: 'of consumers are inspired by custom content' },
             { value: '47%', label: 'of buyers read 3-5 pieces before engaging sales' }
         ],
-        extras: null,
-        faqs: [
-            { q: 'What types of content writing services do you offer in {cityName}?', a: 'We provide blog posts, website copy, product descriptions, social media content, email newsletters, whitepapers, case studies, and more — all crafted specifically for {cityName} businesses and their target audiences.' },
-            { q: 'Is the content SEO-optimized for {cityName} searches?', a: 'Yes, every piece of content is optimized with relevant keywords, local {cityName} search terms, proper heading structure, meta descriptions, and internal linking to improve your search engine rankings.' },
-            { q: 'How do you ensure content quality and originality?', a: 'All content goes through a rigorous process — research, writing, editing, and plagiarism checking. We use professional writers experienced in various industries and every piece is 100% original and tailored for your {cityName} business.' },
-            { q: 'How much content can you produce monthly for my {cityName} business?', a: 'Our packages range from 4–20+ pieces of content per month depending on your needs. For most {cityName} businesses, we recommend 8–12 blog posts/articles per month along with website copy and social content for optimal results.' },
-            { q: 'Do you write in regional languages for {cityName} audiences?', a: 'Yes, we offer content writing in multiple Indian languages including Hindi, along with English. For {cityName} businesses targeting local audiences, multilingual content helps you connect with a wider customer base.' },
-            { q: 'What is your revision policy for content writing?', a: 'We offer 2 rounds of free revisions on every piece of content. Our writers work closely with your {cityName} team to understand your brand voice, ensuring minimal revisions are needed and content meets your expectations.' }
-        ]
+        extras: null
     },
     'Wordpress Development': {
         theme: {
@@ -421,15 +374,7 @@ const CATEGORY_CONFIG = {
             { value: '55K+', label: 'plugins available for functionality' },
             { value: '10K+', label: 'free themes to choose from' }
         ],
-        extras: null,
-        faqs: [
-            { q: 'Why should my {cityName} business choose WordPress?', a: 'WordPress powers 43% of all websites globally. For {cityName} businesses, it offers an easy-to-manage CMS, thousands of plugins, SEO-friendly architecture, and cost-effective development — making it ideal for businesses of all sizes.' },
-            { q: 'Do you build custom themes or use pre-built ones for {cityName} clients?', a: 'We offer both options. For unique brand identities, we build custom themes from scratch. For budget-conscious {cityName} businesses, we customize premium pre-built themes to match your brand — both options deliver professional results.' },
-            { q: 'Can you build an e-commerce store with WooCommerce for my {cityName} business?', a: 'Absolutely. We specialize in WooCommerce development for {cityName} businesses — including product catalog setup, payment gateway integration (Razorpay, PayU, etc.), shipping configuration, and inventory management.' },
-            { q: 'How do you ensure WordPress security for {cityName} business websites?', a: 'We implement multiple security layers — SSL certificates, security plugins, firewall setup, regular malware scanning, automatic backups, and strong access controls. Your {cityName} business website stays protected 24/7.' },
-            { q: 'Will my WordPress site be fast and SEO-friendly?', a: 'Yes. We optimize every WordPress site for speed — caching, image compression, CDN setup, and clean code. Combined with SEO plugins and proper structure, your {cityName} website will rank well and load quickly.' },
-            { q: 'Do you offer WordPress maintenance packages for {cityName} businesses?', a: 'Yes, our maintenance plans include core/plugin updates, daily backups, security monitoring, uptime tracking, and content updates. {cityName} businesses get peace of mind knowing their website is professionally maintained.' }
-        ]
+        extras: null
     }
 };
 
@@ -445,6 +390,8 @@ export default function CityServicePage() {
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
     const [otherCities, setOtherCities] = useState([]);
+    const [faqs, setFaqs] = useState([]);
+    const [serviceCards, setServiceCards] = useState([]);
 
     useEffect(() => {
         async function fetchCity() {
@@ -488,8 +435,36 @@ export default function CityServicePage() {
                             }
                         }
                     })
-                    .catch(() => {});
+                    .catch(() => { });
             }
+        }
+    }, [city, slug]);
+
+    // Fetch FAQs from database (with city-specific override support)
+    useEffect(() => {
+        if (city && city.category_name) {
+            fetch(`${API_BASE}/faqs?category=${encodeURIComponent(city.category_name)}&page_slug=${encodeURIComponent(slug)}`)
+                .then(res => res.json())
+                .then(json => {
+                    if (json.success && json.data.length > 0) {
+                        setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                    }
+                })
+                .catch(() => { });
+        }
+    }, [city, slug]);
+
+    // Fetch service cards from database (with city-specific override support)
+    useEffect(() => {
+        if (city && city.category_name) {
+            fetch(`${API_BASE}/service-cards?category=${encodeURIComponent(city.category_name)}&page_slug=${encodeURIComponent(slug)}`)
+                .then(res => res.json())
+                .then(json => {
+                    if (json.success && json.data.length > 0) {
+                        setServiceCards(json.data.map(c => ({ title: c.title, desc: c.description })));
+                    }
+                })
+                .catch(() => { });
         }
     }, [city, slug]);
 
@@ -792,7 +767,7 @@ export default function CityServicePage() {
             )}
 
             {/* Service Cards from Content */}
-            {SERVICE_CARDS[city.category_name] && (
+            {serviceCards.length > 0 && (
                 <section className='py-20 px-4 md:px-8 lg:px-16 bg-slate-900'>
                     <div className='max-w-7xl mx-auto'>
                         <motion.div
@@ -812,7 +787,7 @@ export default function CityServicePage() {
                         </motion.div>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                            {SERVICE_CARDS[city.category_name].map((card, index) => (
+                            {serviceCards.map((card, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
@@ -1050,7 +1025,7 @@ export default function CityServicePage() {
             )}
 
             {/* FAQ Section */}
-            {config.faqs && (
+            {faqs.length > 0 && (
                 <section className='py-20 px-4 md:px-8 lg:px-16 bg-white'>
                     <div className='max-w-4xl mx-auto'>
                         <motion.div
@@ -1072,7 +1047,7 @@ export default function CityServicePage() {
                         </motion.div>
 
                         <div className='space-y-4'>
-                            {config.faqs.map((faq, index) => (
+                            {faqs.map((faq, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}

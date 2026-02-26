@@ -22,6 +22,8 @@ const SIDEBAR_GROUPS = [
             { key: 'categories', href: '/admin/categories', label: 'Categories', icon: 'tag' },
             { key: 'posts', href: '/admin/posts', label: 'Posts', icon: 'file' },
             { key: 'comments', href: '/admin/comments', label: 'Comments', icon: 'chat' },
+            { key: 'faqs', href: '/admin/faqs', label: 'FAQs', icon: 'faq' },
+            { key: 'service_cards', href: '/admin/service_cards', label: 'Service Cards', icon: 'cards' },
         ]
     },
     {
@@ -75,6 +77,8 @@ function SidebarIcon({ icon, size = 18 }) {
         menu: <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>,
         x: <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>,
         chevronDown: <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>,
+        faq: <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>,
+        cards: <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="7" rx="2" /><rect x="2" y="14" width="20" height="7" rx="2" /></svg>,
     };
     return icons[icon] || icons.file;
 }

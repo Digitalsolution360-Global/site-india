@@ -25,8 +25,6 @@ import {
     IconUser,
     IconMail
 } from '@tabler/icons-react'
-import MarketServiceCards from '@/components/sections/MarketServiceCards'
-import { SERVICE_CARDS } from '@/components/services/serviceContent'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -39,6 +37,7 @@ export default function DigitalMarketingMarketPage() {
     const [openFaq, setOpenFaq] = useState(null);
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
+    const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -57,6 +56,21 @@ export default function DigitalMarketingMarketPage() {
             }
         }
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function fetchFaqs() {
+            try {
+                const res = await fetch(`${API_BASE}/faqs?category=${encodeURIComponent('Digital Marketing')}&page_slug=market`);
+                const json = await res.json();
+                if (json.success) {
+                    setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                }
+            } catch (err) {
+                console.error('Failed to fetch FAQs:', err);
+            }
+        }
+        fetchFaqs();
     }, []);
 
     const filteredStates = statesData.filter(state =>
@@ -189,13 +203,6 @@ export default function DigitalMarketingMarketPage() {
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* <MarketServiceCards
-                        cards={SERVICE_CARDS['Digital Marketing']}
-                        title='Our Digital Marketing Services'
-                        subtitle='Comprehensive digital marketing solutions to grow your brand and drive results across India.'
-                        accentColor='orange'
-                    /> */}
 
                     {/* Search & Directory - 70/30 Layout */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
@@ -378,14 +385,7 @@ export default function DigitalMarketingMarketPage() {
                                 <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our digital marketing services across India.</p>
                             </motion.div>
                             <div className='space-y-4'>
-                                {[
-                                    { q: 'What does a digital marketing strategy include?', a: 'A comprehensive digital marketing strategy includes SEO (Search Engine Optimization), PPC advertising (Google Ads, social ads), social media marketing, content marketing, email campaigns, and analytics tracking. We create a customized mix based on your business goals, target audience, budget, and industry competition.' },
-                                    { q: 'How much should I budget for digital marketing?', a: 'Budget depends on your goals, industry, and competition. Small businesses typically start with ₹15,000-₹50,000/month, while mid-size companies invest ₹50,000-₹2,00,000/month. We offer flexible packages and always recommend starting with a focused approach, then scaling based on ROI.' },
-                                    { q: 'How long before I see results from digital marketing?', a: 'PPC ads can generate leads within days. Social media engagement improves within 2-4 weeks. SEO typically takes 3-6 months for significant ranking improvements. Content marketing shows compounding results over 6-12 months. We set clear milestones and provide monthly progress reports.' },
-                                    { q: 'Do you offer digital marketing services in my city?', a: 'Yes! We serve 790+ cities across India with localized digital marketing strategies. Browse the state directory above to find your city. Our local expertise means we understand regional markets, consumer behavior, and competitive landscapes.' },
-                                    { q: 'How do you measure the ROI of digital marketing campaigns?', a: 'We track key metrics including website traffic, lead generation, conversion rates, cost per acquisition, customer lifetime value, and revenue attribution. Our custom dashboards provide real-time visibility into campaign performance, and monthly reports break down exactly where your investment is generating returns.' },
-                                    { q: 'Can you handle both B2B and B2C digital marketing?', a: 'Absolutely. We have specialized teams for both B2B and B2C marketing. B2B strategies focus on LinkedIn, content marketing, and lead nurturing funnels. B2C strategies leverage social media, influencer partnerships, and performance marketing. We tailor the approach to your specific audience and sales cycle.' }
-                                ].map((faq, index) => (
+                                {faqs.map((faq, index) => (
                                     <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
                                         <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
                                             <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>

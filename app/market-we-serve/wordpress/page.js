@@ -25,8 +25,6 @@ import {
     IconUser,
     IconMail
 } from '@tabler/icons-react'
-import MarketServiceCards from '@/components/sections/MarketServiceCards'
-import { SERVICE_CARDS } from '@/components/services/serviceContent'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -39,6 +37,7 @@ export default function WordpressMarketPage() {
     const [openFaq, setOpenFaq] = useState(null);
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
+    const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -57,6 +56,21 @@ export default function WordpressMarketPage() {
             }
         }
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function fetchFaqs() {
+            try {
+                const res = await fetch(`${API_BASE}/faqs?category=${encodeURIComponent('Wordpress Development')}&page_slug=market`);
+                const json = await res.json();
+                if (json.success) {
+                    setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                }
+            } catch (err) {
+                console.error('Failed to fetch FAQs:', err);
+            }
+        }
+        fetchFaqs();
     }, []);
 
     const filteredStates = statesData.filter(state =>
@@ -190,13 +204,6 @@ export default function WordpressMarketPage() {
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* <MarketServiceCards
-                        cards={SERVICE_CARDS['Wordpress Development']}
-                        title='Our WordPress Development Services'
-                        subtitle='Expert WordPress solutions from custom themes to complete e-commerce stores across India.'
-                        accentColor='indigo'
-                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
@@ -397,14 +404,7 @@ export default function WordpressMarketPage() {
                                 <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our WordPress development services across India.</p>
                             </motion.div>
                             <div className='space-y-4'>
-                                {[
-                                    { q: 'Why should I choose WordPress for my website?', a: 'WordPress powers 43% of all websites globally — and for good reason. It\'s highly customizable, SEO-friendly, easy to manage, has a massive plugin ecosystem (55,000+), and scales from simple blogs to complex e-commerce stores. It\'s also cost-effective compared to fully custom-built solutions.' },
-                                    { q: 'Do you build custom WordPress themes or use pre-built ones?', a: 'We do both. For budget-conscious projects, we customize premium themes to match your brand. For businesses needing a unique identity, we build custom themes from scratch using Figma/PSD designs. Custom themes offer better performance, cleaner code, and no unnecessary bloat.' },
-                                    { q: 'Can you build an e-commerce store with WordPress?', a: 'Yes! We specialize in WooCommerce — the most popular WordPress e-commerce solution. We set up product catalogs, payment gateways (Razorpay, PayU, Stripe), shipping integrations, inventory management, and custom checkout flows. WooCommerce powers 28% of all online stores worldwide.' },
-                                    { q: 'How do you ensure WordPress site security?', a: 'Security is built into our development process. We implement SSL certificates, firewall protection, malware scanning, regular core/plugin/theme updates, strong password policies, two-factor authentication, login attempt limiting, and automated backups. We also perform security audits quarterly.' },
-                                    { q: 'Will my WordPress site be fast and SEO-friendly?', a: 'Absolutely. We optimize every site with caching plugins, image compression, CDN integration, lazy loading, database optimization, and clean code practices. Our WordPress sites typically score 90+ on Google PageSpeed Insights and are fully SEO-optimized with proper schema markup.' },
-                                    { q: 'Do you offer WordPress maintenance packages?', a: 'Yes, our maintenance plans include core updates, plugin/theme updates, daily backups, uptime monitoring, security scanning, performance optimization, and priority support. Plans start from ₹3,000/month. Regular maintenance prevents security vulnerabilities and keeps your site running at peak performance.' }
-                                ].map((faq, index) => (
+                                {faqs.map((faq, index) => (
                                     <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
                                         <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
                                             <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>

@@ -25,8 +25,6 @@ import {
     IconUser,
     IconMail
 } from '@tabler/icons-react'
-import MarketServiceCards from '@/components/sections/MarketServiceCards'
-import { SERVICE_CARDS } from '@/components/services/serviceContent'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
@@ -39,6 +37,7 @@ export default function ContentWritingMarketPage() {
     const [openFaq, setOpenFaq] = useState(null);
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
+    const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -57,6 +56,21 @@ export default function ContentWritingMarketPage() {
             }
         }
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function fetchFaqs() {
+            try {
+                const res = await fetch(`${API_BASE}/faqs?category=${encodeURIComponent('Content Writing')}&page_slug=market`);
+                const json = await res.json();
+                if (json.success) {
+                    setFaqs(json.data.map(f => ({ q: f.question, a: f.answer })));
+                }
+            } catch (err) {
+                console.error('Failed to fetch FAQs:', err);
+            }
+        }
+        fetchFaqs();
     }, []);
 
     const filteredStates = statesData.filter(state =>
@@ -190,13 +204,6 @@ export default function ContentWritingMarketPage() {
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* <MarketServiceCards
-                        cards={SERVICE_CARDS['Content Writing']}
-                        title='Our Content Writing Services'
-                        subtitle='Professional content writing solutions that drive traffic, engage audiences, and boost conversions.'
-                        accentColor='teal'
-                    /> */}
 
                     {/* Search & Directory */}
                     <section className='py-16 px-4 md:px-8 lg:px-16'>
@@ -398,14 +405,7 @@ export default function ContentWritingMarketPage() {
                                 <p className='text-lg text-gray-600 max-w-2xl mx-auto'>Common questions about our content writing services across India.</p>
                             </motion.div>
                             <div className='space-y-4'>
-                                {[
-                                    { q: 'What types of content do you write?', a: 'We write blogs, articles, website copy, product descriptions, social media content, email newsletters, whitepapers, case studies, press releases, and technical documentation. Every piece is tailored to your brand voice, target audience, and business objectives.' },
-                                    { q: 'Is the content SEO-optimized?', a: 'Yes, all our content is written with SEO best practices in mind. We conduct keyword research, optimize heading structures, include strategic internal and external links, write compelling meta descriptions, and ensure the content addresses search intent — all while keeping it natural and engaging for readers.' },
-                                    { q: 'How do you ensure content quality and originality?', a: 'Every piece goes through a rigorous process: research, writing, editing, proofreading, and plagiarism checking using industry-standard tools. We also have subject matter experts review technical content. All content is 100% original and passes Copyscape checks.' },
-                                    { q: 'How many articles/blogs can you deliver per month?', a: 'Our output depends on your package. Standard packages include 8-12 blog posts per month (800-1500 words each). Enterprise clients receive 20-30+ pieces monthly. We also offer on-demand content services for one-time projects. Turnaround is typically 3-5 business days per piece.' },
-                                    { q: 'Can you write content in regional languages?', a: 'Yes! We have writers proficient in Hindi, Tamil, Telugu, Marathi, Bengali, Kannada, Malayalam, Gujarati, and other Indian languages. Multilingual content helps you connect with local audiences more effectively and improves regional SEO performance.' },
-                                    { q: 'What is your content revision policy?', a: 'We offer unlimited revisions until you\'re 100% satisfied. Most content requires just 1-2 rounds of minor edits. We encourage detailed briefs upfront so the first draft is close to your vision. Our collaborative process ensures the final output perfectly matches your expectations.' }
-                                ].map((faq, index) => (
+                                {faqs.map((faq, index) => (
                                     <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className='bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'>
                                         <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className='w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-100 transition-colors duration-300'>
                                             <span className='text-lg md:text-xl font-semibold text-gray-900 pr-4'>{faq.q}</span>
