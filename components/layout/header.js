@@ -241,7 +241,7 @@ function Header() {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 30 }}
-                className={`fixed top-0.5 left-0 right-0 z-50 hidden lg:block transition-all duration-500 ${
+                className={`fixed top-0 left-0 right-0 z-50 hidden lg:block transition-all duration-500 ${
                     scrolled
                         ? 'bg-white/80 backdrop-blur-2xl shadow-[0_1px_3px_rgba(0,0,0,0.04),0_8px_32px_-8px_rgba(0,0,0,0.08)]'
                         : 'bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]'
@@ -368,7 +368,7 @@ function Header() {
 
                                 {navItem('portfolio', 'Portfolio', '/case-studies')}
                                 {navItem('careers', 'Careers', '/careers')}
-                                {navItem('blogs', 'Blogs', '/blogs')}
+                                {navItem('blogs', 'Blogs', '/blog')}
                                 {navItem('contact', 'Contact', '/contact-us')}
                             </ul>
                         </nav>
