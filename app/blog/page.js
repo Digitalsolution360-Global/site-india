@@ -112,7 +112,7 @@ export default function BlogPage() {
       <main className="min-h-screen bg-gray-50">
 
         {/* ── Hero Section ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20">
+        <section className="relative overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500 rounded-full filter blur-3xl" />
             <div className="absolute bottom-10 right-20 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl" />
@@ -127,7 +127,7 @@ export default function BlogPage() {
                 <IconArticle size={16} /> Our Blog
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-                Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">Resources</span>
+                Insights & <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-400 to-blue-400">Resources</span>
               </h1>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
                 Stay updated with the latest trends in digital marketing, web development, SEO, and more.
@@ -171,7 +171,7 @@ export default function BlogPage() {
                 onClick={() => handleCategoryClick(null)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   !selectedCategory
-                    ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white shadow-md'
+                    ? 'bg-linear-to-r from-teal-500 to-teal-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -183,7 +183,7 @@ export default function BlogPage() {
                   onClick={() => handleCategoryClick(cat.category_id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === cat.category_id
-                      ? `bg-gradient-to-r ${categoryColors[i % categoryColors.length]} text-white shadow-md`
+                      ? `bg-linear-to-r ${categoryColors[i % categoryColors.length]} text-white shadow-md`
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -222,7 +222,7 @@ export default function BlogPage() {
                     <Link href={`/blog/${post.post_slug}`} className="group block h-full">
                       <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:border-teal-200 transition-all duration-300 h-full flex flex-col">
                         {/* Image */}
-                        <div className="relative h-52 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                        <div className="relative h-52 overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                           {post.image ? (
                             <img
                               src={post.image.startsWith('http') ? post.image : `https://digitalsolution360.in/storage/post/${post.image}`}
@@ -294,7 +294,7 @@ export default function BlogPage() {
                         onClick={() => setPage(pageNum)}
                         className={`w-10 h-10 rounded-xl text-sm font-medium transition-all shadow-sm ${
                           page === pageNum
-                            ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white shadow-md'
+                            ? 'bg-linear-to-r from-teal-500 to-teal-600 text-white shadow-md'
                             : 'bg-white border border-gray-200 text-gray-600 hover:bg-teal-50 hover:border-teal-300'
                         }`}
                       >

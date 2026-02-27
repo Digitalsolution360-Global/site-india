@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import LocationStructuredData from '@/components/seo/LocationStructuredData';
-import OGMetaTags from '@/components/seo/OGMetaTags';
+import Script from 'next/script';
 import {
     IconArrowLeft,
     IconArrowRight,
@@ -378,6 +378,52 @@ const CATEGORY_CONFIG = {
     }
 };
 
+/* ────────── category meta (SEO) ────────── */
+const CATEGORY_META = {
+    'Google Business': {
+        titleTemplate: 'Best Google My Business Listing Services in {cityName} | 9990556217',
+        description: 'Professional Google My Business listing and optimization services tailored to your local business needs. Reach our experts at +91 99905 56217 for top-notch GMB solutions.',
+        keywordsTemplate: 'GMB listing company in {cityName}, Google My Business in {cityName}, local SEO services in {cityName}, Google Business Profile optimization in {cityName}, best GMB agency, Google Maps listing in {cityName}, local business listing, GMB experts in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/gmb-digitalsolution360.webp',
+        breadcrumbName: 'Google My Business {cityName}',
+    },
+    'Digital Marketing': {
+        titleTemplate: 'Top Digital Marketing Company in {cityName} | 9990556217',
+        description: 'Comprehensive digital marketing solutions to grow your brand and drive results. Reach our experts at +91 99905 56217 for data-driven digital marketing strategies.',
+        keywordsTemplate: 'digital marketing company in {cityName}, best digital marketing agency in {cityName}, online marketing services in {cityName}, SEO company in {cityName}, PPC services in {cityName}, social media marketing in {cityName}, digital marketing experts, top marketing agency in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/Digital-marketing-agency-digitalsolution360.webp',
+        breadcrumbName: 'Digital Marketing {cityName}',
+    },
+    'Web Development': {
+        titleTemplate: 'Access to Custom Web Development Company in {cityName} | 9990556217',
+        description: 'Discover professional website development services tailored to your business needs. Reach our experts at +91 99905 56217 and ensure top-notch web solutions.',
+        keywordsTemplate: 'website Development Company in {cityName}, find a website developer in {cityName}, guaranteed web design leads, top ecommerce website developers in {cityName}, professional custom web design, web mobile development services in {cityName}, custom website developers, website developers in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/web-development-digitalsolution360.webp',
+        breadcrumbName: 'Website Development {cityName}',
+    },
+    'Social Media': {
+        titleTemplate: 'Best Social Media Marketing Company in {cityName} | 9990556217',
+        description: 'Expert social media marketing services to build your brand and engage your audience. Reach our experts at +91 99905 56217 for impactful social media strategies.',
+        keywordsTemplate: 'social media marketing company in {cityName}, social media agency in {cityName}, Instagram marketing in {cityName}, Facebook marketing in {cityName}, social media management in {cityName}, best social media experts, social media advertising in {cityName}, social media services in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/social-media-digitalsolution360.webp',
+        breadcrumbName: 'Social Media Marketing {cityName}',
+    },
+    'Content Writing': {
+        titleTemplate: 'Professional Content Writing Services in {cityName} | 9990556217',
+        description: 'High-quality content writing services that drive traffic, engage audiences, and boost conversions. Reach our experts at +91 99905 56217 for professional content solutions.',
+        keywordsTemplate: 'content writing company in {cityName}, content writers in {cityName}, SEO content writing in {cityName}, blog writing services in {cityName}, professional copywriting in {cityName}, website content writing, best content agency in {cityName}, article writing services in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/content-writing-digitalsolution360.webp',
+        breadcrumbName: 'Content Writing {cityName}',
+    },
+    'Wordpress Development': {
+        titleTemplate: 'Expert WordPress Development Company in {cityName} | 9990556217',
+        description: 'Custom WordPress development solutions from themes to e-commerce stores. Reach our experts at +91 99905 56217 for professional WordPress services.',
+        keywordsTemplate: 'WordPress development company in {cityName}, WordPress developer in {cityName}, custom WordPress themes in {cityName}, WooCommerce development in {cityName}, WordPress website design in {cityName}, WordPress experts, WordPress plugin development in {cityName}, WordPress agency in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/public/frontend/img/wordpress-development-digitalsolution360.webp',
+        breadcrumbName: 'WordPress Development {cityName}',
+    },
+};
+
 /* ────────── main component ────────── */
 export default function CityServicePage() {
     const params = useParams();
@@ -536,20 +582,67 @@ export default function CityServicePage() {
     const cityName = city.city;
     const stateName = city.state_name;
 
+    // Dynamic SEO meta data
+    const catMeta = CATEGORY_META[city.category_name] || CATEGORY_META['Digital Marketing'];
+    const baseUrl = 'https://www.digitalsolution360.in';
+    const pageUrl = `${baseUrl}/${slug}`;
+    const pageTitle = catMeta.titleTemplate.replace(/\{cityName\}/g, cityName);
+    const pageDescription = catMeta.description;
+    const pageKeywords = catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
+    const ogKeywords = `${pageKeywords}, np digital marketing, gmb, semrush`;
+    const breadcrumbPageName = catMeta.breadcrumbName.replace(/\{cityName\}/g, cityName);
+
     /* ── Page ── */
     return (
         <>
             <Header />
+
+            {/* Dynamic Head Meta Tags */}
+            <title>{pageTitle}</title>
+            <meta name="description" content={pageDescription} />
+            <meta name="keywords" content={pageKeywords} />
+            <meta property="og:title" content={pageTitle} />
+            <meta property="og:description" content={pageDescription} />
+            <meta property="og:keywords" content={ogKeywords} />
+            <meta property="og:image" content={catMeta.ogImage} />
+            <meta property="og:url" content={pageUrl} />
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="Digital Solution 360" />
+            <link rel="canonical" href={pageUrl} />
+            <meta name="name" content="digitalsolution360" />
+            <meta name="url" content={baseUrl} />
+            <meta name="document-type" content="Public" />
+            <meta name="document-rating" content="Safe for Kids" />
+            <meta name="document-distribution" content="Global" />
+            <meta name="robots" content="NOODP,NOYDIR, index, follow" />
+            <meta name="Reply-To" content="info@digitalsolution360.in" />
+            <meta name="googlebot" content="index, follow" />
+            <meta name="revisit-after" content="10 Days" />
+            <meta name="Expires" content="never" />
+            <meta name="netinsert" content="0.0.1.3.8.1" />
+            <meta name="contactPhoneNumber" content="+91-9990556217" />
+
+            {/* Structured Data */}
             <LocationStructuredData
                 locationData={city}
                 locationType="city"
                 serviceType={CATEGORY_SERVICE_MAP[city.category_name] || 'digital-marketing'}
             />
-            <OGMetaTags
-                cityName={city.city}
-                serviceName={CATEGORY_DISPLAY_MAP[city.category_name] || 'Digital Marketing'}
-                pageSlug={slug}
-            />
+            <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "item": { "@id": baseUrl, "name": "Digital Solution 360" } },
+                    { "@type": "ListItem", "position": 2, "item": { "@id": pageUrl, "name": breadcrumbPageName } }
+                ]
+            }) }} />
+            <Script id="webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": pageTitle,
+                "description": pageDescription,
+                "url": pageUrl
+            }) }} />
 
             {/* Hero Section */}
             <section className='relative min-h-[55vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-12 overflow-hidden'>
@@ -633,6 +726,23 @@ export default function CityServicePage() {
                     </div>
                 </div>
             </section>
+
+            {/* Breadcrumb */}
+            <nav className='bg-gray-50 border-b border-gray-100 py-3 px-4 md:px-8 lg:px-16'>
+                <div className='max-w-7xl mx-auto'>
+                    <ol className='flex items-center gap-1 text-sm'>
+                        <li>
+                            <Link href='/' className='text-gray-500 hover:text-gray-900 transition-colors'>Home</Link>
+                        </li>
+                        <li className='text-gray-400 mx-1'>›</li>
+                        <li>
+                            <Link href={backLink} className='text-gray-500 hover:text-gray-900 transition-colors'>{backLabel}</Link>
+                        </li>
+                        <li className='text-gray-400 mx-1'>›</li>
+                        <li className='text-gray-900 font-medium'>{breadcrumbPageName}</li>
+                    </ol>
+                </div>
+            </nav>
 
             {/* City Description with Sidebar */}
             {city.city_description && (
@@ -1112,6 +1222,22 @@ export default function CityServicePage() {
                     </motion.div>
                 </div>
             </section>
+
+            {/* FAQ Schema Structured Data */}
+            {faqs.length > 0 && (
+                <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": faqs.map(faq => ({
+                        "@type": "Question",
+                        "name": faq.q.replace(/\{cityName\}/g, cityName),
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": faq.a.replace(/\{cityName\}/g, cityName)
+                        }
+                    }))
+                }) }} />
+            )}
 
             <Footer />
         </>

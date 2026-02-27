@@ -114,7 +114,7 @@ export default function BlogDetailPage() {
       <main className="min-h-screen bg-gray-50">
 
         {/* ── Hero Banner ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-16">
+        <section className="relative overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-16">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-10 left-20 w-64 h-64 bg-teal-500 rounded-full filter blur-3xl" />
             <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-500 rounded-full filter blur-3xl" />
@@ -267,7 +267,7 @@ export default function BlogDetailPage() {
                   {related.map((rp) => (
                     <Link key={rp.post_id} href={`/blog/${rp.post_slug}`} className="group block">
                       <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300 h-full flex flex-col">
-                        <div className="relative h-40 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                        <div className="relative h-40 overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                           {rp.image ? (
                             <img
                               src={rp.image.startsWith('http') ? rp.image : `https://digitalsolution360.in/storage/post/${rp.image}`}
@@ -300,7 +300,7 @@ export default function BlogDetailPage() {
 
             {/* Back Link */}
             <div className="mt-10 text-center">
-              <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all font-medium shadow-lg shadow-teal-500/20">
+              <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all font-medium shadow-lg shadow-teal-500/20">
                 <IconArrowLeft size={18} /> Back to All Articles
               </Link>
             </div>
