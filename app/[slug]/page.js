@@ -692,9 +692,9 @@ export default function CityServicePage() {
                             {city.city_name}
                         </h1>
 
-                        <h1 className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
+                        <p className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
                             Professional {city.category_name.toLowerCase()} services in {cityName}, {stateName}. DigitalSolution 360 helps local businesses grow their online presence.
-                        </h1>
+                        </p>
 
                         <div className='flex flex-wrap gap-4 mb-8'>
                             <Link href='/contact-us' className='bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2'>
