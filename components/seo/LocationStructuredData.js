@@ -56,7 +56,7 @@ export default function LocationStructuredData({ locationData, locationType, ser
     "@type": "Product",
     "name": `Digital Solution 360`,
     "image": "https://site-india.vercel.app/logo.png",
-    "description": `Digital Solution 360 offers professional ${serviceName.toLowerCase()} services in ${locationName}. Get world-class quality at affordable prices. Contact us at +919990556217 for custom solutions tailored to your business needs.`,
+    "description": `Discover why we are the best ${serviceName.toLowerCase()} company in ${locationName}! 📈 Expert strategies tailored for your success. Call 📞 9990556217 today and grow your business! 🚀`,
     "brand": {
       "@type": "Brand",
       "name": "Digital Solution 360"

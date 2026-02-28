@@ -98,8 +98,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-blue-800',
             statBg: 'bg-blue-50',
             formRing: 'focus:ring-blue-500',
-            ratings: '2,540',
-            projects: '256+',
+            ratingsBase: 2540,
+            projectsBase: 256,
         },
         backLink: '/market-we-serve/gmb',
         backLabel: 'GMB Services',
@@ -150,8 +150,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-orange-800',
             statBg: 'bg-orange-50',
             formRing: 'focus:ring-orange-500',
-            ratings: '3,120',
-            projects: '340+',
+            ratingsBase: 3120,
+            projectsBase: 340,
         },
         backLink: '/market-we-serve/marketing',
         backLabel: 'Digital Marketing',
@@ -204,8 +204,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-purple-800',
             statBg: 'bg-purple-50',
             formRing: 'focus:ring-purple-500',
-            ratings: '1,890',
-            projects: '185+',
+            ratingsBase: 1890,
+            projectsBase: 185,
         },
         backLink: '/market-we-serve/web',
         backLabel: 'Web Development',
@@ -258,8 +258,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-pink-800',
             statBg: 'bg-pink-50',
             formRing: 'focus:ring-pink-500',
-            ratings: '2,750',
-            projects: '290+',
+            ratingsBase: 2750,
+            projectsBase: 290,
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
@@ -302,8 +302,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-teal-800',
             statBg: 'bg-teal-50',
             formRing: 'focus:ring-teal-500',
-            ratings: '1,650',
-            projects: '210+',
+            ratingsBase: 1650,
+            projectsBase: 210,
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
@@ -346,8 +346,8 @@ const CATEGORY_CONFIG = {
             badgeText: 'text-indigo-800',
             statBg: 'bg-indigo-50',
             formRing: 'focus:ring-indigo-500',
-            ratings: '2,080',
-            projects: '175+',
+            ratingsBase: 2080,
+            projectsBase: 175,
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
@@ -477,7 +477,7 @@ export default function CityServicePage() {
                         if (json.success) {
                             const currentState = json.data.find(s => s.name === city.state_name);
                             if (currentState) {
-                                setOtherCities(currentState.cities.filter(c => c.slug !== slug).slice(0, 12));
+                                setOtherCities(currentState.cities.filter(c => c.slug !== slug));
                             }
                         }
                     })
@@ -582,6 +582,21 @@ export default function CityServicePage() {
     const cityName = city.city;
     const stateName = city.state_name;
 
+    // Dynamic ratings & projects based on city_id
+    const dynamicRatings = (city.city_id + theme.ratingsBase).toLocaleString('en-IN');
+    const dynamicProjects = `${city.city_id + theme.projectsBase}+`;
+
+    // Build breadcrumb chain
+    const breadcrumbItems = [
+        { label: 'Home', href: '/' },
+        { label: CATEGORY_DISPLAY_MAP[city.category_name], href: backLink },
+        { label: stateName, href: backLink },
+    ];
+    if (city.is_metrocity && city.parent_city) {
+        breadcrumbItems.push({ label: city.parent_city, href: `/${city.parent_city_slug}` });
+    }
+    breadcrumbItems.push({ label: cityName, href: null });
+
     // Dynamic SEO meta data
     const catMeta = CATEGORY_META[city.category_name] || CATEGORY_META['Digital Marketing'];
     const baseUrl = 'https://www.digitalsolution360.in';
@@ -590,7 +605,6 @@ export default function CityServicePage() {
     const pageDescription = catMeta.description;
     const pageKeywords = catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
     const ogKeywords = `${pageKeywords}, np digital marketing, gmb, semrush`;
-    const breadcrumbPageName = catMeta.breadcrumbName.replace(/\{cityName\}/g, cityName);
 
     /* ── Page ── */
     return (
@@ -631,10 +645,16 @@ export default function CityServicePage() {
             <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "item": { "@id": baseUrl, "name": "Digital Solution 360" } },
-                    { "@type": "ListItem", "position": 2, "item": { "@id": pageUrl, "name": breadcrumbPageName } }
-                ]
+                "itemListElement": breadcrumbItems.map((item, idx) => ({
+                    "@type": "ListItem",
+                    "position": idx + 1,
+                    "item": {
+                        "@id": item.href
+                            ? (item.href.startsWith('/') ? `${baseUrl}${item.href}` : item.href)
+                            : pageUrl,
+                        "name": item.label
+                    }
+                }))
             }) }} />
             <Script id="webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
@@ -672,9 +692,9 @@ export default function CityServicePage() {
                             {city.city_name}
                         </h1>
 
-                        <p className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
+                        <h1 className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>
                             Professional {city.category_name.toLowerCase()} services in {cityName}, {stateName}. DigitalSolution 360 helps local businesses grow their online presence.
-                        </p>
+                        </h1>
 
                         <div className='flex flex-wrap gap-4 mb-8'>
                             <Link href='/contact-us' className='bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2'>
@@ -691,14 +711,14 @@ export default function CityServicePage() {
                                     ))}
                                 </div>
                                 <div>
-                                    <div className='text-2xl font-bold text-white'>{theme.ratings}</div>
+                                    <div className='text-2xl font-bold text-white'>{dynamicRatings}</div>
                                     <div className='text-sm text-gray-300'>Ratings</div>
                                 </div>
                             </div>
                             <div className='flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20'>
                                 <IconChecks className='w-6 h-6 text-emerald-400' />
                                 <div>
-                                    <div className='text-2xl font-bold text-white'>{theme.projects}</div>
+                                    <div className='text-2xl font-bold text-white'>{dynamicProjects}</div>
                                     <div className='text-sm text-gray-300'>Projects Done</div>
                                 </div>
                             </div>
@@ -730,16 +750,21 @@ export default function CityServicePage() {
             {/* Breadcrumb */}
             <nav className='bg-gray-50 border-b border-gray-100 py-3 px-4 md:px-8 lg:px-16'>
                 <div className='max-w-7xl mx-auto'>
-                    <ol className='flex items-center gap-1 text-sm'>
-                        <li>
-                            <Link href='/' className='text-gray-500 hover:text-gray-900 transition-colors'>Home</Link>
-                        </li>
-                        <li className='text-gray-400 mx-1'>›</li>
-                        <li>
-                            <Link href={backLink} className='text-gray-500 hover:text-gray-900 transition-colors'>{backLabel}</Link>
-                        </li>
-                        <li className='text-gray-400 mx-1'>›</li>
-                        <li className='text-gray-900 font-medium'>{breadcrumbPageName}</li>
+                    <ol className='flex flex-wrap items-center gap-1 text-sm'>
+                        {breadcrumbItems.map((item, idx) => (
+                            <React.Fragment key={idx}>
+                                {idx > 0 && <li className='text-gray-400'>›</li>}
+                                <li>
+                                    {item.href ? (
+                                        <Link href={item.href} className='text-gray-500 hover:text-gray-900 transition-colors'>
+                                            {item.label}
+                                        </Link>
+                                    ) : (
+                                        <span className='text-gray-900 font-medium'>{item.label}</span>
+                                    )}
+                                </li>
+                            </React.Fragment>
+                        ))}
                     </ol>
                 </div>
             </nav>
