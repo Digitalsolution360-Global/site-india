@@ -1,21 +1,10 @@
-// app/dashboard/ClientComponent.js
+import CityClient from "./cityClient";
 
-"use client";
-
-import { useState } from "react";
-
-export default function ClientComponent({ username }) {
-  const [count, setCount] = useState(0);
+export default function Page() {
 
   return (
-    <div>
-      <h2>Welcome {username}</h2>
 
-      <p>Counter: {count}</p>
-
-      <button onClick={() => setCount(count + 1)}>
-        Increase
-      </button>
-    </div>
+      <CityClient/>
+  
   );
 }
