@@ -584,7 +584,7 @@ export default function CityClientPage() {
 
     // Dynamic ratings & projects based on city_id
     const dynamicRatings = (city.city_id + 1000).toLocaleString('en-IN');
-    const dynamicProjects = `${Math.floor((city.city_id + theme.projectsBase)/4)}+`;
+    const dynamicProjects = `${Math.floor((city.city_id + theme.projectsBase) / 4)}+`;
 
     // Build breadcrumb chain
     const breadcrumbItems = [
@@ -642,27 +642,31 @@ export default function CityClientPage() {
                 locationType="city"
                 serviceType={CATEGORY_SERVICE_MAP[city.category_name] || 'digital-marketing'}
             />
-            <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": breadcrumbItems.map((item, idx) => ({
-                    "@type": "ListItem",
-                    "position": idx + 1,
-                    "item": {
-                        "@id": item.href
-                            ? (item.href.startsWith('/') ? `${baseUrl}${item.href}` : item.href)
-                            : pageUrl,
-                        "name": item.label
-                    }
-                }))
-            }) }} />
-            <Script id="webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": pageTitle,
-                "description": pageDescription,
-                "url": pageUrl
-            }) }} />
+            <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": breadcrumbItems.map((item, idx) => ({
+                        "@type": "ListItem",
+                        "position": idx + 1,
+                        "item": {
+                            "@id": item.href
+                                ? (item.href.startsWith('/') ? `${baseUrl}${item.href}` : item.href)
+                                : pageUrl,
+                            "name": item.label
+                        }
+                    }))
+                })
+            }} />
+            <Script id="webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "WebPage",
+                    "name": pageTitle,
+                    "description": pageDescription,
+                    "url": pageUrl
+                })
+            }} />
 
             {/* Hero Section */}
             <section className='relative min-h-[55vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-12 overflow-hidden'>
@@ -1250,18 +1254,20 @@ export default function CityClientPage() {
 
             {/* FAQ Schema Structured Data */}
             {faqs.length > 0 && (
-                <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": faqs.map(faq => ({
-                        "@type": "Question",
-                        "name": faq.q.replace(/\{cityName\}/g, cityName),
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": faq.a.replace(/\{cityName\}/g, cityName)
-                        }
-                    }))
-                }) }} />
+                <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": faqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.q.replace(/\{cityName\}/g, cityName),
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.a.replace(/\{cityName\}/g, cityName)
+                            }
+                        }))
+                    })
+                }} />
             )}
 
             <Footer />
