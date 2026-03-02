@@ -63,7 +63,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight'
+              className='text-4xl md:text-5xl font-bold text-gray-900 leading-tight'
             >
               Website Development Company Offering
               <span className='block text-blue-600 mt-2'>
@@ -76,7 +76,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className='text-lg md:text-xl text-gray-600 max-w-2xl'
+              className='text-lg text-gray-600 max-w-2xl'
             >
               Digitalsolution360 is a professional website development company providing high-quality website development services and complete digital marketing services for businesses looking to grow online. We specialize in building SEO friendly websites that improve online visibility and generate consistent business leads.
             </motion.p>
