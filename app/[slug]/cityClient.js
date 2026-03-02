@@ -597,13 +597,13 @@ export default function CityClientPage() {
     }
     breadcrumbItems.push({ label: cityName, href: null });
 
-    // Dynamic SEO meta data
+    // Dynamic SEO meta data — prefer DB fields, fall back to CATEGORY_META templates
     const catMeta = CATEGORY_META[city.category_name] || CATEGORY_META['Digital Marketing'];
     const baseUrl = 'https://www.digitalsolution360.in';
     const pageUrl = `${baseUrl}/${slug}`;
-    const pageTitle = catMeta.titleTemplate.replace(/\{cityName\}/g, cityName);
-    const pageDescription = catMeta.description;
-    const pageKeywords = catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
+    const pageTitle = city.meta_title?.trim() || catMeta.titleTemplate.replace(/\{cityName\}/g, cityName);
+    const pageDescription = city.meta_description?.trim() || catMeta.description;
+    const pageKeywords = city.meta_keyword?.trim() || catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
     const ogKeywords = `${pageKeywords}, np digital marketing, gmb, semrush`;
 
     /* ── Page ── */

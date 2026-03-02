@@ -151,8 +151,7 @@ function Footer() {
                             <li className='flex items-start gap-3'>
                                 <IconMapPin className='w-5 h-5 text-blue-500 shrink-0 mt-1' stroke={1.5} />
                                 <span className='text-gray-400'>
-                                    123 Business Street, Digital Hub,<br />
-                                    New Delhi, India 110001
+                                    B-76, Basement, Noida Sec-2, Near Noida Sec-15 Metro Station, UP - 201301
                                 </span>
                             </li>
                             <li className='flex items-center gap-3'>
