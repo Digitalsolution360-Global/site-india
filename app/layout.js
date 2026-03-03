@@ -15,7 +15,7 @@ export const viewport = {
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#ffffff' },
   ],
-};
+}; 
 
 export const metadata = {
   metadataBase: new URL('https://www.digitalsolution360.in'),
