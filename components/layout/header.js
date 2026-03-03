@@ -34,15 +34,15 @@ const navServices = [
         ]
     },
     {
-        name: 'SEO Services', href: '/search-engine-optimization-seo', icon: IconSearch, desc: 'Rank higher on search engines', bg: 'bg-orange-50', text: 'text-orange-600',
+        name: 'SEO Services', href: '/seo', icon: IconSearch, desc: 'Rank higher on search engines', bg: 'bg-orange-50', text: 'text-orange-600',
         subs: [
-            { name: 'Local SEO', href: '/search-engine-optimization-seo/local-seo' },
-            { name: 'Ecommerce SEO', href: '/search-engine-optimization-seo/ecommerce-seo' },
-            { name: 'Technical SEO', href: '/search-engine-optimization-seo/technical-seo' },
-            { name: 'On Page SEO', href: '/search-engine-optimization-seo/on-page-seo' },
-            { name: 'Off Page SEO', href: '/search-engine-optimization-seo/off-page-seo' },
-            { name: 'SEO Audit', href: '/search-engine-optimization-seo/seo-audit' },
-            { name: 'AI SEO', href: '/search-engine-optimization-seo/ai-seo' },
+            { name: 'Local SEO', href: '/seo/local-seo' },
+            { name: 'Ecommerce SEO', href: '/seo/ecommerce-seo' },
+            { name: 'Technical SEO', href: '/seo/technical-seo' },
+            { name: 'On Page SEO', href: '/seo/on-page-seo' },
+            { name: 'Off Page SEO', href: '/seo/off-page-seo' },
+            { name: 'SEO Audit', href: '/seo/seo-audit' },
+            { name: 'AI SEO', href: '/seo/ai-seo' },
         ]
     },
     {
