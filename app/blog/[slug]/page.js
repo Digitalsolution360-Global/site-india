@@ -73,15 +73,16 @@ export default function BlogDetailPage() {
     e.preventDefault();
     setFormSubmitting(true);
     try {
-      await fetch('/api/contacts', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+      await fetch(`${API_URL}/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: contactForm.name, email: contactForm.email, phone: contactForm.phone,
-          country_code: '+91', company: null, website: null, services: null,
-          message: null, source: 'blog_sidebar', page_url: typeof window !== 'undefined' ? window.location.pathname : ''
+          name: contactForm.name, email: contactForm.email, number: contactForm.phone,
+          message: '[blog_sidebar]',
+          pageurl: typeof window !== 'undefined' ? window.location.pathname : ''
         })
-      });
+      }).catch(() => {});
       const formData = new FormData();
       formData.append('name', contactForm.name);
       formData.append('email', contactForm.email);

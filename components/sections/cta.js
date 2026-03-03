@@ -26,7 +26,8 @@ function CTASection() {
 
     try {
       // Save to database
-      await fetch('/api/contacts', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+      await fetch(`${API_URL}/contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,16 +35,11 @@ function CTASection() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
-          country_code: '+91',
-          company: null,
-          website: null,
-          services: null,
-          message: null,
-          source: 'cta_section',
-          page_url: window.location.pathname
+          number: formData.phone,
+          message: '[cta_section]',
+          pageurl: window.location.pathname
         })
-      });
+      }).catch(() => {});
 
       // Send email notification using FormSubmit
       const formSubmitData = new FormData();

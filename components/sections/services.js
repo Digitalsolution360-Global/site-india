@@ -199,7 +199,7 @@ function ServiceSection() {
             Our website development services include responsive design, SEO optimization, and fast loading speed to ensure the best performance.
           </p>
           <Link
-            href='/contact'
+            href='/contact-us'
             className='inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
           >
             Get in Touch

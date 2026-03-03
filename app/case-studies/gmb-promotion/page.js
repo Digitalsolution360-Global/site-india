@@ -56,7 +56,7 @@ export default function GMBPromotionComingSoonPage() {
 
                         <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                             <Link
-                                href='/contact'
+                                href='/contact-us'
                                 className='inline-flex items-center justify-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                             >
                                 <IconBell className='w-5 h-5' />

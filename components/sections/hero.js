@@ -89,13 +89,13 @@ function HeroSection() {
               className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'
             >
               <Link
-                href="/contact"
+                href="/contact-us"
                 className='bg-blue-600 text-white px-6 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl inline-block text-center'
               >
                 Get Started
               </Link>
               <Link
-                href="/portfolio"
+                href="/case-studies"
                 className='bg-white text-blue-600 border-2 border-blue-600 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 inline-block text-center'
               >
                 View Our Work

@@ -132,7 +132,7 @@ export default function SEOProjectsPage() {
                             Let us help you achieve similar results with our proven SEO strategies.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Get Free SEO Audit

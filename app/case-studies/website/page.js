@@ -150,7 +150,7 @@ export default function WebsiteCaseStudiesPage() {
                             Let's create a high-performance website that converts visitors into customers.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Start Your Project

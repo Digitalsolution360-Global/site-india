@@ -34,6 +34,20 @@ export default function ContactUsPage() {
         setIsSubmitting(true);
 
         try {
+            // Save to database
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api'}/contacts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    number: formData.phone,
+                    message: formData.message ? `[${formData.subject}] ${formData.message}` : formData.subject,
+                    pageurl: '/contact-us',
+                })
+            }).catch(() => {});
+
+            // Send email via FormSubmit
             const response = await fetch('https://formsubmit.co/ajax/info@digitalsolution360.in', {
                 method: 'POST',
                 headers: {

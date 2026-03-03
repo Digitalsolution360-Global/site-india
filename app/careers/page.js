@@ -99,6 +99,22 @@ export default function CareersPage() {
                 }
             }
 
+            // Save to careers DB table
+            await fetch(`${API}/contacts/career`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    apply_for: selectedJob.title,
+                    city: formData.currentCompany || null,
+                    expected_salary: formData.experience || null,
+                    resume: resumeUrl || null,
+                })
+            }).catch(() => {});
+
+            // Send email via FormSubmit
             const response = await fetch('https://formsubmit.co/ajax/info@digitalsolution360.in', {
                 method: 'POST',
                 headers: {
@@ -617,7 +633,7 @@ export default function CareersPage() {
                             We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Submit Your Resume

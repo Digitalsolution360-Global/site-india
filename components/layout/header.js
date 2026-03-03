@@ -193,6 +193,20 @@ function Header() {
         const form = e.target;
         const formData = new FormData(form);
         try {
+            // Save to database
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api'}/contacts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    number: formData.get('phone'),
+                    pageurl: typeof window !== 'undefined' ? window.location.pathname : '',
+                    message: '[header_quote]',
+                })
+            }).catch(() => {});
+
+            // Send email via FormSubmit
             await fetch('https://formsubmit.co/globalweb3600@gmail.com', { method: 'POST', body: formData });
             setShowForm(false);
             setShowThankYou(true);

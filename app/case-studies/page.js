@@ -392,7 +392,7 @@ export default function CaseStudiesPage() {
                             Let's collaborate and create amazing results together.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Start Your Project

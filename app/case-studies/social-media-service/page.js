@@ -176,7 +176,7 @@ export default function SocialMediaCaseStudiesPage() {
                             Let's build an engaged community around your brand on social media.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-pink-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Get Started Today

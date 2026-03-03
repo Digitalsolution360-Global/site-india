@@ -189,7 +189,7 @@ export default function AppDevelopmentCaseStudiesPage() {
                             Let's build a mobile app that your users will love.
                         </p>
                         <Link
-                            href='/contact'
+                            href='/contact-us'
                             className='inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition-all duration-300 hover:scale-105 hover:shadow-xl'
                         >
                             Start Your App Project

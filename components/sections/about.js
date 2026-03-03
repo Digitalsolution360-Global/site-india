@@ -145,7 +145,7 @@ function AboutSection() {
               className='pt-4'
             >
               <Link
-                href='/about'
+                href='/about-us'
                 className='inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl'
               >
                 Learn More About Us

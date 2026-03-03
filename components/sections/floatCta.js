@@ -72,7 +72,8 @@ function FloatCta() {
 
     try {
       // Save to database
-      await fetch('/api/contacts', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+      await fetch(`${API_URL}/contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,16 +81,11 @@ function FloatCta() {
         body: JSON.stringify({
           name: formData.get('name'),
           email: formData.get('email'),
-          phone: formData.get('phone'),
-          country_code: '+91',
-          company: null,
-          website: null,
-          services: null,
-          message: null,
-          source: 'float_cta',
-          page_url: window.location.pathname
+          number: formData.get('phone'),
+          message: '[float_cta]',
+          pageurl: window.location.pathname
         })
-      })
+      }).catch(() => {});
 
       // Send email notification
       await fetch('https://formsubmit.co/globalweb3600@gmail.com', {
