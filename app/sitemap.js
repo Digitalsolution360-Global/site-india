@@ -171,11 +171,49 @@ async function fetchAllCitySlugs() {
   }
 }
 
+/* ── Fetch all metro-city slugs across all market categories ── */
+async function fetchAllMetroCitySlugs() {
+  const categories = [
+    "Google Business",
+    "Digital Marketing",
+    "Web Development",
+    "Social Media",
+    "Content Writing",
+    "Wordpress Development",
+  ];
+
+  try {
+    const results = await Promise.all(
+      categories.map(async (cat) => {
+        try {
+          const res = await fetch(
+            `${API_BASE}/market/${encodeURIComponent(cat)}/metrocities`,
+            { next: { revalidate: 3600 } }
+          );
+          const json = await res.json();
+          if (json.success && json.data) {
+            return json.data.map((m) => m.metrocity_slug).filter(Boolean);
+          }
+          return [];
+        } catch {
+          return [];
+        }
+      })
+    );
+
+    return [...new Set(results.flat())];
+  } catch (err) {
+    console.error("Sitemap: failed to fetch metro city slugs", err);
+    return [];
+  }
+}
+
 /* ── Next.js sitemap function ── */
 export default async function sitemap() {
-  const [blogPosts, citySlugs] = await Promise.all([
+  const [blogPosts, citySlugs, metroCitySlugs] = await Promise.all([
     fetchAllBlogSlugs(),
     fetchAllCitySlugs(),
+    fetchAllMetroCitySlugs(),
   ]);
 
   const now = new Date().toISOString();
@@ -206,5 +244,13 @@ export default async function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...blogEntries, ...cityEntries];
+  // Metro city routes
+  const metroCityEntries = metroCitySlugs.map((slug) => ({
+    url: `${BASE_URL}/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...blogEntries, ...cityEntries, ...metroCityEntries];
 }

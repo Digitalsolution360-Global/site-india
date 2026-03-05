@@ -129,7 +129,7 @@ const serviceCategories = [
         ],
     },
     {
-        slug: 'search-engine-optimization-seo',
+        slug: 'seo',
         name: 'SEO Services',
         shortName: 'SEO',
         description: 'Comprehensive search engine optimization strategies to boost your organic rankings, drive qualified traffic, and dominate search results.',
