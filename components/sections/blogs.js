@@ -1,49 +1,51 @@
 "use client";
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
-import { IconCalendar, IconClock, IconArrowRight, IconUser } from '@tabler/icons-react'
+import { IconCalendar, IconClock, IconArrowRight, IconUser, IconLoader2 } from '@tabler/icons-react'
+
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 function BlogSection() {
-  const blogs = [
-    {
-      id: 1,
-      title: 'The Future of Digital Marketing in 2025',
-      excerpt: 'Explore the latest trends and strategies that are shaping the future of digital marketing. Learn how AI and automation are revolutionizing the industry.',
-      image: '/blogs/blog-1.jpg',
-      category: 'Digital Marketing',
-      categoryColor: 'bg-blue-100 text-blue-600',
-      author: 'Priya Sharma',
-      date: 'Nov 8, 2025',
-      readTime: '5 min read',
-      slug: 'future-of-digital-marketing-2025'
-    },
-    {
-      id: 2,
-      title: '10 Essential SEO Tips to Boost Your Rankings',
-      excerpt: 'Discover proven SEO strategies that can significantly improve your search engine rankings and drive more organic traffic to your website.',
-      image: '/blogs/blog-2.jpg',
-      category: 'SEO',
-      categoryColor: 'bg-green-100 text-green-600',
-      author: 'Rajesh Kumar',
-      date: 'Nov 5, 2025',
-      readTime: '7 min read',
-      slug: 'essential-seo-tips-boost-rankings'
-    },
-    {
-      id: 3,
-      title: 'Why Your Business Needs a Mobile-First Website',
-      excerpt: 'Learn why mobile-first design is no longer optional and how it can dramatically improve user experience and conversion rates for your business.',
-      image: '/blogs/blog-3.jpg',
-      category: 'Web Development',
-      categoryColor: 'bg-purple-100 text-purple-600',
-      author: 'Amit Patel',
-      date: 'Nov 1, 2025',
-      readTime: '6 min read',
-      slug: 'mobile-first-website-importance'
-    }
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(`${API_BASE}/posts?page=1&limit=3`);
+        const json = await res.json();
+        if (json.success && json.data) {
+          setBlogs(json.data);
+        }
+      } catch (e) {
+        console.error('Failed to fetch blog posts:', e);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+  };
+
+  const estimateReadTime = (html) => {
+    if (!html) return '3 min read';
+    const text = html.replace(/<[^>]*>/g, '');
+    const words = text.split(/\s+/).length;
+    const mins = Math.max(2, Math.ceil(words / 200));
+    return `${mins} min read`;
+  };
+
+  const getExcerpt = (html, maxLen = 140) => {
+    if (!html) return '';
+    const text = html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    return text.length > maxLen ? text.slice(0, maxLen) + '…' : text;
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,6 +100,13 @@ function BlogSection() {
         </motion.div>
 
         {/* Blog Grid */}
+        {loading ? (
+          <div className='flex justify-center py-16'>
+            <IconLoader2 className='w-10 h-10 text-blue-600 animate-spin' />
+          </div>
+        ) : blogs.length === 0 ? (
+          <p className='text-center text-gray-500 py-16'>No blog posts yet. Check back soon!</p>
+        ) : (
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -107,17 +116,17 @@ function BlogSection() {
         >
           {blogs.map((blog) => (
             <motion.article
-              key={blog.id}
+              key={blog.post_id}
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
               className='group'
             >
-              <Link href={`/blogs/${blog.slug}`}>
+              <Link href={`/${blog.post_slug}`}>
                 <div className='bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 h-full flex flex-col'>
                   {/* Blog Image */}
                   <div className='relative h-56 overflow-hidden bg-gray-200'>
                     <img
-                      src={blog.image}
+                      src={blog.featured_image || '/blogs/blog-1.jpg'}
                       alt={blog.title}
                       className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
                       onError={(e) => {
@@ -125,11 +134,13 @@ function BlogSection() {
                       }}
                     />
                     {/* Category Badge */}
+                    {blog.category_name && (
                     <div className='absolute top-4 left-4'>
-                      <span className={`${blog.categoryColor} px-3 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm`}>
-                        {blog.category}
+                      <span className='bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm'>
+                        {blog.category_name}
                       </span>
                     </div>
+                    )}
                   </div>
 
                   {/* Blog Content */}
@@ -138,11 +149,11 @@ function BlogSection() {
                     <div className='flex items-center gap-4 text-sm text-gray-500 mb-4'>
                       <div className='flex items-center gap-1'>
                         <IconCalendar className='w-4 h-4' stroke={1.5} />
-                        <span>{blog.date}</span>
+                        <span>{formatDate(blog.created_at)}</span>
                       </div>
                       <div className='flex items-center gap-1'>
                         <IconClock className='w-4 h-4' stroke={1.5} />
-                        <span>{blog.readTime}</span>
+                        <span>{estimateReadTime(blog.content)}</span>
                       </div>
                     </div>
 
@@ -153,7 +164,7 @@ function BlogSection() {
 
                     {/* Excerpt */}
                     <p className='text-gray-600 mb-6 leading-relaxed line-clamp-3 grow'>
-                      {blog.excerpt}
+                      {getExcerpt(blog.content)}
                     </p>
 
                     {/* Footer */}
@@ -163,7 +174,7 @@ function BlogSection() {
                         <div className='w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center'>
                           <IconUser className='w-4 h-4 text-gray-500' stroke={1.5} />
                         </div>
-                        <span>{blog.author}</span>
+                        <span>{blog.author || 'Digital Solution 360'}</span>
                       </div>
 
                       {/* Read More */}
@@ -178,6 +189,7 @@ function BlogSection() {
             </motion.article>
           ))}
         </motion.div>
+        )}
 
         {/* View All Blogs Button */}
         <motion.div
@@ -188,7 +200,7 @@ function BlogSection() {
           className='text-center mt-12'
         >
           <Link
-            href='/blogs'
+            href='/blog'
             className='inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-xl group'
           >
             <span>View All Articles</span>

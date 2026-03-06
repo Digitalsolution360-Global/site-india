@@ -8,32 +8,32 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
 const CATEGORY_SCHEMA = {
   "Google Business": {
     serviceName: "Google My Business Optimization",
-    image: `https://digitalsolution360.in/gmb-og.webp`,
+    image: `/gmb-og.webp`,
     ratingsBase: 2540,
   },
   "Digital Marketing": {
     serviceName: "Digital Marketing Services",
-    image: `https://digitalsolution360.in/digital-marketing-og.webp`,
+    image: `/digital-marketing-og.webp`,
     ratingsBase: 3120,
   },
   "Web Development": {
     serviceName: "Web Development Services",
-    image: `https://digitalsolution360.in/home/images/og-home.webp`,
+    image: `/og-home.webp`,
     ratingsBase: 1890,
   },
   "Social Media": {
     serviceName: "Social Media Marketing Services",
-    image: `https://digitalsolution360.in/social-media-og.webp`,
+    image: `/social-media-og.webp`,
     ratingsBase: 2750,
   },
   "Content Writing": {
     serviceName: "Content Writing Services",
-    image: `https://digitalsolution360.in/content-writing-og.webp`,
+    image: `/content-writing-og.webp`,
     ratingsBase: 1650,
   },
   "Wordpress Development": {
     serviceName: "WordPress Development Services",
-    image: `https://digitalsolution360.in/wordpress-og.webp`,
+    image: `/wordpress-og.webp`,
     ratingsBase: 2080,
   },
 };

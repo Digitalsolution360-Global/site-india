@@ -208,12 +208,30 @@ async function fetchAllMetroCitySlugs() {
   }
 }
 
+/* ── Fetch all state slugs ── */
+async function fetchAllStateSlugs() {
+  try {
+    const res = await fetch(`${API_BASE}/states`, {
+      next: { revalidate: 3600 },
+    });
+    const json = await res.json();
+    if (json.success && json.data) {
+      return json.data.map((s) => s.slug).filter(Boolean);
+    }
+    return [];
+  } catch (err) {
+    console.error("Sitemap: failed to fetch state slugs", err);
+    return [];
+  }
+}
+
 /* ── Next.js sitemap function ── */
 export default async function sitemap() {
-  const [blogPosts, citySlugs, metroCitySlugs] = await Promise.all([
+  const [blogPosts, citySlugs, metroCitySlugs, stateSlugs] = await Promise.all([
     fetchAllBlogSlugs(),
     fetchAllCitySlugs(),
     fetchAllMetroCitySlugs(),
+    fetchAllStateSlugs(),
   ]);
 
   const now = new Date().toISOString();
@@ -252,5 +270,13 @@ export default async function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...blogEntries, ...cityEntries, ...metroCityEntries];
+  // State routes
+  const stateEntries = stateSlugs.map((slug) => ({
+    url: `${BASE_URL}/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...blogEntries, ...cityEntries, ...metroCityEntries, ...stateEntries];
 }
