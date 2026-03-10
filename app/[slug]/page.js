@@ -1,6 +1,6 @@
 import CityClient from "./cityClient";
 import StateClient from "./stateClient";
-import BlogDetailPage from "../blog/[slug]/page";
+import BlogDetailClient from "../blog/[slug]/blogDetailClient";
 import { notFound } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
@@ -178,7 +178,7 @@ export default async function Page({ params }) {
     // Check if it's a blog post
     const post = await fetchBlog(slug);
     if (post) {
-      return <BlogDetailPage />;
+      return <BlogDetailClient />;
     }
     notFound();
   }

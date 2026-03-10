@@ -73,7 +73,7 @@ export const metadata = {
     description: 'Elevate your brand with tailored digital marketing, SEO services, and web development solutions. Expert team delivering proven results.',
     images: [
       {
-        url: '/logo.png',
+        url: '/og-default.webp',
         width: 1200,
         height: 630,
         alt: 'Digital Solution 360 Logo',
@@ -84,7 +84,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Digital Solution 360 - Expert SEO, Digital Marketing & Web Development',
     description: 'Elevate your brand with tailored digital marketing, SEO services, and web development solutions.',
-    images: ['/logo.png'],
+    images: ['/og-default.webp'],
   },
   robots: {
     index: true,
@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
     email: 'globalweb3600@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'AE',
+      addressCountry: 'IN',
     },
     sameAs: [
       // Add your social media links here when available
