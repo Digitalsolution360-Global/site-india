@@ -29,7 +29,7 @@ export const metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.digitalsolution360.in/home/images/og-home.webp",
+        url: "/og-default.webp",
         width: 1200,
         height: 630,
         alt: "Digitalsolution360 - Website Development & Digital Marketing Company",
