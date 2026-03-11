@@ -48,7 +48,7 @@ const CATEGORY_CONTENT = {
             { q: 'Can you help with both lead generation and ecommerce?', a: 'Absolutely. We have dedicated teams for lead generation (B2B/B2C) and ecommerce marketing. Our strategies are tailored based on whether you need leads, online sales, app installs, or brand awareness.' },
         ],
     },
-    'website-development': {
+    'web-development': {
         overview: 'Your website is your most powerful sales tool — working 24/7 to represent your brand, engage visitors, and convert them into customers. At DigitalSolution 360, we build custom websites that aren\'t just visually stunning but are engineered for speed, SEO performance, and conversion optimization. From simple business sites to complex web applications, we deliver solutions that grow with your business.',
         whyChoose: [
             { title: 'Performance-First Build', desc: 'Every site scores 90+ on Google PageSpeed. We optimize for Core Web Vitals to ensure lightning-fast load times.' },
