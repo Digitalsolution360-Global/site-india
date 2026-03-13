@@ -225,7 +225,7 @@ export default function StaticServicePage({
                                 </motion.div>
 
                                 {/* Sidebar list */}
-                                {sidebarItems.length > 0 && (
+                                {/* {sidebarItems.length > 0 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
                                         className='bg-white border border-gray-200 rounded-xl shadow-lg p-6'>
                                         <h3 className='text-lg font-bold text-gray-900 mb-4'>{sidebarTitle}</h3>
@@ -241,7 +241,7 @@ export default function StaticServicePage({
                                             ))}
                                         </div>
                                     </motion.div>
-                                )}
+                                )} */}
                             </div>
                         </div>
                     </div>
