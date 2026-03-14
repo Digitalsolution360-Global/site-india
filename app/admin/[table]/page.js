@@ -24,6 +24,8 @@ const TABLE_META = {
     users: { displayName: 'Users', pk: 'id' },
 };
 
+const BULK_UPLOAD_TABLES = new Set(['states', 'citys', 'metrocitys']);
+
 function Spinner({ size = 16 }) {
     return (
         <svg className="animate-spin" width={size} height={size} viewBox="0 0 24 24">
@@ -159,12 +161,19 @@ export default function CrudTablePage() {
     const [deleteId, setDeleteId] = useState(null);
     const [deleteLoading, setDeleteLoading] = useState(false);
     const [imageUploading, setImageUploading] = useState(false);
+    const [bulkModal, setBulkModal] = useState(false);
+    const [bulkFile, setBulkFile] = useState(null);
+    const [bulkMode, setBulkMode] = useState('upsert');
+    const [bulkDryRun, setBulkDryRun] = useState(true);
+    const [bulkLoading, setBulkLoading] = useState(false);
+    const [bulkResult, setBulkResult] = useState(null);
 
     // Table columns info from first fetch
     const [tableCols, setTableCols] = useState([]);
     const [editableCols, setEditableCols] = useState([]);
 
     const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : '';
+    const canBulkUpload = BULK_UPLOAD_TABLES.has(table);
 
     const fetchData = useCallback(async (page = 1, searchVal = '') => {
         setLoading(true);
@@ -320,6 +329,70 @@ export default function CrudTablePage() {
         else { setSortBy(col); setSortOrder('DESC'); }
     };
 
+    const handleDownloadBulkTemplate = async () => {
+        try {
+            const res = await fetch(`${API}/admin/bulk-upload/template/${table}`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            if (!res.ok) {
+                const json = await res.json().catch(() => ({}));
+                alert(json.message || 'Failed to download template');
+                return;
+            }
+
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${table}-bulk-template.csv`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (err) {
+            console.error('Template download failed:', err);
+            alert('Failed to download template');
+        }
+    };
+
+    const handleBulkUpload = async () => {
+        if (!bulkFile) {
+            alert('Please select a file first.');
+            return;
+        }
+
+        setBulkLoading(true);
+        setBulkResult(null);
+        try {
+            const fd = new FormData();
+            fd.append('file', bulkFile);
+            fd.append('mode', bulkMode);
+            fd.append('dryRun', bulkDryRun ? 'true' : 'false');
+
+            const res = await fetch(`${API}/admin/bulk-upload/${table}`, {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}` },
+                body: fd,
+            });
+
+            const json = await res.json();
+            if (!json.success) {
+                alert(json.message || 'Bulk upload failed');
+                return;
+            }
+
+            setBulkResult(json.data);
+            if (!bulkDryRun) {
+                fetchData(1, search);
+            }
+        } catch (err) {
+            console.error('Bulk upload failed:', err);
+            alert('Bulk upload failed');
+        } finally {
+            setBulkLoading(false);
+        }
+    };
+
     if (!meta) {
         return (
             <div className="text-center py-20">
@@ -430,15 +503,36 @@ export default function CrudTablePage() {
                     <h1 className="text-2xl font-bold text-white">{meta.displayName}</h1>
                     <p className="text-white/40 text-sm mt-0.5">{pagination.total.toLocaleString()} total records</p>
                 </div>
-                <button
-                    onClick={handleOpenCreate}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-500/25 cursor-pointer"
-                >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
-                    Add New
-                </button>
+                <div className="flex items-center gap-2">
+                    {canBulkUpload && (
+                        <button
+                            onClick={() => {
+                                setBulkModal(true);
+                                setBulkResult(null);
+                                setBulkFile(null);
+                                setBulkMode('upsert');
+                                setBulkDryRun(true);
+                            }}
+                            className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-xl hover:bg-white/10 transition cursor-pointer"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Bulk Upload
+                        </button>
+                    )}
+                    <button
+                        onClick={handleOpenCreate}
+                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-500/25 cursor-pointer"
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Add New
+                    </button>
+                </div>
             </div>
 
             {/* Search */}
@@ -808,6 +902,102 @@ export default function CrudTablePage() {
                 onConfirm={handleDelete}
                 loading={deleteLoading}
             />
+
+            {/* Bulk Upload Modal */}
+            <Modal open={bulkModal} onClose={() => setBulkModal(false)} title={`Bulk Upload ${meta.displayName}`}>
+                <div className="space-y-4">
+                    <div className="rounded-xl border border-blue-500/30 bg-blue-500/10 p-3">
+                        <p className="text-blue-200 text-sm leading-relaxed">
+                            Recommended flow: download template, fill rows in Excel/Google Sheets, export as CSV/XLSX, run validation first, then run final upload.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                        <button
+                            onClick={handleDownloadBulkTemplate}
+                            className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white/80 text-sm hover:bg-white/10 transition cursor-pointer"
+                        >
+                            Download Template
+                        </button>
+                    </div>
+
+                    <div>
+                        <label className="block text-white/50 text-xs font-medium uppercase tracking-wider mb-1.5">File</label>
+                        <input
+                            type="file"
+                            accept=".csv,.xlsx,.xls"
+                            onChange={(e) => setBulkFile(e.target.files?.[0] || null)}
+                            className="w-full px-3 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm"
+                        />
+                        <p className="text-white/30 text-xs mt-1">Accepted formats: CSV, XLSX, XLS (max 8MB, max 2000 rows)</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label className="block text-white/50 text-xs font-medium uppercase tracking-wider mb-1.5">Mode</label>
+                            <select
+                                value={bulkMode}
+                                onChange={(e) => setBulkMode(e.target.value)}
+                                className="w-full px-3 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm"
+                            >
+                                <option value="upsert" className="bg-slate-900">Upsert (insert new + update existing)</option>
+                                <option value="insert" className="bg-slate-900">Insert only (fail duplicates)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-white/50 text-xs font-medium uppercase tracking-wider mb-1.5">Run Type</label>
+                            <select
+                                value={bulkDryRun ? 'dry' : 'final'}
+                                onChange={(e) => setBulkDryRun(e.target.value === 'dry')}
+                                className="w-full px-3 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm"
+                            >
+                                <option value="dry" className="bg-slate-900">Dry Run (validation only)</option>
+                                <option value="final" className="bg-slate-900">Final Upload (apply changes)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {bulkResult && (
+                        <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
+                            <p className="text-white text-sm font-medium">Result Summary</p>
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                                <div className="bg-white/5 rounded-lg p-2"><span className="text-white/40">Total</span><div className="text-white font-semibold">{bulkResult.summary.totalRows}</div></div>
+                                <div className="bg-emerald-500/10 rounded-lg p-2"><span className="text-emerald-300/80">Inserted</span><div className="text-emerald-300 font-semibold">{bulkResult.summary.inserted}</div></div>
+                                <div className="bg-blue-500/10 rounded-lg p-2"><span className="text-blue-300/80">Updated</span><div className="text-blue-300 font-semibold">{bulkResult.summary.updated}</div></div>
+                                <div className="bg-red-500/10 rounded-lg p-2"><span className="text-red-300/80">Failed</span><div className="text-red-300 font-semibold">{bulkResult.summary.failed}</div></div>
+                            </div>
+                            {bulkResult.failures?.length > 0 && (
+                                <div className="mt-2">
+                                    <p className="text-white/60 text-xs mb-1">First {bulkResult.failures.length} error(s):</p>
+                                    <div className="max-h-40 overflow-auto space-y-1 pr-1">
+                                        {bulkResult.failures.map((f, idx) => (
+                                            <div key={`${f.rowNumber}-${idx}`} className="text-xs text-red-300 bg-red-500/10 rounded px-2 py-1">
+                                                Row {f.rowNumber}: {f.message}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    <div className="flex gap-3 pt-2">
+                        <button
+                            onClick={() => setBulkModal(false)}
+                            className="flex-1 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white/70 hover:bg-white/10 transition text-sm cursor-pointer"
+                        >
+                            Close
+                        </button>
+                        <button
+                            onClick={handleBulkUpload}
+                            disabled={bulkLoading || !bulkFile}
+                            className="flex-1 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 rounded-xl text-white hover:from-blue-500 hover:to-indigo-500 transition text-sm disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                            {bulkLoading ? <><Spinner size={14} /> Processing...</> : (bulkDryRun ? 'Validate File' : 'Run Bulk Upload')}
+                        </button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }
