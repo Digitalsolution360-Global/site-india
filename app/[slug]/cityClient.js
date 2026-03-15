@@ -436,6 +436,7 @@ export default function CityClientPage() {
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
     const [formStatus, setFormStatus] = useState(null);
     const [otherCities, setOtherCities] = useState([]);
+    const [showAllOtherCities, setShowAllOtherCities] = useState(false);
     const [faqs, setFaqs] = useState([]);
     const [serviceCards, setServiceCards] = useState([]);
 
@@ -485,6 +486,10 @@ export default function CityClientPage() {
             }
         }
     }, [city, slug]);
+
+    useEffect(() => {
+        setShowAllOtherCities(false);
+    }, [slug]);
 
     // Fetch FAQs from database (with city-specific override support)
     useEffect(() => {
@@ -627,6 +632,7 @@ export default function CityClientPage() {
     const pageDescription = city.meta_description?.trim() || catMeta.description;
     const pageKeywords = city.meta_keyword?.trim() || catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
     const ogKeywords = `${pageKeywords}, np digital marketing, gmb, semrush`;
+    const visibleOtherCities = showAllOtherCities ? otherCities : otherCities.slice(0, 10);
 
     /* ── Page ── */
     return (
@@ -880,7 +886,7 @@ export default function CityClientPage() {
                                                 Other Cities in {stateName}
                                             </h3>
                                             <div className='space-y-2'>
-                                                {otherCities.map((c, index) => (
+                                                {visibleOtherCities.map((c, index) => (
                                                     <Link
                                                         key={index}
                                                         href={`/${c.slug}`}
@@ -891,6 +897,15 @@ export default function CityClientPage() {
                                                     </Link>
                                                 ))}
                                             </div>
+                                            {otherCities.length > 10 && (
+                                                <button
+                                                    type='button'
+                                                    onClick={() => setShowAllOtherCities((prev) => !prev)}
+                                                    className='mt-3 w-full text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors'
+                                                >
+                                                    {showAllOtherCities ? 'Show Less' : `Show More (${otherCities.length - 10} more)`}
+                                                </button>
+                                            )}
                                         </motion.div>
                                     )}
                                 </div>
