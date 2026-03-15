@@ -302,7 +302,7 @@ export default function StateClient() {
                                                         {filtered.map((city) => (
                                                             <Link
                                                                 key={city.slug}
-                                                                href={city.isMetro ? `/metro-cities/${city.slug}` : `/${city.slug}`}
+                                                                href={`/${city.slug}`}
                                                                 className={`flex items-center gap-2 px-4 py-3 ${colors.bg} border ${colors.border} rounded-lg ${colors.hover} hover:shadow-md transition-all duration-300 group`}
                                                             >
                                                                 <IconMapPin className={`w-4 h-4 ${colors.icon}`} />

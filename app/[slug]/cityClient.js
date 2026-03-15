@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { useParams, usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import Header from '@/components/layout/header';
@@ -428,8 +428,6 @@ const CATEGORY_META = {
 export default function CityClientPage() {
     const params = useParams();
     const slug = params.slug;
-    const pathname = usePathname();
-    const isMetroRoute = pathname?.startsWith('/metro-cities/');
 
     const [city, setCity] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -444,10 +442,7 @@ export default function CityClientPage() {
     useEffect(() => {
         async function fetchCity() {
             try {
-                const cityUrl = isMetroRoute
-                    ? `${API_BASE}/cities/metro/${slug}`
-                    : `${API_BASE}/cities/${slug}`;
-                const res = await fetch(cityUrl);
+                const res = await fetch(`${API_BASE}/cities/${slug}`);
                 const json = await res.json();
                 if (json.success && json.data) {
                     setCity(json.data);
@@ -462,7 +457,7 @@ export default function CityClientPage() {
             }
         }
         if (slug) fetchCity();
-    }, [slug, isMetroRoute]);
+    }, [slug]);
 
     useEffect(() => {
         if (city && city.category_name) {
@@ -888,7 +883,7 @@ export default function CityClientPage() {
                                                 {otherCities.map((c, index) => (
                                                     <Link
                                                         key={index}
-                                                        href={c.isMetro ? `/metro-cities/${c.slug}` : `/${c.slug}`}
+                                                        href={`/${c.slug}`}
                                                         className='flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors group'
                                                     >
                                                         <span className='text-sm font-medium text-gray-800 group-hover:text-gray-900'>{c.name}</span>

@@ -288,7 +288,7 @@ export default function SocialMediaMarketPage() {
                                                                     {state.cities.map((city) => (
                                                                         <Link
                                                                             key={city.slug}
-                                                                            href={city.isMetro ? `/metro-cities/${city.slug}` : `/${city.slug}`}
+                                                                            href={`/${city.slug}`}
                                                                             className='flex items-center gap-2 px-4 py-3 bg-pink-50 border border-pink-200 rounded-lg hover:bg-pink-100 hover:shadow-md transition-all duration-300 group'
                                                                         >
                                                                             <IconMapPin className='w-4 h-4 text-pink-600' />
@@ -371,7 +371,7 @@ export default function SocialMediaMarketPage() {
                                                 {sidebarCities.map((city, index) => (
                                                     <Link
                                                         key={index}
-                                                        href={city.isMetro ? `/metro-cities/${city.slug}` : `/${city.slug}`}
+                                                        href={`/${city.slug}`}
                                                         className='flex items-center justify-between px-3 py-2 rounded-lg hover:bg-pink-50 transition-colors group'
                                                     >
                                                         <div>

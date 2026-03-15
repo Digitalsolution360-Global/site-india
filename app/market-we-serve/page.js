@@ -198,6 +198,12 @@ export default function MarketWeServePage() {
                         <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
                             Select a service category to explore our coverage across Indian states and cities.
                         </p>
+                        <div className='mt-6'>
+                            <Link href='/metro-cities' className='inline-flex items-center gap-2 px-5 py-3 bg-linear-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 hover:shadow-xl'>
+                                Explore Metro Cities Directory
+                                <IconArrowRight className='w-4 h-4' />
+                            </Link>
+                        </div>
                     </motion.div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>

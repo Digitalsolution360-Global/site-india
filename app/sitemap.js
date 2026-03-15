@@ -6,6 +6,7 @@ const staticRoutes = [
   "/",
   "/about-us",
   "/services",
+  "/metro-cities",
   "/contact-us",
   "/blog",
   "/careers",
@@ -264,7 +265,7 @@ export default async function sitemap() {
 
   // Metro city routes
   const metroCityEntries = metroCitySlugs.map((slug) => ({
-    url: `${BASE_URL}/metro-cities/${slug}`,
+    url: `${BASE_URL}/${slug}`,
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.6,

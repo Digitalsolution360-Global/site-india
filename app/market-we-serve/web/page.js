@@ -288,7 +288,7 @@ export default function WebDevelopmentMarketPage() {
                                                                     {state.cities.map((city) => (
                                                                         <Link
                                                                             key={city.slug}
-                                                                            href={city.isMetro ? `/metro-cities/${city.slug}` : `/${city.slug}`}
+                                                                            href={`/${city.slug}`}
                                                                             className='flex items-center gap-2 px-4 py-3 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 hover:shadow-md transition-all duration-300 group'
                                                                         >
                                                                             <IconMapPin className='w-4 h-4 text-purple-600' />
@@ -386,7 +386,7 @@ export default function WebDevelopmentMarketPage() {
                                                 {sidebarCities.map((city) => (
                                                     <Link
                                                         key={city.slug}
-                                                        href={city.isMetro ? `/metro-cities/${city.slug}` : `/${city.slug}`}
+                                                        href={`/${city.slug}`}
                                                         className='flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-all duration-300 group'
                                                     >
                                                         <IconMapPin className='w-4 h-4 text-purple-600' />
