@@ -313,15 +313,22 @@ export async function generateMetadata({ params }) {
     const ogImage = city.image || catSchema.image;
 
     return {
-      title,
+      title: { absolute: title },
       description,
       keywords,
+      alternates: {
+        canonical: `${SITE_URL}/${slug}`,
+      },
       openGraph: {
         title,
         description,
         url: `${SITE_URL}/${slug}`,
         images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
         type: 'website',
+        siteName: 'Digital Solution 360',
+      },
+      other: {
+        'og:keywords': keywords,
       },
       twitter: {
         card: 'summary_large_image',
@@ -341,15 +348,22 @@ export async function generateMetadata({ params }) {
     const ogImage = state.image || '/logo.png';
 
     return {
-      title,
+      title: { absolute: title },
       description,
       keywords,
+      alternates: {
+        canonical: `${SITE_URL}/${slug}`,
+      },
       openGraph: {
         title,
         description,
         url: `${SITE_URL}/${slug}`,
         images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
         type: 'website',
+        siteName: 'Digital Solution 360',
+      },
+      other: {
+        'og:keywords': keywords,
       },
       twitter: {
         card: 'summary_large_image',
@@ -368,14 +382,18 @@ export async function generateMetadata({ params }) {
     const ogImage = post.featured_image || '/logo.png';
 
     return {
-      title,
+      title: { absolute: title },
       description,
+      alternates: {
+        canonical: `${SITE_URL}/${slug}`,
+      },
       openGraph: {
         title,
         description,
         url: `${SITE_URL}/${slug}`,
         images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
         type: 'article',
+        siteName: 'Digital Solution 360',
       },
       twitter: {
         card: 'summary_large_image',
@@ -396,15 +414,22 @@ export async function generateMetadata({ params }) {
     const ogImage = serviceMatch.subService.heroImage || '/logo.png';
 
     return {
-      title,
+      title: { absolute: title },
       description,
       keywords,
+      alternates: {
+        canonical: `${SITE_URL}/${slug}`,
+      },
       openGraph: {
         title,
         description,
         url: `${SITE_URL}/${slug}`,
         images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
         type: 'website',
+        siteName: 'Digital Solution 360',
+      },
+      other: {
+        'og:keywords': keywords,
       },
       twitter: {
         card: 'summary_large_image',

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Website Development Services Across India | DigitalSolution 360',
+  title: { absolute: 'Website Development Services Across India | DigitalSolution 360' },
   description:
     'Professional website development services including custom websites, business websites, and eCommerce solutions by DigitalSolution 360.',
   keywords:

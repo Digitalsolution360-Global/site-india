@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Digital Marketing Services Across India | DigitalSolution 360',
+  title: { absolute: 'Digital Marketing Services Across India | DigitalSolution 360' },
   description:
     'Grow your business with expert digital marketing services including SEO, PPC, social media marketing, and performance marketing by DigitalSolution 360.',
   keywords:

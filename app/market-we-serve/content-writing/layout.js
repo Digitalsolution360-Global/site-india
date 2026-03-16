@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Content Writing Services | SEO Content Writing - DigitalSolution 360',
+  title: { absolute: 'Content Writing Services | SEO Content Writing - DigitalSolution 360' },
   description:
     'Professional SEO content writing services for blogs, websites, and marketing campaigns to boost rankings and engagement.',
   keywords:

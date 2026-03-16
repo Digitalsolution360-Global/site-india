@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Google My Business Optimization Services | DigitalSolution 360',
+  title: { absolute: 'Google My Business Optimization Services | DigitalSolution 360' },
   description:
     'Improve your local visibility with professional Google My Business optimization services. Get more calls, leads, and local traffic with DigitalSolution 360.',
   keywords:

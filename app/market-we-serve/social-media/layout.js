@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Social Media Marketing Services | DigitalSolution 360',
+  title: { absolute: 'Social Media Marketing Services | DigitalSolution 360' },
   description:
     'Boost your brand visibility with social media marketing services including Facebook, Instagram, LinkedIn, and YouTube marketing.',
   keywords:

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Markets We Serve | Digital Marketing Services Across India - DigitalSolution 360',
+  title: { absolute: 'Markets We Serve | Digital Marketing Services Across India - DigitalSolution 360' },
   description:
     'Explore the markets served by DigitalSolution 360 across India. We provide digital marketing, SEO, website development, content writing, and social media services to businesses in multiple cities and states.',
   keywords:

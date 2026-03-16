@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'WordPress Development Services | DigitalSolution 360',
+  title: { absolute: 'WordPress Development Services | DigitalSolution 360' },
   description:
     'Custom WordPress development services including business websites, blog sites, and eCommerce solutions by DigitalSolution 360.',
   keywords:
