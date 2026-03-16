@@ -134,3 +134,11 @@ button{
     @apply bg-background text-foreground;
   }
 }
+
+.blog-body a {
+  color: #2563eb;
+}
+
+.blog-body a:hover {
+  color: #1d4ed8;
+}

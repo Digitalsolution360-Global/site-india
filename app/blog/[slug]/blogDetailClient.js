@@ -247,12 +247,12 @@ export default function BlogDetailClient() {
               {/* Article Body */}
               <article className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 mb-10">
                 <div
-                  className="prose prose-lg max-w-none
+                  className="blog-body prose prose-lg max-w-none
                     prose-headings:text-gray-900 prose-headings:font-bold
                     prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-100 prose-h2:pb-3
                     prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
                     prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-4
-                    prose-a:text-teal-600 prose-a:underline hover:prose-a:text-teal-700
+                    prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-700
                     prose-img:rounded-xl prose-img:shadow-md
                     prose-ul:pl-6 prose-li:text-gray-600 prose-li:mb-1
                     prose-strong:text-gray-800
