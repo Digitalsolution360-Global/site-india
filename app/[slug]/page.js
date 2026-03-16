@@ -42,6 +42,219 @@ const CATEGORY_SCHEMA = {
   },
 };
 
+const ROOT_SUBSERVICE_META = {
+  "performance-marketing": {
+    title: "Performance Marketing Services | DigitalSolution 360",
+    description: "Drive measurable results with data-driven performance marketing campaigns designed to increase conversions and ROI.",
+    keywords: "performance marketing services, conversion marketing, roi marketing",
+  },
+  "growth-marketing": {
+    title: "Growth Marketing Services | DigitalSolution 360",
+    description: "Professional growth marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "growth, marketing, growth marketing services, DigitalSolution 360",
+  },
+  "google-ads-management": {
+    title: "Google Ads Management Services | DigitalSolution 360",
+    description: "Professional google ads management services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "google, ads, management, google ads management services, DigitalSolution 360",
+  },
+  "facebook-instagram-ads": {
+    title: "Facebook Instagram Ads Services | DigitalSolution 360",
+    description: "Professional facebook instagram ads services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "facebook, instagram, ads, facebook instagram ads services, DigitalSolution 360",
+  },
+  "web-design": {
+    title: "Web Design Services | DigitalSolution 360",
+    description: "Professional web design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "web, design, web design services, DigitalSolution 360",
+  },
+  "ui-ux-design": {
+    title: "Ui Ux Design Services | DigitalSolution 360",
+    description: "Professional ui ux design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ui, ux, design, ui ux design services, DigitalSolution 360",
+  },
+  "wordpress-development": {
+    title: "Wordpress Development Services | DigitalSolution 360",
+    description: "Professional wordpress development services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "wordpress, development, wordpress development services, DigitalSolution 360",
+  },
+  "shopify-development": {
+    title: "Shopify Development Services | DigitalSolution 360",
+    description: "Professional shopify development services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "shopify, development, shopify development services, DigitalSolution 360",
+  },
+  "landing-page-design": {
+    title: "Landing Page Design Services | DigitalSolution 360",
+    description: "Professional landing page design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "landing, page, design, landing page design services, DigitalSolution 360",
+  },
+  "local-seo": {
+    title: "Local Seo Services | DigitalSolution 360",
+    description: "Professional local seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "local, seo, local seo services, DigitalSolution 360",
+  },
+  "ecommerce-seo": {
+    title: "Ecommerce Seo Services | DigitalSolution 360",
+    description: "Professional ecommerce seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ecommerce, seo, ecommerce seo services, DigitalSolution 360",
+  },
+  "technical-seo": {
+    title: "Technical Seo Services | DigitalSolution 360",
+    description: "Professional technical seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "technical, seo, technical seo services, DigitalSolution 360",
+  },
+  "on-page-seo": {
+    title: "On Page Seo Services | DigitalSolution 360",
+    description: "Professional on page seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "on, page, seo, on page seo services, DigitalSolution 360",
+  },
+  "off-page-seo": {
+    title: "Off Page Seo Services | DigitalSolution 360",
+    description: "Professional off page seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "off, page, seo, off page seo services, DigitalSolution 360",
+  },
+  "seo-audit": {
+    title: "Seo Audit Services | DigitalSolution 360",
+    description: "Professional seo audit services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "seo, audit, seo audit services, DigitalSolution 360",
+  },
+  "ai-seo": {
+    title: "Ai Seo Services | DigitalSolution 360",
+    description: "Professional ai seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ai, seo, ai seo services, DigitalSolution 360",
+  },
+  "brand-identity-design": {
+    title: "Brand Identity Design Services | DigitalSolution 360",
+    description: "Professional brand identity design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "brand, identity, design, brand identity design services, DigitalSolution 360",
+  },
+  "logo-design": {
+    title: "Logo Design Services | DigitalSolution 360",
+    description: "Professional logo design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "logo, design, logo design services, DigitalSolution 360",
+  },
+  "graphic-design": {
+    title: "Graphic Design Services | DigitalSolution 360",
+    description: "Professional graphic design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "graphic, design, graphic design services, DigitalSolution 360",
+  },
+  "creative-for-ads": {
+    title: "Creative For Ads Services | DigitalSolution 360",
+    description: "Professional creative for ads services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "creative, for, ads, creative for ads services, DigitalSolution 360",
+  },
+  "performance-creatives": {
+    title: "Performance Creatives Services | DigitalSolution 360",
+    description: "Professional performance creatives services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "performance, creatives, performance creatives services, DigitalSolution 360",
+  },
+  "social-media-management": {
+    title: "Social Media Management Services | DigitalSolution 360",
+    description: "Professional social media management services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "social, media, management, social media management services, DigitalSolution 360",
+  },
+  "instagram-marketing": {
+    title: "Instagram Marketing Services | DigitalSolution 360",
+    description: "Professional instagram marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "instagram, marketing, instagram marketing services, DigitalSolution 360",
+  },
+  "facebook-marketing": {
+    title: "Facebook Marketing Services | DigitalSolution 360",
+    description: "Professional facebook marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "facebook, marketing, facebook marketing services, DigitalSolution 360",
+  },
+  "linkedin-marketing": {
+    title: "Linkedin Marketing Services | DigitalSolution 360",
+    description: "Professional linkedin marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "linkedin, marketing, linkedin marketing services, DigitalSolution 360",
+  },
+  "youtube-marketing": {
+    title: "Youtube Marketing Services | DigitalSolution 360",
+    description: "Professional youtube marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "youtube, marketing, youtube marketing services, DigitalSolution 360",
+  },
+  "influencer-marketing": {
+    title: "Influencer Marketing Services | DigitalSolution 360",
+    description: "Professional influencer marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "influencer, marketing, influencer marketing services, DigitalSolution 360",
+  },
+  "short-video-marketing": {
+    title: "Short Video Marketing Services | DigitalSolution 360",
+    description: "Professional short video marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "short, video, marketing, short video marketing services, DigitalSolution 360",
+  },
+  "marketing-automation": {
+    title: "Marketing Automation Services | DigitalSolution 360",
+    description: "Professional marketing automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "marketing, automation, marketing automation services, DigitalSolution 360",
+  },
+  "crm-automation": {
+    title: "Crm Automation Services | DigitalSolution 360",
+    description: "Professional crm automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "crm, automation, crm automation services, DigitalSolution 360",
+  },
+  "lead-automation": {
+    title: "Lead Automation Services | DigitalSolution 360",
+    description: "Professional lead automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "lead, automation, lead automation services, DigitalSolution 360",
+  },
+  "email-automation": {
+    title: "Email Automation Services | DigitalSolution 360",
+    description: "Professional email automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "email, automation, email automation services, DigitalSolution 360",
+  },
+  "sales-funnel-automation": {
+    title: "Sales Funnel Automation Services | DigitalSolution 360",
+    description: "Professional sales funnel automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "sales, funnel, automation, sales funnel automation services, DigitalSolution 360",
+  },
+  "ai-marketing-automation": {
+    title: "Ai Marketing Automation Services | DigitalSolution 360",
+    description: "Professional ai marketing automation services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ai, marketing, automation, ai marketing automation services, DigitalSolution 360",
+  },
+  "digital-marketing-managed": {
+    title: "Digital Marketing Managed Services | DigitalSolution 360",
+    description: "Professional digital marketing managed services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "digital, marketing, managed, digital marketing managed services, DigitalSolution 360",
+  },
+  "seo-managed": {
+    title: "Seo Managed Services | DigitalSolution 360",
+    description: "Professional seo managed services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "seo, managed, seo managed services, DigitalSolution 360",
+  },
+  "ppc-managed": {
+    title: "Ppc Managed Services | DigitalSolution 360",
+    description: "Professional ppc managed services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ppc, managed, ppc managed services, DigitalSolution 360",
+  },
+  "social-media-managed": {
+    title: "Social Media Managed Services | DigitalSolution 360",
+    description: "Professional social media managed services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "social, media, managed, social media managed services, DigitalSolution 360",
+  },
+  "startup-marketing": {
+    title: "Startup Marketing Services | DigitalSolution 360",
+    description: "Professional startup marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "startup, marketing, startup marketing services, DigitalSolution 360",
+  },
+  "saas-marketing": {
+    title: "Saas Marketing Services | DigitalSolution 360",
+    description: "Professional saas marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "saas, marketing, saas marketing services, DigitalSolution 360",
+  },
+  "ecommerce-marketing": {
+    title: "Ecommerce Marketing Services | DigitalSolution 360",
+    description: "Professional ecommerce marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "ecommerce, marketing, ecommerce marketing services, DigitalSolution 360",
+  },
+  "b2b-marketing": {
+    title: "B2B Marketing Services | DigitalSolution 360",
+    description: "Professional b2b marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    keywords: "b2b, marketing, b2b marketing services, DigitalSolution 360",
+  },
+};
+
 async function fetchCity(slug) {
   try {
     const res = await fetch(`${API_BASE}/cities/${slug}`, {
@@ -176,13 +389,16 @@ export async function generateMetadata({ params }) {
   // Root-level sub-service page
   const serviceMatch = findSubServiceBySlug(slug);
   if (serviceMatch) {
-    const title = `${serviceMatch.subService.name} - Digital Solution 360`;
-    const description = serviceMatch.subService.description;
+    const configuredMeta = ROOT_SUBSERVICE_META[slug];
+    const title = configuredMeta?.title || `${serviceMatch.subService.name} - Digital Solution 360`;
+    const description = configuredMeta?.description || serviceMatch.subService.description;
+    const keywords = configuredMeta?.keywords || `${serviceMatch.subService.name}, DigitalSolution 360`;
     const ogImage = serviceMatch.subService.heroImage || '/logo.png';
 
     return {
       title,
       description,
+      keywords,
       openGraph: {
         title,
         description,
