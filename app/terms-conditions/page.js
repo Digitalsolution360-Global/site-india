@@ -3,9 +3,11 @@ import Footer from "@/components/layout/footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms & Conditions - Digital Solution 360",
+  title: "Terms and Conditions | DigitalSolution 360",
   description:
-    "Read the Terms and Conditions for using Digital Solution 360 website and digital marketing, SEO, and web development services.",
+    "Review the terms and conditions for using DigitalSolution 360 services, website, and digital marketing solutions.",
+  keywords:
+    "terms and conditions digitalsolution360, website terms policy",
   alternates: {
     canonical: "https://www.digitalsolution360.in/terms-conditions",
   },

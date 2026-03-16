@@ -3,9 +3,11 @@ import Footer from "@/components/layout/footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy - Digital Solution 360",
+  title: "Privacy Policy | DigitalSolution 360",
   description:
-    "Read the Privacy Policy of Digital Solution 360. Learn how we collect, use, and protect your personal information when you use our website and digital marketing services.",
+    "Read the privacy policy of DigitalSolution 360 to understand how we collect, use, and protect your personal information.",
+  keywords:
+    "privacy policy digitalsolution360, data protection policy, website privacy policy",
   alternates: {
     canonical: "https://www.digitalsolution360.in/privacy-policy",
   },
