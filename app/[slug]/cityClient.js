@@ -883,7 +883,7 @@ export default function CityClientPage() {
                                         >
                                             <h3 className='text-lg font-bold text-gray-900 mb-4 flex items-center gap-2'>
                                                 <IconMapPin className={`w-5 h-5 ${theme.iconText}`} />
-                                                Other Cities in {stateName}
+                                                Popular Cities in {cityName}
                                             </h3>
                                             <div className='space-y-2'>
                                                 {visibleOtherCities.map((c, index) => (

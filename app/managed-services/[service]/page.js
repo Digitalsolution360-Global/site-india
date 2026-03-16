@@ -1,3 +1,6 @@
-"use client";
-import ServiceDetailPage from '@/components/services/ServiceDetailPage';
-export default function Page() { return <ServiceDetailPage categorySlug="managed-services" />; }
+import { permanentRedirect } from 'next/navigation';
+
+export default async function Page({ params }) {
+	const { service } = await params;
+	permanentRedirect(`/${service}`);
+}

@@ -1,6 +1,8 @@
 import CityClient from "./cityClient";
 import StateClient from "./stateClient";
 import BlogDetailClient from "../blog/[slug]/blogDetailClient";
+import ServiceDetailPage from "@/components/services/ServiceDetailPage";
+import serviceCategories from "@/app/services/serviceData";
 import { notFound } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
@@ -70,6 +72,16 @@ async function fetchState(slug) {
     const json = await res.json();
     if (json.success && json.data) return json.data;
   } catch {}
+  return null;
+}
+
+function findSubServiceBySlug(slug) {
+  for (const category of serviceCategories) {
+    const subService = category.subServices?.find((service) => service.slug === slug);
+    if (subService) {
+      return { category, subService };
+    }
+  }
   return null;
 }
 
@@ -161,6 +173,32 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  // Root-level sub-service page
+  const serviceMatch = findSubServiceBySlug(slug);
+  if (serviceMatch) {
+    const title = `${serviceMatch.subService.name} - Digital Solution 360`;
+    const description = serviceMatch.subService.description;
+    const ogImage = serviceMatch.subService.heroImage || '/logo.png';
+
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `${SITE_URL}/${slug}`,
+        images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: [ogImage],
+      },
+    };
+  }
+
   return {};
 }
 
@@ -179,6 +217,17 @@ export default async function Page({ params }) {
     const post = await fetchBlog(slug);
     if (post) {
       return <BlogDetailClient />;
+    }
+
+    // Check if it's a root-level sub-service page
+    const serviceMatch = findSubServiceBySlug(slug);
+    if (serviceMatch) {
+      return (
+        <ServiceDetailPage
+          categorySlug={serviceMatch.category.slug}
+          serviceSlug={serviceMatch.subService.slug}
+        />
+      );
     }
     notFound();
   }

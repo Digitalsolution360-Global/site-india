@@ -359,7 +359,7 @@ export default function CategoryPage({ categorySlug }) {
                             const SubIcon = sub.icon;
                             return (
                                 <motion.div key={sub.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-                                    <Link href={`/${cat.slug}/${sub.slug}`} className='block bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-100'>
+                                    <Link href={`/${sub.slug}`} className='block bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-100'>
                                         <div className={`w-14 h-14 ${theme.iconBg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                                             <SubIcon className={`w-7 h-7 ${theme.iconText}`} stroke={1.5} />
                                         </div>

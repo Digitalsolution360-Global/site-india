@@ -158,7 +158,7 @@ export default function ServicesPage() {
                                             const SubIcon = sub.icon;
                                             return (
                                                 <motion.div key={sub.slug} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: subIdx * 0.05 }}>
-                                                    <Link href={`/${cat.slug}/${sub.slug}`}
+                                                    <Link href={`/${sub.slug}`}
                                                         className={`block bg-white rounded-xl p-5 border ${theme.border} ${theme.hoverBorder} hover:shadow-lg transition-all duration-300 group h-full`}>
                                                         <div className={`w-10 h-10 ${theme.iconBg} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                                                             <SubIcon className={`w-5 h-5 ${theme.iconText}`} stroke={1.5} />

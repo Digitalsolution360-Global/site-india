@@ -22,11 +22,12 @@ const COLOR_MAP = {
     teal: { gradient: 'from-slate-900/95 via-slate-800/90 to-teal-900/70', ctaGrad: 'from-slate-900 to-teal-900', badge: 'bg-teal-100 text-teal-800', iconBg: 'bg-teal-100', iconText: 'text-teal-600', stat: 'bg-teal-50', ring: 'focus:ring-teal-500', btn: 'bg-teal-600 hover:bg-teal-700', lightBg: 'bg-teal-50', border: 'border-teal-200', hoverBg: 'hover:bg-teal-50' },
 };
 
-export default function ServiceDetailPage({ categorySlug }) {
-    const { service } = useParams();
+export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
+    const params = useParams();
+    const resolvedServiceSlug = serviceSlug || params?.service || params?.slug;
     const cat = serviceCategories.find(c => c.slug === categorySlug);
     if (!cat) return notFound();
-    const sub = cat.subServices.find(s => s.slug === service);
+    const sub = cat.subServices.find(s => s.slug === resolvedServiceSlug);
     if (!sub) return notFound();
 
     const theme = COLOR_MAP[cat.color] || COLOR_MAP.blue;
@@ -65,7 +66,7 @@ export default function ServiceDetailPage({ categorySlug }) {
         setTimeout(() => setFormStatus(null), 3000);
     };
 
-    const siblings = cat.subServices.filter(s => s.slug !== service);
+    const siblings = cat.subServices.filter(s => s.slug !== resolvedServiceSlug);
 
     const faqs = [
         { q: `What is ${sub.name} and how can it help my business?`, a: `${sub.name} is a specialized service that helps businesses ${sub.description.toLowerCase().slice(0, 150)}. Our expert team uses proven strategies and the latest tools to deliver measurable results, whether you're a startup or an established enterprise.` },
@@ -230,7 +231,7 @@ export default function ServiceDetailPage({ categorySlug }) {
                                             {siblings.slice(0, 8).map((sib, index) => {
                                                 const SibIcon = sib.icon;
                                                 return (
-                                                    <Link key={index} href={`/${cat.slug}/${sib.slug}`}
+                                                    <Link key={index} href={`/${sib.slug}`}
                                                         className={`flex items-center justify-between px-3 py-2 rounded-lg ${theme.hoverBg} transition-colors group`}>
                                                         <div className='flex items-center gap-2'>
                                                             <SibIcon className={`w-4 h-4 ${theme.iconText}`} stroke={1.5} />
