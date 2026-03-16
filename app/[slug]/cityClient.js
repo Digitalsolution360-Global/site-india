@@ -472,17 +472,31 @@ export default function CityClientPage() {
             };
             const endpoint = marketMap[city.category_name];
             if (endpoint) {
-                fetch(`${API_BASE}/market/${endpoint}`)
-                    .then(res => res.json())
-                    .then(json => {
-                        if (json.success) {
-                            const currentState = json.data.find(s => s.name === city.state_name);
-                            if (currentState) {
-                                setOtherCities(currentState.cities.filter(c => c.slug !== slug));
+                if (city.is_metrocity && city.parent_city_slug) {
+                    fetch(`${API_BASE}/market/${endpoint}/metrocities`)
+                        .then(res => res.json())
+                        .then(json => {
+                            if (json.success) {
+                                const siblings = (json.data || [])
+                                    .filter(m => m.parent_city_slug === city.parent_city_slug && m.metrocity_slug !== slug)
+                                    .map(m => ({ name: m.metrocity, slug: m.metrocity_slug }));
+                                setOtherCities(siblings);
                             }
-                        }
-                    })
-                    .catch(() => { });
+                        })
+                        .catch(() => { });
+                } else {
+                    fetch(`${API_BASE}/market/${endpoint}`)
+                        .then(res => res.json())
+                        .then(json => {
+                            if (json.success) {
+                                const currentState = json.data.find(s => s.name === city.state_name);
+                                if (currentState) {
+                                    setOtherCities(currentState.cities.filter(c => c.slug !== slug));
+                                }
+                            }
+                        })
+                        .catch(() => { });
+                }
             }
         }
     }, [city, slug]);
@@ -633,6 +647,9 @@ export default function CityClientPage() {
     const pageKeywords = city.meta_keyword?.trim() || catMeta.keywordsTemplate.replace(/\{cityName\}/g, cityName);
     const ogKeywords = `${pageKeywords}, np digital marketing, gmb, semrush`;
     const visibleOtherCities = showAllOtherCities ? otherCities : otherCities.slice(0, 10);
+    const otherCitiesTitle = city.is_metrocity && city.parent_city
+        ? `Other Cities in ${city.parent_city}`
+        : `Popular Cities in ${cityName}`;
 
     /* ── Page ── */
     return (
@@ -883,7 +900,7 @@ export default function CityClientPage() {
                                         >
                                             <h3 className='text-lg font-bold text-gray-900 mb-4 flex items-center gap-2'>
                                                 <IconMapPin className={`w-5 h-5 ${theme.iconText}`} />
-                                                Popular Cities in {cityName}
+                                                {otherCitiesTitle}
                                             </h3>
                                             <div className='space-y-2'>
                                                 {visibleOtherCities.map((c, index) => (
