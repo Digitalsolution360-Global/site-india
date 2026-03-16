@@ -96,6 +96,33 @@ export default function MetroCitiesPage() {
         return nextData;
     }, [categoryData, searchQuery]);
 
+    const groupedCategoryData = useMemo(() => {
+        const grouped = {};
+
+        Object.entries(filteredCategoryData).forEach(([key, items]) => {
+            const stateMap = {};
+
+            (items || []).forEach((item) => {
+                const stateName = item.state_name || 'Other States';
+                if (!stateMap[stateName]) {
+                    stateMap[stateName] = [];
+                }
+                stateMap[stateName].push(item);
+            });
+
+            const sortedStates = Object.keys(stateMap)
+                .sort((a, b) => a.localeCompare(b))
+                .map((stateName) => ({
+                    stateName,
+                    items: stateMap[stateName].sort((a, b) => (a.metrocity || '').localeCompare(b.metrocity || '')),
+                }));
+
+            grouped[key] = sortedStates;
+        });
+
+        return grouped;
+    }, [filteredCategoryData]);
+
     const totalMetroCities = Object.values(categoryData).reduce((sum, items) => sum + items.length, 0);
     const categoriesWithData = CATEGORY_CONFIG.filter((category) => (filteredCategoryData[category.key] || []).length > 0);
 
@@ -185,6 +212,7 @@ export default function MetroCitiesPage() {
                             <div className='space-y-6'>
                                 {categoriesWithData.map((category, index) => {
                                     const items = filteredCategoryData[category.key] || [];
+                                    const stateGroups = groupedCategoryData[category.key] || [];
                                     const isExpanded = expandedCategory === category.key;
                                     const colors = COLOR_MAP[category.color] || COLOR_MAP.blue;
                                     const Icon = category.icon;
@@ -224,20 +252,35 @@ export default function MetroCitiesPage() {
                                                         className='overflow-hidden'
                                                     >
                                                         <div className='px-6 pb-6 pt-2'>
-                                                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
-                                                                {items.map((item) => (
-                                                                    <Link
-                                                                        key={item.metrocity_slug}
-                                                                        href={`/${item.metrocity_slug}`}
-                                                                        className={`flex items-start gap-3 px-4 py-4 ${colors.bg} border ${colors.border} rounded-lg ${colors.hover} hover:shadow-md transition-all duration-300 group`}
-                                                                    >
-                                                                        <IconMapPin className={`w-4 h-4 ${colors.icon} mt-0.5 shrink-0`} />
-                                                                        <div className='min-w-0 flex-1'>
-                                                                            <div className='text-gray-900 font-medium group-hover:text-black truncate'>{item.metrocity}</div>
-                                                                            <div className='text-xs text-gray-500 truncate'>{item.parent_city}, {item.state_name}</div>
+                                                            <div className='space-y-6'>
+                                                                {stateGroups.map((stateGroup) => (
+                                                                    <div key={stateGroup.stateName}>
+                                                                        <div className='mb-3 flex items-center justify-between border-b border-gray-200 pb-2'>
+                                                                            <h3 className='text-base font-semibold text-gray-900'>
+                                                                                {stateGroup.stateName}
+                                                                            </h3>
+                                                                            <span className='text-xs font-medium text-gray-500'>
+                                                                                {stateGroup.items.length} metro pages
+                                                                            </span>
                                                                         </div>
-                                                                        <IconArrowRight className={`w-4 h-4 ${colors.icon} opacity-0 group-hover:opacity-100 transition-opacity shrink-0`} />
-                                                                    </Link>
+
+                                                                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
+                                                                            {stateGroup.items.map((item) => (
+                                                                                <Link
+                                                                                    key={item.metrocity_slug}
+                                                                                    href={`/${item.metrocity_slug}`}
+                                                                                    className={`flex items-start gap-3 px-4 py-4 ${colors.bg} border ${colors.border} rounded-lg ${colors.hover} hover:shadow-md transition-all duration-300 group`}
+                                                                                >
+                                                                                    <IconMapPin className={`w-4 h-4 ${colors.icon} mt-0.5 shrink-0`} />
+                                                                                    <div className='min-w-0 flex-1'>
+                                                                                        <div className='text-gray-900 font-medium group-hover:text-black truncate'>{item.metrocity}</div>
+                                                                                        <div className='text-xs text-gray-500 truncate'>{item.parent_city}, {item.state_name}</div>
+                                                                                    </div>
+                                                                                    <IconArrowRight className={`w-4 h-4 ${colors.icon} opacity-0 group-hover:opacity-100 transition-opacity shrink-0`} />
+                                                                                </Link>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
                                                                 ))}
                                                             </div>
                                                         </div>
