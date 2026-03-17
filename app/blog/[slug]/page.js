@@ -36,11 +36,11 @@ export async function generateMetadata({ params }) {
   const keywords = post.meta_keyword || "";
 
   const ogImage = post.image
-    ? post.image.startsWith("https")
+    ? post.image.startsWith("http")
       ? post.image
       : `${SITE_URL}${post.image}`
     : `${SITE_URL}/og-default.webp`;
-console.log(`Arpit:${OgImage}`);
+console.log(`Arpit:${ogImage}`);
   return {
     title,
     description,
