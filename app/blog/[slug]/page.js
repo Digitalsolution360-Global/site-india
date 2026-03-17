@@ -6,8 +6,7 @@ const SITE_URL = "https://www.digitalsolution360.in";
 async function fetchPost(slug) {
   try {
     const res = await fetch(`${API_BASE}/posts/${slug}`, {
-       cache: "no-store",
-      
+      next: { revalidate: 3600 },
     });
     const json = await res.json();
     if (json.success && json.data) return json.data;
