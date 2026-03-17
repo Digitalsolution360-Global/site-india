@@ -10,12 +10,14 @@ async function fetchPost(slug) {
     });
     const json = await res.json();
     if (json.success && json.data) return json.data;
-  } catch {}
+  } catch (err) {
+    console.error("Fetch post error:", err);
+  }
   return null;
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await fetchPost(slug);
 
   if (!post) return {};
@@ -24,14 +26,20 @@ export async function generateMetadata({ params }) {
   const description =
     post.meta_description ||
     (post.post_description
-      ? post.post_description.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, 160)
+      ? post.post_description
+          .replace(/<[^>]*>/g, "")
+          .replace(/\s+/g, " ")
+          .trim()
+          .slice(0, 160)
       : "");
+
   const keywords = post.meta_keyword || "";
+
   const ogImage = post.image
     ? post.image.startsWith("http")
       ? post.image
-      : `/og-default.webp`
-    : "/og-default.webp";
+      : `${SITE_URL}${post.image}`
+    : `${SITE_URL}/og-default.webp`;
 
   return {
     title,
@@ -41,8 +49,15 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: `${SITE_URL}/blog/${slug}`,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
