@@ -48,7 +48,7 @@ const ogImage = post.image || `${SITE_URL}/og-default.webp`;
       type: "article",
       images: [
         {
-          url: ogImage,
+          url: "/og-default.webp",
           width: 1200,
           height: 630,
           alt: title,
