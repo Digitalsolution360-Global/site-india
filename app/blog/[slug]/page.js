@@ -6,7 +6,8 @@ const SITE_URL = "https://www.digitalsolution360.in";
 async function fetchPost(slug) {
   try {
     const res = await fetch(`${API_BASE}/posts/${slug}`, {
-      next: { revalidate: 3600 },
+       cache: "no-store",
+      
     });
     const json = await res.json();
     if (json.success && json.data) return json.data;
@@ -48,7 +49,7 @@ const ogImage = post.image || `${SITE_URL}/og-default.webp`;
       type: "article",
       images: [
         {
-          url: "/og-default.webp",
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: title,
