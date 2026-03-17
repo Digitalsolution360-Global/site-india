@@ -446,7 +446,7 @@ function Header() {
             >
                 <div className="flex items-center justify-between px-4 py-3.5">
                     <Link href="/">
-                        <img src="/logo.png" alt="Digital Solution 360" className="h-9" />
+                        <img src="/logo.png" alt="Digital Solution 360" className="h-7" />
                     </Link>
                     <div className="flex items-center gap-2">
                         <button
@@ -495,7 +495,7 @@ function Header() {
                                     { name: 'Services', href: '#', hasDropdown: true },
                                     { name: 'Portfolio', href: '/case-studies' },
                                     { name: 'Careers', href: '/careers' },
-                                    { name: 'Blogs', href: '/blogs' },
+                                    { name: 'Blogs', href: '/blog' },
                                     { name: 'Contact', href: '/contact-us' },
                                 ].map((item, i) => (
                                     <motion.li

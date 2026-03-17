@@ -39,7 +39,7 @@ function Footer() {
         { name: 'Services', href: '/services' },
         { name: 'Portfolio', href: '/case-studies' },
         { name: 'Careers', href: '/careers' },
-        { name: 'Blogs', href: '/blogs' },
+        { name: 'Blogs', href: '/blog' },
         { name: 'Contact', href: '/contact-us' },
     ];
 
