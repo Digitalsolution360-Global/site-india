@@ -9,6 +9,7 @@ import {
     IconArrowRight, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
 } from '@tabler/icons-react';
+import { usePathname } from 'next/navigation';
 
 const COLOR_MAP = {
     blue:    { gradient: 'from-slate-900/95 via-slate-800/90 to-blue-900/70',    ctaGrad: 'from-slate-900 to-blue-900',    badge: 'bg-blue-100 text-blue-800',    iconBg: 'bg-blue-100',    iconText: 'text-blue-600',    ring: 'focus:ring-blue-500',    btn: 'bg-blue-600 hover:bg-blue-700',    lightBg: 'bg-blue-50',    border: 'border-blue-200',    hoverBg: 'hover:bg-blue-50' },
@@ -68,7 +69,7 @@ export default function StaticServicePage({
         setFormData({ name: '', phone: '', email: '', message: '' });
         setTimeout(() => setFormStatus(null), 3000);
     };
-
+    const pathname = usePathname();
     return (
         <>
             <Header />
@@ -116,7 +117,115 @@ export default function StaticServicePage({
                     </motion.div>
                 </div>
             </section>
-
+   {pathname === '/social-media' &&  (<>        
+<section>
+  <div>
+    <div>
+      <div>
+        <h2> Social Media Marketing in Delhi</h2>
+        <p>The world is moving fast towards online marketing using social media platforms. Also, more businesses are showing their interest in collecting maximum attention using various social media marketing tricks. </p>
+        <p> To win in the race of social media marketing, businesses and enterprises should look for the best way to advertise on social media in Delhi to overcome their competitors. You may find different agencies that claim to deliver services but fail in certain instances. To stay out of fraud and cheap options, join the best social media marketing agency in Delhi. </p>
+        <p> With Digital Solution 360, it becomes easier for businesses to connect with people using social media platforms. The best part is that this SMM agency in Delhi provides informative posts and maintains consistency to grab the attention of the maximum audience. </p>
+        <p> Grow your reputation & reach using the best social media to advertise your business: Join Digital Solution 360 </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div>
+    <div>
+      <h2>Social Media Marketing Services We Provide</h2>
+      <p>When various entrepreneurs and startups are seeking their growth over the internet, they love to use proven strategies. The combination of social media and marketing can do the job for you.</p>
+      <p>Social media marketing is one of the best choices to consider for elevating the reach of products and services of any client without fail.</p>
+      <p>However, it is always recommended to go with the proven strategy makers. When it comes to providing successful social media campaigning in Delhi, the name “Digital Marketing 360” pops up first.</p>
+      <p>With the following strategies, businesses and industries can thrive well across various social media platforms.</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <span>64%</span>
+      <p>of consumers express a desire for brands to communicate more authentically.</p>
+    </div>
+    <div>
+      <p>Underscoring that modern consumers value relationships with brands that foster meaningful interactions that resonate on a personal level, as per a study.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div>
+    <h2>Follow Our Social Media Profiles</h2>
+    <p> Stay connected and get the latest updates by following us on Instagram. </p>
+    <div>
+      <a href="https://www.instagram.com/rajnursinghomehapur" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"/>
+        <div>
+          <h3>Rajnursinghomehapur</h3>
+          <p className="text-gray-600">Healthcare updates and news from Raj Nursing Home, Hapur.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/thisisdehi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" className="w-12 h-12 rounded-md" />
+        <div>
+          <h3 className="font-semibold text-lg">This Is Dehi</h3>
+          <p className="text-gray-600">Exploring the vibrant culture and lifestyle of Dehi.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/maxalign.dental" target="_blank" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-left flex gap-4 items-center" data-aos="fade-left" data-aos-delay="500">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" className="w-12 h-12 rounded-md" />
+        <div>
+          <h3>Maxalign Dental</h3>
+          <p>Your smile’s best friend - Maxalign Dental Clinic updates.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Social Media Marketing Services We Provide</h2>
+  <div>
+    <div>
+      <h3>Social Media Strategy Development</h3>
+      <p> Well-defined strategies always give the best results in the end. When clients join Digital Solution 360, we provide customized social media marketing strategies. They always align with the vision of your business, achieve long-term goals, and align with the audience. </p>
+      <p> We analyze your current online presence and elevate its status further. We use different industry-specific trends better than your competitors. Our experts prepare an actionable roadmap so that we can always stay ahead all the time. </p>
+      <p>Let us customize a winning strategy tailored to your business goals today!</p>
+    </div>
+    <div>
+      <h3>Content Creation and Management</h3>
+      <p>Content is the face of your brand and is the most integral part in SMM marketing. With our expert content writers, Digital Solution 360 helps you create engaging posts related to social media. </p>
+      <p>Content is based on infographics, stories, videos, blogs, articles, etc. We highlight your key strengths and engage with the audience effectively. Our team ensures that your brand message reaches every reader, resulting in a higher impact rate. </p>
+    </div>
+    <div>
+      <h3>Facebook Advertising Management</h3>
+      <p> Facebook marketing is one of the most powerful tools in social media marketing. When used wisely, it produces impactful campaigns and raises awareness about the client’s products. </p>
+      <p> From ad copywriting to A/B testing and tracking conversions, we manage it all to ensure maximum ROI. This is the best way to advertise on social media for businesses in any sector. </p>
+    </div>
+    <div>
+      <h3>Social Media Campaign Execution</h3>
+      <p> For any type of business, campaigns can boost growth effectively. As a budget-friendly social media campaign agency, we specialize in raising awareness and engagement. </p>
+      <p> With impact-driven campaigns, you grab maximum attention and turn viewers into loyal customers. Let Digital Solution 360 launch campaigns that carry your brand message far and wide. </p>
+    </div>
+    <div>
+      <h3>Reputation Management</h3>
+      <p> Your business reputation is a strong resource to stay ahead on social media platforms. One negative impression can cause unexpected setbacks, so choosing the right agency is crucial. </p>
+      <p> Digital Solution 360 secures your credibility by monitoring mentions, engaging with feedback, and highlighting positive stories to maintain respect and reliability across platforms. </p>
+    </div>
+    <div>
+      <h3>Analytics & Performance Tracking</h3>
+      <p> Measuring results is crucial to tackle growth in social media marketing. Our experts provide detailed analytics on audience engagement, performance, and ROI. </p>
+      <p> These insights are used to elevate your business further and surpass competitors. Our data-focused approach ensures every promotion is a calculated growth opportunity. </p>
+    </div>
+  </div>
+</section>
+<section>
+  <div>
+    <h2> Partner with a Trusted Social Media Campaign Agency</h2>
+    <p> When you partner with a trusted social media campaign agency, you are not just investing in advertising; you are building lasting relationships with the people that matter. With Digital Solution 360 as your ally, every post, every ad, and every campaign becomes a stepping stone toward stronger community bonds and long-term success. </p>
+    <p> Whether it is corporate social media marketing or promoting business on social media, Digital Solution 360 in Delhi is the best and reliable choice. </p>
+    <a href="/schedule-meeting"> Get Started Today </a>
+  </div>
+</section>
+</>)
+}
             {/* Content: 70/30 layout */}
             <section className='py-16 px-4 md:px-8 lg:px-16'>
                 <div className='max-w-7xl mx-auto'>

@@ -81,7 +81,8 @@ export default function SocialMediaPage() {
     return (
         <StaticServicePage
             name='Willing to Harness The Power of Social Media Marketing?'
-            description='Build your business stature over social media with the cutting-edge social media marketing technologies in Delhi. Digital Solution 360 helps businesses connect with people through informative, consistent, and high-impact social campaigns.'
+            description='Build your business’s stature over social media with the cutting-edge social media marketing technologies in
+        Delhi.'
             heroImage='https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=1600&q=80'
             badge='Social Media Marketing in Delhi'
             color='pink'
