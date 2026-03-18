@@ -1,13 +1,26 @@
 import StaticServicePage from '@/components/services/StaticServicePage';
 
+const title = "Social Media Marketing in Delhi - Digital Solution 360";
+
+const description = "Build your business stature with social media marketing in Delhi. Digital Solution 360 offers strategy, content, campaigns, reputation management, and performance tracking.";
+
 export const metadata = {
-    title: 'Social Media Marketing in Delhi - Digital Solution 360',
-    description:
-        'Build your business stature with social media marketing in Delhi. Digital Solution 360 offers strategy, content, campaigns, reputation management, and performance tracking.',
+    title,
+    description,
     keywords:
         'social media marketing delhi, smm agency delhi, facebook advertising management, social media campaign agency, corporate social media marketing, digital solution 360',
     alternates: {
         canonical: 'https://www.digitalsolution360.in/social-media',
+    },
+     openGraph: {
+      title,
+      description,
+      url: `https://www.digitalsolution360.in/social-media`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
 };
 
