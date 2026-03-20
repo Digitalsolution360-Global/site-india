@@ -12,15 +12,15 @@ export const metadata = {
     alternates: {
         canonical: 'https://www.digitalsolution360.in/social-media',
     },
-     openGraph: {
-      title,
-      description,
-      url: `https://www.digitalsolution360.in/social-media`,
+    openGraph: {
+        title,
+        description,
+        url: `https://www.digitalsolution360.in/social-media`,
     },
     twitter: {
-      card: "summary_large_image",
-      title,
-      description,
+        card: "summary_large_image",
+        title,
+        description,
     },
 };
 
@@ -99,8 +99,8 @@ export default function SocialMediaPage() {
             heroImage='https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=1600&q=80'
             badge='Social Media Marketing in Delhi'
             color='pink'
-            features={features}
-            benefits={benefits}
+            // features={features}
+            // benefits={benefits}
             sidebarTitle='Social Media Marketing Services We Provide'
             sidebarItems={sidebarItems}
             faqs={faqs}
