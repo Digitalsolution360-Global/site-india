@@ -47,7 +47,7 @@ export default function WebsiteCaseStudiesPage() {
             {/* Projects Grid */}
             <section className='py-10 px-4 md:px-8 lg:px-16'>
                 <div className='max-w-7xl mx-auto space-y-12'>
-                    {projects.map((project, index) => (
+                    {projects.reverse().map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 30 }}
