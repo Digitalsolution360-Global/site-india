@@ -43,11 +43,6 @@ const CATEGORY_SCHEMA = {
 };
 
 const ROOT_SUBSERVICE_META = {
-  "performance-marketing": {
-    title: "Performance Marketing Services | DigitalSolution 360",
-    description: "Drive measurable results with data-driven performance marketing campaigns designed to increase conversions and ROI.",
-    keywords: "performance marketing services, conversion marketing, roi marketing",
-  },
   "growth-marketing": {
     title: "Growth Marketing Services | DigitalSolution 360",
     description: "Professional growth marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",

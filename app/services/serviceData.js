@@ -29,15 +29,6 @@ const serviceCategories = [
         ],
         subServices: [
             {
-                slug: 'performance-marketing',
-                name: 'Performance Marketing',
-                description: 'Results-oriented marketing campaigns focused on measurable outcomes — conversions, leads, and revenue. We optimize every rupee spent to deliver maximum ROI.',
-                icon: IconChartBar,
-                heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80',
-                features: ['Conversion Tracking & Attribution', 'Multi-Channel Campaign Management', 'A/B Testing & Optimization', 'ROI-Focused Budget Allocation', 'Real-Time Performance Dashboards', 'Cost Per Acquisition Optimization'],
-                benefits: ['Maximize return on ad spend', 'Data-driven decision making', 'Transparent performance reporting', 'Scalable growth strategies'],
-            },
-            {
                 slug: 'growth-marketing',
                 name: 'Growth Marketing',
                 description: 'Full-funnel growth strategies that combine creative experimentation with data analysis to drive sustainable business growth at every stage.',
