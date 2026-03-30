@@ -8,7 +8,7 @@ import Footer from '@/components/layout/footer';
 // import serviceCategories from './serviceData';
 import {
     IconArrowRight, IconStarFilled, IconChecks, IconUsers, IconTrendingUp,
-    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu, IconTrendingUp, IconTrendingUp, IconBrandGoogle 
+    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu, IconBrandGoogle, IconBrandFacebook 
 } from '@tabler/icons-react';
 const trustStats = [
     { value: '500+', label: 'Projects Delivered', icon: IconChecks },
