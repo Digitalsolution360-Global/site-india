@@ -8,7 +8,7 @@ import Footer from '@/components/layout/footer';
 // import serviceCategories from './serviceData';
 import {
     IconArrowRight, IconStarFilled, IconChecks, IconUsers, IconTrendingUp,
-    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu 
+    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu, IconTrendingUp, IconTrendingUp, IconBrandGoogle 
 } from '@tabler/icons-react';
 const trustStats = [
     { value: '500+', label: 'Projects Delivered', icon: IconChecks },
@@ -315,12 +315,9 @@ export default function PerformanceClientPage(){
                         <h3 className='text-lg font-bold text-gray-900 mb-4'>Our Services</h3>
                         <div className='space-y-2'>
                             {[
-                                { name: "Performance Marketing 2.0", slug: "performance-marketing", icon: IconTrendingUp },
-                                { name: "Google Ads Management", slug: "google-ads", icon: IconSearch },
-                                { name: "Creative Intelligence", slug: "creative-intelligence", icon: IconPalette },
-                                { name: "First-Party Data Solutions", slug: "first-party-data", icon: IconDatabase },
-                                { name: "AI-Driven Bidding", slug: "ai-bidding", icon: IconCpu },
-                                { name: "Server-Side Tracking", slug: "server-tracking", icon: IconCode }
+                                { name: "Facebook & Instagram Ads", slug: "facebook-instagram-ads", icon: IconBrandFacebook },
+                                { name: "Google Ads Management", slug: "google-ads-management", icon: IconBrandGoogle },
+                                { name: "Growth Marketing", slug: "growth-marketing", icon: IconTrendingUp }
                             ].slice(0, 8).map((sib, index) => {
                                 const SibIcon = sib.icon;
                                 return (
