@@ -55,6 +55,31 @@ const serviceCategories = [
                 features: ['Audience Targeting & Lookalikes', 'Creative Ad Design', 'Carousel & Video Ads', 'Lead Generation Campaigns', 'Retargeting & Custom Audiences', 'Campaign Optimization & Scaling'],
                 benefits: ['Access 3B+ active users', 'Advanced audience targeting', 'Visual-first ad formats', 'Lower cost per lead'],
             },
+            {
+                slug: 'performance-marketing',
+                name: 'Performance Marketing 2.0',
+                description: 'Maximize ROI with data-driven Performance Marketing. We combine AI-powered strategies, Google Ads, Meta Ads, and conversion optimization to scale leads, sales, and revenue for startups and growing businesses in India.',
+                icon: IconTrendingUp,
+                heroImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1920&q=80',
+                features: [
+                    'Google Ads (Search, Display & YouTube)',
+                    'Meta Ads (Facebook & Instagram Campaigns)',
+                    'Audience Targeting & Lookalike Audiences',
+                    'Conversion Tracking & Analytics Setup',
+                    'Landing Page Optimization (CRO)',
+                    'Retargeting & Funnel-Based Campaigns',
+                    'A/B Testing & Performance Optimization',
+                    'Campaign Scaling & Budget Management'
+                ],
+                benefits: [
+                    'Higher ROI with data-driven campaigns',
+                    'Quality leads & increased conversions',
+                    'Multi-platform reach (Google + Meta)',
+                    'Lower cost per acquisition (CPA)',
+                    'Real-time tracking & performance insights',
+                    'Scalable growth for your business'
+                ]
+            },
         ],
     },
     {
