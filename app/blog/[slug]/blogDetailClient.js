@@ -58,6 +58,27 @@ export default function BlogDetailClient() {
     })();
   }, [slug]);
 
+  useEffect(() => {
+  if (!post) return;
+  
+  const timer = setTimeout(() => {
+    const buttons = document.querySelectorAll(".faq-btn");
+    buttons.forEach((btn) => {
+      btn.removeEventListener("click", handleClick);
+      btn.addEventListener("click", handleClick);
+    });
+  }, 100);
+  
+  function handleClick() {
+    const content = this.nextElementSibling;
+    const icon = this.querySelector("span");
+    content.classList.toggle("hidden");
+    icon.innerText = content.classList.contains("hidden") ? "+" : "−";
+  }
+  
+  return () => clearTimeout(timer);
+}, [post]);
+
   // Fetch all posts for sidebar
   useEffect(() => {
     (async () => {
