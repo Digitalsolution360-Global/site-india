@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import "./globals.css";
 import {
   IconArrowLeft,
   IconCalendar,
@@ -58,25 +59,43 @@ export default function BlogDetailClient() {
     })();
   }, [slug]);
 
-  useEffect(() => {
+ useEffect(() => {
   if (!post) return;
-  
-  const timer = setTimeout(() => {
-    const buttons = document.querySelectorAll(".faq-btn");
+
+  const buttons = document.querySelectorAll(".faq-btn");
+
+  function handleClick(e) {
+    const btn = e.currentTarget;
+
+    const allContents = document.querySelectorAll(".faq-content");
+    const allIcons = document.querySelectorAll(".faq-icon");
+
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector(".faq-icon");
+
+    const isOpen = content.classList.contains("open");
+
+    // Close all
+    allContents.forEach(c => c.classList.remove("open"));
+    allIcons.forEach(i => i.innerText = "+");
+
+    // Open clicked one
+    if (!isOpen) {
+      content.classList.add("open");
+      icon.innerText = "−";
+    }
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", handleClick);
+  });
+
+  return () => {
     buttons.forEach((btn) => {
       btn.removeEventListener("click", handleClick);
-      btn.addEventListener("click", handleClick);
     });
-  }, 100);
-  
-  function handleClick() {
-    const content = this.nextElementSibling;
-    const icon = this.querySelector("span");
-    content.classList.toggle("hidden");
-    icon.innerText = content.classList.contains("hidden") ? "+" : "−";
-  }
-  
-  return () => clearTimeout(timer);
+  };
+
 }, [post]);
 
   // Fetch all posts for sidebar

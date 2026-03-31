@@ -142,3 +142,14 @@ button{
 .blog-body a:hover {
   color: #1d4ed8;
 }
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+
+.faq-content.open {
+  max-height: 200px; /* adjust if content is bigger */
+  padding-bottom: 24px; /* same as pb-6 */
+}
