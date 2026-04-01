@@ -130,44 +130,43 @@ export default function BlogDetailClient() {
     setTimeout(() => setCopied(false), 2000);
   };
 useEffect(() => {
-  if (!post) return; // wait until content loads
+  if (!post) return;
 
-  const container = document.querySelector(".faq-section");
-
-  if (!container) {
-    console.log("FAQ container not found AFTER post load");
-    return;
-  }
-
-  function handleClick(e) {
+  const handleClick = (e) => {
+    console.log('Arpit');
     const btn = e.target.closest(".faq-btn");
     if (!btn) return;
 
-    const allContents = container.querySelectorAll(".faq-content");
-    const allIcons = container.querySelectorAll(".faq-icon");
+    // find parent faq-item (safe for editor HTML)
+    const faqItem = btn.closest(".faq-item");
+    if (!faqItem) return;
 
-    const content = btn.parentElement.querySelector(".faq-content"); // safer
+    const content = faqItem.querySelector(".faq-content");
     const icon = btn.querySelector(".faq-icon");
+
+    const allItems = document.querySelectorAll(".faq-item");
 
     const isOpen = content.classList.contains("open");
 
     // close all
-    allContents.forEach(c => c.classList.remove("open"));
-    allIcons.forEach(i => i.innerText = "+");
+    allItems.forEach(item => {
+      item.querySelector(".faq-content")?.classList.remove("open");
+      const ic = item.querySelector(".faq-icon");
+      if (ic) ic.innerText = "+";
+    });
 
-    // open clicked
+    // open current
     if (!isOpen) {
       content.classList.add("open");
-      icon.innerText = "−";
+      if (icon) icon.innerText = "−";
     }
-  }
-
-  container.addEventListener("click", handleClick);
-
-  return () => {
-    container.removeEventListener("click", handleClick);
   };
 
+  document.addEventListener("click", handleClick);
+
+  return () => {
+    document.removeEventListener("click", handleClick);
+  };
 }, [post]);
 
   if (loading) {
