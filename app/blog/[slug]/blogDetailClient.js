@@ -130,14 +130,19 @@ export default function BlogDetailClient() {
     setTimeout(() => setCopied(false), 2000);
   };
 useEffect(() => {
-  const container = document.querySelector("section");
+  const container = document.querySelector(".faq-section");
+
+  if (!container) {
+    console.log("FAQ container not found");
+    return;
+  }
 
   function handleClick(e) {
     const btn = e.target.closest(".faq-btn");
     if (!btn) return;
 
-    const allContents = document.querySelectorAll(".faq-content");
-    const allIcons = document.querySelectorAll(".faq-icon");
+    const allContents = container.querySelectorAll(".faq-content");
+    const allIcons = container.querySelectorAll(".faq-icon");
 
     const content = btn.nextElementSibling;
     const icon = btn.querySelector(".faq-icon");
