@@ -130,8 +130,6 @@ export default function BlogDetailClient() {
     setTimeout(() => setCopied(false), 2000);
   };
 useEffect(() => {
-  if (!post) return;
-
   const buttons = document.querySelectorAll(".faq-btn");
 
   function handleClick(e) {
@@ -145,28 +143,27 @@ useEffect(() => {
 
     const isOpen = content.classList.contains("open");
 
-    // Close all
+    // close all
     allContents.forEach(c => c.classList.remove("open"));
     allIcons.forEach(i => i.innerText = "+");
 
-    // Open clicked one
+    // open clicked
     if (!isOpen) {
       content.classList.add("open");
       icon.innerText = "−";
     }
   }
 
-  buttons.forEach((btn) => {
+  buttons.forEach(btn => {
     btn.addEventListener("click", handleClick);
   });
 
   return () => {
-    buttons.forEach((btn) => {
+    buttons.forEach(btn => {
       btn.removeEventListener("click", handleClick);
     });
   };
-
-}, [post]);
+}, []);
 
   if (loading) {
     return (

@@ -142,6 +142,8 @@ button{
 .blog-body a:hover {
   color: #1d4ed8;
 }
+
+
 .faq-content {
   max-height: 0;
   overflow: hidden;
