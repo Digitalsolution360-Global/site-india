@@ -130,10 +130,12 @@ export default function BlogDetailClient() {
     setTimeout(() => setCopied(false), 2000);
   };
 useEffect(() => {
+  if (!post) return; // wait until content loads
+
   const container = document.querySelector(".faq-section");
 
   if (!container) {
-    console.log("FAQ container not found");
+    console.log("FAQ container not found AFTER post load");
     return;
   }
 
@@ -144,7 +146,7 @@ useEffect(() => {
     const allContents = container.querySelectorAll(".faq-content");
     const allIcons = container.querySelectorAll(".faq-icon");
 
-    const content = btn.nextElementSibling;
+    const content = btn.parentElement.querySelector(".faq-content"); // safer
     const icon = btn.querySelector(".faq-icon");
 
     const isOpen = content.classList.contains("open");
@@ -165,7 +167,8 @@ useEffect(() => {
   return () => {
     container.removeEventListener("click", handleClick);
   };
-}, []);
+
+}, [post]);
 
   if (loading) {
     return (
