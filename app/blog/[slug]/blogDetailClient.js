@@ -130,10 +130,11 @@ export default function BlogDetailClient() {
     setTimeout(() => setCopied(false), 2000);
   };
 useEffect(() => {
-  const buttons = document.querySelectorAll(".faq-btn");
+  const container = document.querySelector("section");
 
   function handleClick(e) {
-    const btn = e.currentTarget;
+    const btn = e.target.closest(".faq-btn");
+    if (!btn) return;
 
     const allContents = document.querySelectorAll(".faq-content");
     const allIcons = document.querySelectorAll(".faq-icon");
@@ -154,14 +155,10 @@ useEffect(() => {
     }
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", handleClick);
-  });
+  container.addEventListener("click", handleClick);
 
   return () => {
-    buttons.forEach(btn => {
-      btn.removeEventListener("click", handleClick);
-    });
+    container.removeEventListener("click", handleClick);
   };
 }, []);
 
