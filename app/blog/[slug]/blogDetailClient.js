@@ -58,44 +58,6 @@ export default function BlogDetailClient() {
     })();
   }, [slug]);
 
- useEffect(() => {
-  if (!post) return;
-
-  const buttons = document.querySelectorAll(".faq-btn");
-
-  function handleClick(e) {
-    const btn = e.currentTarget;
-
-    const allContents = document.querySelectorAll(".faq-content");
-    const allIcons = document.querySelectorAll(".faq-icon");
-
-    const content = btn.nextElementSibling;
-    const icon = btn.querySelector(".faq-icon");
-
-    const isOpen = content.classList.contains("open");
-
-    // Close all
-    allContents.forEach(c => c.classList.remove("open"));
-    allIcons.forEach(i => i.innerText = "+");
-
-    // Open clicked one
-    if (!isOpen) {
-      content.classList.add("open");
-      icon.innerText = "−";
-    }
-  }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", handleClick);
-  });
-
-  return () => {
-    buttons.forEach((btn) => {
-      btn.removeEventListener("click", handleClick);
-    });
-  };
-
-}, [post]);
 
   // Fetch all posts for sidebar
   useEffect(() => {
@@ -167,6 +129,44 @@ export default function BlogDetailClient() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+useEffect(() => {
+  if (!post) return;
+
+  const buttons = document.querySelectorAll(".faq-btn");
+
+  function handleClick(e) {
+    const btn = e.currentTarget;
+
+    const allContents = document.querySelectorAll(".faq-content");
+    const allIcons = document.querySelectorAll(".faq-icon");
+
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector(".faq-icon");
+
+    const isOpen = content.classList.contains("open");
+
+    // Close all
+    allContents.forEach(c => c.classList.remove("open"));
+    allIcons.forEach(i => i.innerText = "+");
+
+    // Open clicked one
+    if (!isOpen) {
+      content.classList.add("open");
+      icon.innerText = "−";
+    }
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", handleClick);
+  });
+
+  return () => {
+    buttons.forEach((btn) => {
+      btn.removeEventListener("click", handleClick);
+    });
+  };
+
+}, [post]);
 
   if (loading) {
     return (
