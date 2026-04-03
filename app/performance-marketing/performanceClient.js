@@ -8,14 +8,9 @@ import Footer from '@/components/layout/footer';
 // import serviceCategories from './serviceData';
 import {
     IconArrowRight, IconStarFilled, IconChecks, IconUsers, IconTrendingUp,
-    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu, IconBrandGoogle, IconBrandFacebook 
+    IconBulb, IconRocket, IconCheck, IconPlus, IconMinus, IconUser, IconPhone, IconMail, IconSend, IconBriefcase, IconCode, IconPalette, IconSearch, IconFileText,IconDatabase, IconCpu, IconBrandGoogle, IconBrandFacebook, IconArrowLeft 
 } from '@tabler/icons-react';
-const trustStats = [
-    { value: '500+', label: 'Projects Delivered', icon: IconChecks },
-    { value: '50+', label: 'Industries Served', icon: IconUsers },
-    { value: '4.9/5', label: 'Average Rating', icon: IconStarFilled },
-    { value: '12+', label: 'Years Experience', icon: IconTrendingUp },
-];
+
 
 export default function PerformanceClientPage(){
     const [openFaq, setOpenFaq] = useState(null);
@@ -50,6 +45,7 @@ export default function PerformanceClientPage(){
         setTimeout(() => setFormStatus(null), 3000);
     };
     return (
+
         <>
         <Header />
         {/* Hero */}
@@ -60,9 +56,14 @@ export default function PerformanceClientPage(){
                 </div>
                 <div className='max-w-7xl mx-auto relative z-20 w-full'>
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                    <Link href="/digital-marketing" className='inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 mr-6 transition-colors'>
+                            <IconArrowLeft className='w-5 h-5' />
+                            Back to Digital Marketing
+                        </Link>
                         <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }}
                             className='inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 border border-white/30'>
-                            Our Services
+                            <IconRocket className='w-4 h-4' />
+                            Digital Marketing
                         </motion.span>
                         <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>
                             Performance Marketing 2.0: Why Indian Startups are Switching Agencies This Year
@@ -74,24 +75,27 @@ export default function PerformanceClientPage(){
                             <Link href='/contact-us' className='bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2'>
                                 Get Free Consultation <IconArrowRight className='w-5 h-5' />
                             </Link>
-                            <Link href='#services' className='bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 border border-white/30'>
-                                Explore Services
-                            </Link>
                         </div>
-                        <div className='flex flex-wrap gap-6'>
-                            {trustStats.map((stat, i) => {
-                                const StatIcon = stat.icon;
-                                return (
-                                    <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                                        className='flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20'>
-                                        <StatIcon className='w-5 h-5 text-amber-400' />
-                                        <div>
-                                            <div className='text-xl font-bold text-white'>{stat.value}</div>
-                                            <div className='text-xs text-gray-300'>{stat.label}</div>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
+
+                          <div className='flex flex-wrap gap-6'>
+                            <div className='flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20'>
+                                <div className='flex items-center gap-1'>
+                                    {[...Array(5)].map((_, i) => (
+                                        <IconStarFilled key={i} className='w-4 h-4 text-amber-400' />
+                                    ))}
+                                </div>
+                                <div>
+                                    <div className='text-2xl font-bold text-white'>4.9/5</div>
+                                    <div className='text-sm text-gray-300'>Ratings</div>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20'>
+                                <IconChecks className='w-6 h-6 text-emerald-400' />
+                                <div>
+                                    <div className='text-2xl font-bold text-white'>500+</div>
+                                    <div className='text-sm text-gray-300'>Projects Done</div>
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
