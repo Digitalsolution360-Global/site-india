@@ -103,7 +103,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve/gmb',
         backLabel: 'GMB Services',
-        heroImage: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80',
+        heroImage: '/gmb-h-1.webp',
         benefits: [
             { icon: IconBrandGoogle, title: 'Google Visibility', desc: 'Get found on Google Search and Maps by local customers.' },
             { icon: IconStar, title: 'Reputation Management', desc: 'Build trust with positive reviews and ratings.' },
@@ -155,7 +155,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve/marketing',
         backLabel: 'Digital Marketing',
-        heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80',
+        heroImage: '/digital-h-1.webp',
         benefits: [
             { icon: IconTargetArrow, title: 'Targeted Reach', desc: 'Reach your ideal customers with precision targeting strategies.' },
             { icon: IconChartBar, title: 'Measurable Results', desc: 'Track every rupee spent with detailed analytics and ROI reporting.' },
@@ -209,7 +209,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve/web',
         backLabel: 'Web Development',
-        heroImage: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&q=80',
+        heroImage: '/web-h-1.webp',
         benefits: [
             { icon: IconDeviceMobile, title: 'Responsive Design', desc: 'Websites that look perfect on every device and screen size.' },
             { icon: IconRocket, title: 'Fast Performance', desc: 'Lightning-fast loading speeds for better user experience.' },
@@ -263,7 +263,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
-        heroImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1920&q=80',
+        heroImage: '/market-h-1.webp',
         benefits: [
             { icon: IconUsers, title: 'Audience Growth', desc: 'Grow your social following with organic and paid strategies.' },
             { icon: IconHeart, title: 'Brand Loyalty', desc: 'Build lasting relationships with your audience.' },
@@ -307,7 +307,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
-        heroImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1920&q=80',
+        heroImage: '/market-h-2.webp',
         benefits: [
             { icon: IconPencil, title: 'Professional Writing', desc: 'Expert writers crafting high-quality content for your business.' },
             { icon: IconSearch, title: 'SEO Content', desc: 'Keyword-optimized content that ranks on search engines.' },
@@ -351,7 +351,7 @@ const CATEGORY_CONFIG = {
         },
         backLink: '/market-we-serve',
         backLabel: 'Markets We Serve',
-        heroImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1920&q=80',
+        heroImage: '/market-h-3.webp',
         benefits: [
             { icon: IconBrandWordpress, title: 'WordPress Expertise', desc: 'Certified WordPress developers for any project size.' },
             { icon: IconPalette, title: 'Custom Themes', desc: 'Bespoke theme development to match your brand.' },
@@ -1104,7 +1104,7 @@ export default function CityClientPage() {
                                 transition={{ duration: 0.8 }}
                                 className='relative h-[400px] rounded-2xl overflow-hidden shadow-2xl'
                             >
-                                <img src='https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80' alt={`Why choose us for ${city.category_name} in ${cityName}`} className='w-full h-full object-cover' />
+                                <img src='/cat-h-1.webp' alt={`Why choose us for ${city.category_name} in ${cityName}`} className='w-full h-full object-cover' />
                             </motion.div>
 
                             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
