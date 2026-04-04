@@ -149,7 +149,7 @@ export default function StateClient() {
                 <div className='absolute inset-0 z-0'>
                     <div className='absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-800/90 to-blue-900/70 z-10' />
                     <img
-                        src={'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&q=80'}
+                        src='/banner-digitalsolution360.webp'
                         alt={`Digital Services in ${stateData.name}`}
                         className='w-full h-full object-cover'
                     />

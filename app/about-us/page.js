@@ -18,26 +18,26 @@ import {
 
 export default function AboutUsPage() {
     const services = [
-        { name: 'Search Engine Optimization (SEO)', description: 'Making websites more relevant with right keywords, attractive content, and technical optimization.', image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&q=80' },
-        { name: 'Local SEO', description: 'Improving visibility for local businesses on Google Maps and local listings.', image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=400&q=80' },
-        { name: 'Social Media Marketing (SMM)', description: 'Building communities and brand loyalty through Instagram, LinkedIn, and Facebook.', image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80' },
-        { name: 'PPC Advertising', description: 'Maximizing ROI with accurate targeting and instant brand awareness.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80' },
-        { name: 'Web Design & Development', description: 'Professional, responsive, high-performance websites that convert visitors.', image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80' },
-        { name: 'Content Development', description: 'Engaging stories through blogs, videos, and social media posts.', image: 'https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=400&q=80' },
-        { name: 'Graphic Design & Branding', description: 'Aesthetic designs, logos, and brand kits for business identity.', image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&q=80' },
-        { name: 'Online Reputation Management', description: 'Managing reviews and maintaining positive brand image.', image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&q=80' },
-        { name: 'Ecommerce Marketing', description: 'Result-based campaigns to generate traffic and income.', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80' },
+        { name: 'Search Engine Optimization (SEO)', description: 'Making websites more relevant with right keywords, attractive content, and technical optimization.', image: '/digitalsolution360-banner1.webp' },
+        { name: 'Local SEO', description: 'Improving visibility for local businesses on Google Maps and local listings.', image: '/digitalsolution360-small-banner.webp' },
+        { name: 'Social Media Marketing (SMM)', description: 'Building communities and brand loyalty through Instagram, LinkedIn, and Facebook.', image: '/social-media-case-studies.webp' },
+        { name: 'PPC Advertising', description: 'Maximizing ROI with accurate targeting and instant brand awareness.', image: '/report-digitalsolution360.webp' },
+        { name: 'Web Design & Development', description: 'Professional, responsive, high-performance websites that convert visitors.', image: '/web-development-case-studies-digitalsolution360.webp' },
+        { name: 'Content Development', description: 'Engaging stories through blogs, videos, and social media posts.', image: '/small-banner-2-digitalsolution360.webp' },
+        { name: 'Graphic Design & Branding', description: 'Aesthetic designs, logos, and brand kits for business identity.', image: '/graphic-banner-digitalsolution360.webp' },
+        { name: 'Online Reputation Management', description: 'Managing reviews and maintaining positive brand image.', image: '/crm-development-company-india.webp' },
+        { name: 'Ecommerce Marketing', description: 'Result-based campaigns to generate traffic and income.', image: '/digital-marketing-agency-in-india.webp' },
     ];
 
     const industries = [
-        { name: 'Ecommerce & Retail', image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80' },
-        { name: 'Real Estate', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80' },
-        { name: 'Healthcare & Telemedicine', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80' },
-        { name: 'Education & Coaching', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80' },
-        { name: 'Hospitality & Travel', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80' },
-        { name: 'Technology & SaaS', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80' },
-        { name: 'Fitness & Wellness', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
-        { name: 'Interior Design', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80' },
+        { name: 'Ecommerce & Retail', image: '/career-digitalsolution360.webp' },
+        { name: 'Real Estate', image: '/social-media-agency-digitalsolution360.webp' },
+        { name: 'Healthcare & Telemedicine', image: '/seo-project-digitalsolution360.webp' },
+        { name: 'Education & Coaching', image: '/case-studies-digitalsolution360.webp' },
+        { name: 'Hospitality & Travel', image: '/contact-digitalsolution360.webp' },
+        { name: 'Technology & SaaS', image: '/wordpress-development-digitalsolution360.webp' },
+        { name: 'Fitness & Wellness', image: '/fitness-wellness-digitalsolution360.webp' },
+        { name: 'Interior Design', image: '/interior-design-digitalsolution360.webp' },
     ];
 
     const benefits = [
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
                 <div className='absolute inset-0 z-0'>
                     <div className='absolute inset-0 bg-linear-to-r from-blue-900/95 via-blue-800/90 to-transparent z-10' />
                     <img
-                        src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80'
+                        src='/ecommerce-website-development-digitalsolution360.webp'
                         alt='Team collaboration'
                         className='w-full h-full object-cover'
                     />
