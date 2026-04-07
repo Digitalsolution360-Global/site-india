@@ -227,14 +227,7 @@ const schemaData = post ? {
 } : null;
   return (
     <>
-   
-    {/* 👇 ADD THIS LINE FIRST */}
-    {schemaData && (
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-    )}
+  
     {post && (
   <script
     type="application/ld+json"
