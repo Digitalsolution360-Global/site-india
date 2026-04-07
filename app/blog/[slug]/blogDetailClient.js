@@ -199,9 +199,44 @@ useEffect(() => {
       </>
     );
   }
-
+// 👇 ADD HERE (before return)
+const schemaData = post ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`
+  },
+  "headline": post.meta_title || post.title,
+  "description": post.meta_description || "",
+  "image": post.featured_image || "/logo.png",
+  "author": {
+    "@type": "Person",
+    "name": post.author_name || "Admin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Digital Solution 360",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`
+    }
+  },
+  "datePublished": post.created_at ? new Date(post.created_at).toISOString() : "",
+  "dateModified": post.updated_at ? new Date(post.updated_at).toISOString() : ""
+} : null;
   return (
     <>
+   
+    {/* 👇 ADD THIS LINE FIRST */}
+    {schemaData && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    )}
+
+  
       <Header />
       <main className="min-h-screen bg-gray-50">
 
