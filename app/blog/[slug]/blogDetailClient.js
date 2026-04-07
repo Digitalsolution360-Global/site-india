@@ -209,10 +209,10 @@ const schemaData = post ? {
   },
   "headline": post.meta_title || post.title,
   "description": post.meta_description || "",
-  "image": post.featured_image || "/logo.png",
+  "image": post.image || "/logo.png",
   "author": {
     "@type": "Person",
-    "name": post.author_name || "Admin"
+    "name": post.author_name || "DigitalSolution360"
   },
   "publisher": {
     "@type": "Organization",
