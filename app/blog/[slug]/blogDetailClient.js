@@ -235,6 +235,14 @@ const schemaData = post ? {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
     )}
+    {post && (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(schemaData)
+    }}
+  />
+)}
 
   
       <Header />
