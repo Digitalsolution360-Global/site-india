@@ -54,7 +54,7 @@ export default function ServicesPage() {
             <section className='relative min-h-[60vh] flex items-center px-4 md:px-8 lg:px-16 pt-24 pb-16 overflow-hidden'>
                 <div className='absolute inset-0 z-0'>
                     <div className='absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-800/90 to-blue-900/70 z-10' />
-                    <img src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80' alt='Our Services' className='w-full h-full object-cover' />
+                    <img src='/digital-marketing-company-digitalsolution360.webp' alt='Our Services' className='w-full h-full object-cover' />
                 </div>
                 <div className='max-w-7xl mx-auto relative z-20 w-full'>
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
