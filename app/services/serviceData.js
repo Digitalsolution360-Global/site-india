@@ -29,15 +29,6 @@ const serviceCategories = [
         ],
         subServices: [
             {
-                slug: 'growth-marketing',
-                name: 'Growth Marketing',
-                description: 'Full-funnel growth strategies that combine creative experimentation with data analysis to drive sustainable business growth at every stage.',
-                icon: IconRocket,
-                heroImage: '/google-my-business-company-digitalsolution360.webp',
-                features: ['Growth Strategy & Planning', 'Funnel Optimization', 'Retention Marketing', 'Viral & Referral Campaigns', 'Product-Led Growth Tactics', 'Data Analytics & Experimentation'],
-                benefits: ['Sustainable long-term growth', 'Lower customer acquisition cost', 'Higher customer lifetime value', 'Rapid experimentation cycles'],
-            },
-            {
                 slug: 'google-ads-management',
                 name: 'Google Ads Management',
                 description: 'Expert Google Ads management that puts your business in front of high-intent customers exactly when they are searching for your products or services.',

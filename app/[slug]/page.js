@@ -43,11 +43,6 @@ const CATEGORY_SCHEMA = {
 };
 
 const ROOT_SUBSERVICE_META = {
-  "growth-marketing": {
-    title: "Growth Marketing Services | DigitalSolution 360",
-    description: "Professional growth marketing services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
-    keywords: "growth, marketing, growth marketing services, DigitalSolution 360",
-  },
   "google-ads-management": {
     title: "Google Ads Management Services | DigitalSolution 360",
     description: "Professional google ads management services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
