@@ -1219,7 +1219,10 @@ export default function CityClientPage() {
             {/* Google Map */}
             {city.city_id == 773 && (  
                      <section className='px-4 md:px-8 lg:px-16 bg-white'>
-                    <div className='max-w-7xl mx-auto'>                  
+                    <div className='max-w-7xl mx-auto'>  
+                        <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>
+                                View Location
+                            </h3>                
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
