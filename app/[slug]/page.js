@@ -31,7 +31,7 @@ function resolveAbsoluteImageUrl(image) {
 
 function getPostOgImage(post) {
   return resolveAbsoluteImageUrl(
-    post?.image || post?.featured_image || post?.post_image || post?.thumbnail || ""
+    post?.image || post?.featured_image || post?.post_image || post?.thumbnail || "/og-default.webp"
   );
 }
 
