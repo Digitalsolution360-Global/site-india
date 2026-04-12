@@ -3,6 +3,23 @@ import BlogDetailClient from "./blogDetailClient";
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
 const SITE_URL = "https://www.digitalsolution360.in";
 
+function resolveOgImage(image) {
+  if (!image || typeof image !== "string") {
+    return `${SITE_URL}/og-default.webp`;
+  }
+
+  const trimmed = image.trim();
+  if (!trimmed) {
+    return `${SITE_URL}/og-default.webp`;
+  }
+
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+
+  return trimmed.startsWith("/") ? `${SITE_URL}${trimmed}` : `${SITE_URL}/${trimmed}`;
+}
+
 async function fetchPost(slug) {
   try {
     const res = await fetch(`${API_BASE}/posts/${slug}`, {
@@ -35,7 +52,7 @@ export async function generateMetadata({ params }) {
 
   const keywords = post.meta_keyword || "";
 
-const ogImage = post.image || `${SITE_URL}/og-default.webp`;
+  const ogImage = resolveOgImage(post.image);
 
   return {
     title,
