@@ -8,6 +8,33 @@ import { notFound } from "next/navigation";
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
 const SITE_URL = "https://www.digitalsolution360.in";
 
+function resolveAbsoluteImageUrl(image) {
+  if (!image || typeof image !== "string") {
+    return `${SITE_URL}/og-default.webp`;
+  }
+
+  const trimmed = image.trim();
+  if (!trimmed) {
+    return `${SITE_URL}/og-default.webp`;
+  }
+
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+
+  if (trimmed.startsWith("/")) {
+    return `${SITE_URL}${trimmed}`;
+  }
+
+  return `${SITE_URL}/${trimmed}`;
+}
+
+function getPostOgImage(post) {
+  return resolveAbsoluteImageUrl(
+    post?.image || post?.featured_image || post?.post_image || post?.thumbnail || ""
+  );
+}
+
 /* Minimal per-category data needed for JSON-LD */
 const CATEGORY_SCHEMA = {
   "Google Business": {
@@ -300,7 +327,7 @@ export async function generateMetadata({ params }) {
     const title = city.meta_title || `${catSchema.serviceName} in ${cityName}`;
     const description = city.meta_description || `Professional ${catSchema.serviceName.toLowerCase()} tailored to your local business needs in ${cityName}. Reach our experts at +91 99905 56217.`;
     const keywords = city.meta_keyword || `${catSchema.serviceName}, ${cityName}, digital marketing ${cityName}`;
-    const ogImage = city.image || catSchema.image;
+    const ogImage = resolveAbsoluteImageUrl(city.image || catSchema.image);
 
     return {
       title: { absolute: title },
@@ -335,7 +362,7 @@ export async function generateMetadata({ params }) {
     const title = state.meta_title || `Digital Services in ${state.name} - Digital Solution 360`;
     const description = state.meta_description || `Professional digital marketing, web development, SEO, and branding services across all major cities in ${state.name}. Contact us for a free consultation.`;
     const keywords = state.meta_keywords || `digital marketing ${state.name}, SEO ${state.name}, web development ${state.name}`;
-    const ogImage = state.image || '/logo.png';
+    const ogImage = resolveAbsoluteImageUrl(state.image || '/og-default.webp');
 
     return {
       title: { absolute: title },
@@ -367,9 +394,15 @@ export async function generateMetadata({ params }) {
   // Blog page
   const post = await fetchBlog(slug);
   if (post) {
-    const title = post.meta_title || post.title;
-    const description = post.meta_description || (post.content ? post.content.replace(/<[^>]*>/g, '').slice(0, 160) : '');
-    const ogImage = post.featured_image || '/logo.png';
+    const title = post.meta_title || post.post_name || post.title;
+    const description =
+      post.meta_description ||
+      (post.post_description
+        ? post.post_description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160)
+        : post.content
+          ? post.content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160)
+          : '');
+    const ogImage = getPostOgImage(post);
 
     return {
       title: { absolute: title },
@@ -401,7 +434,7 @@ export async function generateMetadata({ params }) {
     const title = configuredMeta?.title || `${serviceMatch.subService.name} - Digital Solution 360`;
     const description = configuredMeta?.description || serviceMatch.subService.description;
     const keywords = configuredMeta?.keywords || `${serviceMatch.subService.name}, DigitalSolution 360`;
-    const ogImage = serviceMatch.subService.heroImage || '/logo.png';
+    const ogImage = resolveAbsoluteImageUrl(serviceMatch.subService.heroImage || '/og-default.webp');
 
     return {
       title: { absolute: title },
