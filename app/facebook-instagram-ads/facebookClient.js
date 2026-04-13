@@ -88,10 +88,10 @@ export default function FacebookClientPage() {
                             className='inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 border border-white/30'
                         >
                             <IconBrandFacebook className='w-4 h-4' />
-                            Meta Ads Agency
+                            Digital Marketing
                         </motion.span>
                         <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>
-                            Scale Your ROI with Digital Solution 360 in Delhi NCR!
+                            Best Facebook & Instagram Ads Agency in Delhi NCR
                         </h1>
                         <div className='flex flex-wrap gap-4 mb-10'>
                             <Link href='/contact-us' className='bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2'>
@@ -135,13 +135,13 @@ export default function FacebookClientPage() {
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>Scale Your ROI with Digital Solution 360 in Delhi NCR!</h2>
                                 <div className='space-y-4 text-gray-600 leading-relaxed'>
                                     <p>
-                                        The demand for running ads is not enough for any business in Delhi NCR or around its territory. Every small to large business decides to go "BIG" in the online world. That's why they require the power of strategies and an agency that understands the pulse of Meta ads and its ever-changing algorithms.
+                                        The demand for running ads is not enough for any business in Delhi NCR or around its territory. Every small to large business decides to go "BIG" in the online world. That's why they require the power of strategies and an agency that understands the pulse of <strong className="text-emerald-600">Meta ads</strong> and its ever-changing algorithms.
                                     </p>
                                     <p>
-                                        Then comes "DigitalSolution360". We provide the <strong className="text-emerald-600">Best Facebook & Instagram Ads Agency in Delhi NCR</strong>. With our prominent Paid Campaign Managers, businesses can get the perfect aid to bridge the gap between brand visibility and actual revenue.
+                                        Then comes "<Link href="/" className="underline">DigitalSolution360</Link>". We provide the <strong className="text-emerald-600">Best Facebook & Instagram Ads Agency in Delhi NCR</strong>. With our prominent <strong className="text-emerald-600">Paid Campaign Managers</strong>, businesses can get the perfect aid to bridge the gap between brand visibility and actual revenue.
                                     </p>
                                     <p className='font-semibold text-emerald-600'>
-                                        Not just claims, we have many happy clients and their positive feedback, ensuring the quality of services and defining our legacy as the finest Meta Ads Agency in Delhi NCR.
+                                        Not just claims, we have many happy clients and their positive feedback, ensuring the quality of services and defining our legacy as the finest <strong className="text-emerald-600">Meta Ads Agency in Delhi NCR.</strong>
                                     </p>
                                     <p className='text-amber-600 font-semibold'>
                                         The Blueprint to 10X Growth is Here – Grab Our Lead Generation Facebook Ads Plans Now!
@@ -156,13 +156,13 @@ export default function FacebookClientPage() {
                                     Results always matter more than false promises. DigitalSolution360 has proven its legacy through its campaigns and architectural growth strategies.
                                 </p>
                                 <p className='text-gray-600 mb-6'>
-                                    Our team of Meta Ads Experts focuses on the entire funnel, working together to deliver the ultimate integration of Facebook Ads, Instagram Ads, and even WhatsApp Ads.
+                                    Our team of <strong className="text-emerald-600">Meta Ads Experts</strong> focuses on the entire funnel, working together to deliver the ultimate integration of <Link href="facebook-instagram-ads" className="underline">Facebook Ads, Instagram Ads,</Link> and even <strong className="text-emerald-600">WhatsApp Ads.</strong>
                                 </p>
                                 <p className='text-gray-600 mb-6'>
                                     We understand that a business in Noida has different needs than other territories of Delhi or the rest of India. So, we go through the key takeaways:
                                 </p>
                                 <ul className='list-disc pl-6 space-y-2 text-gray-600 mb-8'>
-                                    <li>Understand the demographics of Delhi NCR to design Social Ads and Ad Campaigns accordingly.</li>
+                                    <li>Understand the demographics of Delhi NCR to design <Link href="/social-media-management" className="underline">Social Ads</Link> and <strong className="text-emerald-600">Ad Campaigns</Link> accordingly.</li>
                                     <li>Full-funnel strategy for everything, starting from Lead Ads & Conversion Ads to Growth Ads.</li>
                                     <li>Seamlessly connecting Facebook, Instagram, and WhatsApp.</li>
                                 </ul>
@@ -175,7 +175,7 @@ export default function FacebookClientPage() {
                             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>Scale Your Business: Start with Facebook and Instagram Ads for Business Growth</h2>
                                 <p className='text-gray-600 mb-6'>
-                                    Are you searching "Instagram Ads Professionals" in Delhi NCR? Well, end your search by starting with the best ROI Driven Meta Ads Agency. DigitalSolution360 is the ultimate solution that helps you connect with Paid Social campaigns and all its benefits.
+                                    Are you searching "<Link href="/instagram-marketing" className="underline">Instagram Ads</Link> Professionals" in Delhi NCR? Well, end your search by starting with the best ROI Driven Meta Ads Agency. DigitalSolution360 is the ultimate solution that helps you connect with Paid Social campaigns and all its benefits.
                                 </p>
                                 <p className='text-gray-600 mb-6'>
                                     With the High Conversion Facebook Ads and Sales Funnel Facebook Ads, your business can thrive for sure.
@@ -191,7 +191,7 @@ export default function FacebookClientPage() {
                                 </ul>
                                 <div className='bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100'>
                                     <p className='text-gray-800 font-semibold text-xl'>
-                                        Stop wasting money on junk leads – Get the benefits from the best Performance Ads Agency now!
+                                        Stop wasting money on junk leads – Get the benefits from the best <Link href="/performance-marketing" className="underline">Performance Ads Agency</Link> now!
                                     </p>
                                 </div>
                             </motion.div>
