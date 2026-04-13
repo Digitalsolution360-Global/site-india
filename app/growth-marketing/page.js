@@ -2,7 +2,7 @@ import GrowthClientPage from "./growthClient";
 const title = "Top Growth Marketing Agency 2026 | Digital Solution 360 Expert Services";
 const description = "Scale your brand with Digital Solution 360. We offer expert growth marketing, funnel optimization, and data-driven performance strategies for sustainable 2026 business success.";
 const keywords = "growth, marketing, growth marketing services, DigitalSolution 360";
-const ogImage = "/google-my-business-company-digitalsolution360.webp";
+const ogImage = "https://www.digitalsolution360.in/google-my-business-company-digitalsolution360.webp";
 export const metadata = {
       title,
       description,

@@ -2,7 +2,7 @@ import PerformanceClientPage from "./performanceClient";
 const title = "Best Performance Marketing Agency in India: Scale Your Startup Now";
 const description = "Drive record ROI with Digital Solution 360. We offer AI-driven Performance Marketing and expert Google Ads Management for India's top startups and established businesses.";
 const keywords = "performance marketing services, conversion marketing, roi marketing";
-const ogImage = "/digital-marketing-company-digitalsolution360.webp";
+const ogImage = "https://www.digitalsolution360.in/digital-marketing-company-digitalsolution360.webp";
 export const metadata = {
       title,
       description,
