@@ -162,7 +162,7 @@ export default function FacebookClientPage() {
                                     We understand that a business in Noida has different needs than other territories of Delhi or the rest of India. So, we go through the key takeaways:
                                 </p>
                                 <ul className='list-disc pl-6 space-y-2 text-gray-600 mb-8'>
-                                    <li>Understand the demographics of Delhi NCR to design <Link href="/social-media-management" className="underline">Social Ads</Link> and <strong className="text-emerald-600">Ad Campaigns</Link> accordingly.</li>
+                                    <li>Understand the demographics of Delhi NCR to design <Link href="/social-media-management" className="underline">Social Ads</Link> and <strong className="text-emerald-600">Ad Campaigns</strong> accordingly.</li>
                                     <li>Full-funnel strategy for everything, starting from Lead Ads & Conversion Ads to Growth Ads.</li>
                                     <li>Seamlessly connecting Facebook, Instagram, and WhatsApp.</li>
                                 </ul>
