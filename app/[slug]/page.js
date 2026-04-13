@@ -75,11 +75,6 @@ const ROOT_SUBSERVICE_META = {
     description: "Professional google ads management services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
     keywords: "google, ads, management, google ads management services, DigitalSolution 360",
   },
-  "facebook-instagram-ads": {
-    title: "Facebook Instagram Ads Services | DigitalSolution 360",
-    description: "Professional facebook instagram ads services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
-    keywords: "facebook, instagram, ads, facebook instagram ads services, DigitalSolution 360",
-  },
   "web-design": {
     title: "Web Design Services | DigitalSolution 360",
     description: "Professional web design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
