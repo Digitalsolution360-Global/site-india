@@ -1,4 +1,4 @@
-import facebbokClientPage from "./facebbokClient";
+import FacebookClientPage from "./facebbokClient";
 const title = "Best Facebook & Instagram Ads Agency in Delhi NCR | ROI Driven";
 const description = "Scale your brand with Digital Solution 360, the best Facebook & Instagram ads agency in Delhi NCR. Get high-conversion Meta ads that drive real revenue.";
 const keywords = "facebook, instagram, ads, facebook instagram ads services, DigitalSolution 360";
@@ -21,5 +21,5 @@ export const metadata = {
 }
 
 export default function Page (){
-    return <facebbokClientPage/>
+    return <FacebookClientPage/>
 }
