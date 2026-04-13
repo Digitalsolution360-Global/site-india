@@ -48,23 +48,23 @@ export default function FacebookClientPage() {
     const faqData = [
         {
             q: "Why should I hire a Meta Ads Agency in Delhi NCR instead of doing it myself?",
-            a: "With the best Facebook and Instagram Ads Professionals, you can fast-track the digital environment. Capturing the audience's attention becomes easier, allowing you to focus on your core business while experts maximize your ad ROI."
+            a: "With the best Facebook and Instagram Ads Professionals, you can fast-track the digital environment. Capturing the audience's attention becomes easier. "
         },
         {
             q: "How do you ensure high-quality leads from Facebook Ads?",
-            a: "At DigitalSolution360, our Facebook Ads Specialists prioritize proven strategies to grab the lead. We use high-intent forms, automated CRM sync, and continuous A/B testing to attract and convert qualified traffic."
+            a: "At DigitalSolution360, our Facebook Ads Specialists prioritize proven strategies to grab the lead."
         },
         {
             q: "What makes your Instagram Ads strategy different for 2026?",
-            a: "Yes, of course! We have the specialities to give you high-quality leads using Sales Funnel Facebook Ads. Our strategy focuses on AI-generated creative variations to beat 'Creative Fatigue' and maintain high engagement rates."
+            a: "Yes, of course! We have the specialities to give you high-quality leads using Sales Funnel Facebook Ads."
         },
         {
             q: "Can you manage WhatsApp Ads for my business in Noida or Gurgaon?",
-            a: "Yes, our Performance Ads Agency can manage all the Meta ads and provide conversational commerce that leads to higher trust and faster closing rates across Delhi NCR, including Noida, Gurgaon, and other territories."
+            a: "Yes, our Performance Ads Agency can manage all the Meta ads and provide conversational commerce that leads to higher trust and faster closing rates."
         },
         {
             q: "What is the typical ROI I can expect from your Paid Social campaigns?",
-            a: "When you join DigitalSolution360, our Social Media Campaign Experts ensure profitability. Our goal is always to deliver a measurable increase in your bottom line. We focus on ROI-driven strategies tailored to your business objectives."
+            a: "When you join DigitalSolution360, our Social Media Campaign Experts ensure profitability. Our goal is always to deliver a measurable increase in your bottom line."
         }
     ];
 
@@ -215,7 +215,7 @@ export default function FacebookClientPage() {
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>Conclusion</h2>
                                 <div className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100'>
                                     <p className='text-gray-700 text-lg leading-relaxed mb-4'>
-                                        In a vibrant market, you require the Best Facebook & Instagram Ads Agency in Delhi NCR to keep your online mission active. That's the spirit of DigitalSolution360, and it ensures your brand dominates the digital space.
+                                        In a vibrant market, you require the Best Facebook & Instagram Ads Agency in Delhi NCR to keep your online mission active. That’s the spirit of DigitalSolution360, and it ensures your brand dominates the digital space.
                                     </p>
                                     <p className='text-gray-800 font-semibold text-xl'>
                                         Don't let your competitors take your spot on the feed – spend on high-performing Ad Campaigns developed by Social Media Campaign Experts at DigitalSolution360!
