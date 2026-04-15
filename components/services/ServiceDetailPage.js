@@ -145,7 +145,8 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                         <UiUxContent/>
                     ):
                     (
-                            {/* Features */}
+                    <>
+                        {/* Features */}
                             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>What&apos;s Included</h2>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -178,7 +179,11 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                                     ))}
                                 </div>
                             </motion.div>
+                            </>
+
 )}
+                            
+
                             {/* FAQs */}
                             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>Frequently Asked Questions</h2>
@@ -202,7 +207,6 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                                     ))}
                                 </div>
                             </motion.div>
-                            
                         </div>
 
                         {/* Right: 30% sidebar */}
