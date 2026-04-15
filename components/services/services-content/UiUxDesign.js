@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion} from 'motion/react';
+import Link from 'next/link';
 
 export default function UiUxContent(){
     return(
@@ -14,7 +15,7 @@ export default function UiUxContent(){
             The world of digital marketing is evolving all the time. In that section. Website development plays a huge role. That’s why the implementation of advanced structure and design matters the most.
         </p>
         <p>
-            To develop AI-integrated interfaces and hyper-personalized user journeys, small businesses and agencies can thrive in the digital world. It is DigitalSolution360 that helps you to truly stand out as more unique than your competitors.
+            To develop AI-integrated interfaces and hyper-personalized user journeys, small businesses and agencies can thrive in the digital world. It is <Link className="underline" href="/">DigitalSolution360</Link> that helps you to truly stand out as more unique than your competitors.
         </p>
         <p className='font-semibold text-emerald-600'>
             Wait no further and avail the finest User Interface Design Services India now!
@@ -33,7 +34,7 @@ export default function UiUxContent(){
             You should wait no longer to pick the right UI UX Design Company in India. In 2026, DigitalSolution360 doesn't just draw screens; they architect experiences. We utilize neuro-design principles to guide user behavior, turning casual browsers into loyal brand advocates.
         </p>
         <p>
-            Let’s determine what we do to complete the job within the protocols of the Website UI UX Design Services India:
+            Let’s determine what we do to complete the job within the protocols of the <Link href="/ui-ux-design" className="underline">Website UI UX Design Services India:</Link>
         </p>
 
         <ul className='list-disc pl-6 space-y-2'>
@@ -65,12 +66,12 @@ export default function UiUxContent(){
 
         <ul className='list-disc pl-6 space-y-2'>
             <li>Avoid agencies that provide generic designs that look like every other app on the market.</li>
-            <li>Look for a User Experience Design Company India that prioritizes transparency and regular updates.</li>
+            <li>Look for a <Link href="/web-design" className="underline">User Experience Design Company India</Link> that prioritizes transparency and regular updates.</li>
             <li>Always avoid the one that won't help you optimize after launch is a liability.</li>
         </ul>
 
         <p className='font-semibold text-emerald-600'>
-            Don’t settle for bad ones – Consult Digital Solution 360 to ensure your project avoids common agency pitfalls.
+            Don’t settle for bad ones – <Link href="/contact-us" className="underline">Consult Digital Solution 360</Link> to ensure your project avoids common agency pitfalls.
         </p>
     </div>
 </motion.div>
