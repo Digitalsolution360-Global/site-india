@@ -81,8 +81,8 @@ const ROOT_SUBSERVICE_META = {
     keywords: "web, design, web design services, DigitalSolution 360",
   },
   "ui-ux-design": {
-    title: "Ui Ux Design Services | DigitalSolution 360",
-    description: "Professional ui ux design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    title: "Best UI UX Design Agency in India | Digital Solution 360",
+    description: "Partner with India's top UI UX agency for research-driven designs. We build high-converting digital products for global brands in 2026.",
     keywords: "ui, ux, design, ui ux design services, DigitalSolution 360",
   },
   "wordpress-development": {

@@ -7,6 +7,7 @@ import { useParams, notFound } from 'next/navigation';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import serviceCategories from '@/app/services/serviceData';
+import UiUxContent, { UiUxFaqs } from "./services-content/UiUxDesign";
 import {
     IconArrowRight, IconArrowLeft, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
@@ -67,14 +68,17 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
     };
 
     const siblings = cat.subServices.filter(s => s.slug !== resolvedServiceSlug);
-
-    const faqs = [
+    const faqs =
+  resolvedServiceSlug === "ui-ux-design"
+    ? UiUxFaqs
+    : [
         { q: `What is ${sub.name} and how can it help my business?`, a: `${sub.name} is a specialized service that helps businesses ${sub.description.toLowerCase().slice(0, 150)}. Our expert team uses proven strategies and the latest tools to deliver measurable results, whether you're a startup or an established enterprise.` },
         { q: `How long does it take to see results from ${sub.name}?`, a: `Results timelines vary based on your industry, competition, and current setup. For most clients, initial improvements are visible within 2-4 weeks, with significant measurable results within 2-3 months. We provide regular reports so you can track progress from day one.` },
         { q: `How much does ${sub.name} cost?`, a: `We offer customized pricing based on your specific needs, business size, and goals. We have packages starting from budget-friendly plans to comprehensive enterprise solutions. Contact us for a free consultation and custom quote tailored to your requirements.` },
         { q: `What makes your ${sub.name} different from competitors?`, a: `We combine data-driven strategies with creative excellence, backed by years of experience across 50+ industries. Our dedicated team approach, transparent reporting, and focus on ROI over vanity metrics set us apart. Every strategy is customized — no cookie-cutter solutions.` },
         { q: `Do you provide reports and analytics for ${sub.name}?`, a: `Absolutely. We provide detailed monthly reports covering all key metrics, performance insights, and recommendations. You'll also have access to real-time dashboards and regular strategy calls with your dedicated account manager.` },
     ];
+    
 
     return (
         <>
@@ -95,7 +99,11 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                             className='inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 ml-4 border border-white/30'>
                             <SubIcon className='w-4 h-4' /> {cat.shortName}
                         </motion.span>
-                        <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>{sub.name}</h1>
+                        <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl'>
+                            
+                           {sub.h1 || sub.name}
+                            
+                            </h1>
                         <p className='text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mb-8'>{sub.description}</p>
                         <div className='flex flex-wrap gap-4 mb-8'>
                             <Link href='/contact-us' className='bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2'>
@@ -129,6 +137,10 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
             {/* Content: 70/30 layout */}
             <section className='py-16 px-4 md:px-8 lg:px-16'>
                 <div className='max-w-7xl mx-auto'>
+                    {resolvedServiceSlug === "ui-ux-design" ? (
+                        <UiUxContent/>
+                    ):
+                    (
                     <div className='flex flex-col lg:flex-row gap-8'>
                         {/* Left: 70% */}
                         <div className='w-full lg:w-[70%]'>
@@ -247,6 +259,7 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                             </div>
                         </div>
                     </div>
+                    )}
                 </div>
             </section>
 

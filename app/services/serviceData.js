@@ -105,6 +105,7 @@ const serviceCategories = [
                 heroImage: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1920&q=80',
                 features: ['User Research & Personas', 'Wireframing & Prototyping', 'Visual Interface Design', 'Usability Testing', 'Design Systems', 'Interaction Design'],
                 benefits: ['Higher user satisfaction', 'Reduced bounce rates', 'Increased conversions', 'Better user retention'],
+                h1: "Best ui ux design agency in India",
             },
             {
                 slug: 'wordpress-development',
