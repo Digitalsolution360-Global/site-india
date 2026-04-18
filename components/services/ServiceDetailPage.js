@@ -8,6 +8,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import serviceCategories from '@/app/services/serviceData';
 import UiUxContent, { UiUxFaqs } from "./services-content/UiUxDesign";
+import WordpressContent, { WordpressFaqs } from "./services-content/WordpressDevlopment";
 import {
     IconArrowRight, IconArrowLeft, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
@@ -71,7 +72,11 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
     const faqs =
   resolvedServiceSlug === "ui-ux-design"
     ? UiUxFaqs
-    : [
+    : 
+    resolvedServiceSlug === "wordpress-development"
+    ? WordpressFaqs
+    :
+    [
         { q: `What is ${sub.name} and how can it help my business?`, a: `${sub.name} is a specialized service that helps businesses ${sub.description.toLowerCase().slice(0, 150)}. Our expert team uses proven strategies and the latest tools to deliver measurable results, whether you're a startup or an established enterprise.` },
         { q: `How long does it take to see results from ${sub.name}?`, a: `Results timelines vary based on your industry, competition, and current setup. For most clients, initial improvements are visible within 2-4 weeks, with significant measurable results within 2-3 months. We provide regular reports so you can track progress from day one.` },
         { q: `How much does ${sub.name} cost?`, a: `We offer customized pricing based on your specific needs, business size, and goals. We have packages starting from budget-friendly plans to comprehensive enterprise solutions. Contact us for a free consultation and custom quote tailored to your requirements.` },
@@ -141,11 +146,15 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                     <div className='flex flex-col lg:flex-row gap-8'>
                         {/* Left: 70% */}
                         <div className='w-full lg:w-[70%]'>
-                            {resolvedServiceSlug === "ui-ux-design" ? (
-                        <UiUxContent/>
-                    ):
-                    (
-                    <>
+                      {
+                        resolvedServiceSlug === "ui-ux-design" ? (
+                           <UiUxContent/>
+                      ): 
+                        resolvedServiceSlug === "wordpress-development" ?(
+                           <WordpressContent/>
+                      ):
+                      (
+                        <>
                         {/* Features */}
                             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
                                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>What&apos;s Included</h2>
