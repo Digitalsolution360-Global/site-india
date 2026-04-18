@@ -76,8 +76,8 @@ const ROOT_SUBSERVICE_META = {
     keywords: "google, ads, management, google ads management services, DigitalSolution 360",
   },
   "web-design": {
-    title: "Web Design Services | DigitalSolution 360",
-    description: "Professional web design services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    title: "Best Web Design Company in India | Digital Solution 360",
+    description: "Digital Solution 360 offers premium web design in India. Boost your ROI with our expert, 2026-ready, high-performance digital solutions today.",
     keywords: "web, design, web design services, DigitalSolution 360",
   },
   "ui-ux-design": {
@@ -86,8 +86,8 @@ const ROOT_SUBSERVICE_META = {
     keywords: "ui, ux, design, ui ux design services, DigitalSolution 360",
   },
   "wordpress-development": {
-    title: "Wordpress Development Services | DigitalSolution 360",
-    description: "Professional wordpress development services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    title: "Professional WordPress Website Design Services in India - DS360",
+    description: "Elevate your brand with expert WordPress Website Design Services. Digital Solution 360 creates stunning, conversion-focused websites for businesses across India and beyond.",
     keywords: "wordpress, development, wordpress development services, DigitalSolution 360",
   },
   "shopify-development": {

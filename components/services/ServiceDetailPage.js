@@ -9,6 +9,7 @@ import Footer from '@/components/layout/footer';
 import serviceCategories from '@/app/services/serviceData';
 import UiUxContent, { UiUxFaqs } from "./services-content/UiUxDesign";
 import WordpressContent, { WordpressFaqs } from "./services-content/WordpressDevlopment";
+import WebDesignContent, { WebDesignFaqs } from "./services-content/WebDesign";
 import {
     IconArrowRight, IconArrowLeft, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
@@ -75,6 +76,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
     : 
     resolvedServiceSlug === "wordpress-development"
     ? WordpressFaqs
+    : 
+    resolvedServiceSlug === "web-design"
+    ? WebDesignFaqs
     :
     [
         { q: `What is ${sub.name} and how can it help my business?`, a: `${sub.name} is a specialized service that helps businesses ${sub.description.toLowerCase().slice(0, 150)}. Our expert team uses proven strategies and the latest tools to deliver measurable results, whether you're a startup or an established enterprise.` },
@@ -152,6 +156,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                       ): 
                         resolvedServiceSlug === "wordpress-development" ?(
                            <WordpressContent/>
+                      ):
+                        resolvedServiceSlug === "web-design" ?(
+                           <WebDesignContent/>
                       ):
                       (
                         <>

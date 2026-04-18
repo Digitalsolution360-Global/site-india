@@ -96,6 +96,7 @@ const serviceCategories = [
                 heroImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80',
                 features: ['Custom Website Design', 'Responsive & Mobile-First', 'Brand-Aligned Aesthetics', 'Interactive Prototypes', 'Cross-Browser Compatibility', 'Performance Optimization'],
                 benefits: ['First impressions that convert', 'Mobile-optimized experiences', 'Consistent brand identity', 'Faster loading websites'],
+                h1:"Best Web Design Company in India",
             },
             {
                 slug: 'ui-ux-design',
@@ -115,6 +116,7 @@ const serviceCategories = [
                 heroImage: '/wordpress-development-company-digitalsolution360.webp',
                 features: ['Custom Theme Development', 'Plugin Development', 'WooCommerce Integration', 'Speed Optimization', 'Security Hardening', 'Migration & Support'],
                 benefits: ['Easy content management', '60,000+ plugins available', 'SEO-friendly architecture', 'Cost-effective solutions'],
+                h1: "Best WordPress Development Agency in India",
             },
             {
                 slug: 'shopify-development',
