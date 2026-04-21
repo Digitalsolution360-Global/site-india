@@ -3,10 +3,18 @@ import StateClient from "./stateClient";
 import BlogDetailClient from "../blog/[slug]/blogDetailClient";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import serviceCategories from "@/app/services/serviceData";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
 const SITE_URL = "https://www.digitalsolution360.in";
+const METRO_SERVICE_SLUGS = new Set([
+  "gmb",
+  "marketing",
+  "web",
+  "content-writing",
+  "wordpress",
+  "social-media",
+]);
 
 function resolveAbsoluteImageUrl(image) {
   if (!image || typeof image !== "string") {
@@ -314,6 +322,14 @@ function findSubServiceBySlug(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
+  if (METRO_SERVICE_SLUGS.has(slug)) {
+    return {
+      alternates: {
+        canonical: `${SITE_URL}/metro-cities/${slug}`,
+      },
+    };
+  }
+
   // City page
   const city = await fetchCity(slug);
   if (city) {
@@ -463,6 +479,11 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { slug } = await params;
+
+  if (METRO_SERVICE_SLUGS.has(slug)) {
+    redirect(`/metro-cities/${slug}`);
+  }
+
   const city = await fetchCity(slug);
 
   if (!city) {

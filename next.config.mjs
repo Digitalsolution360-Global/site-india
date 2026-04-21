@@ -5,11 +5,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/metro-cities/:slug',
-        destination: '/:slug',
-        permanent: true,
-      },
-      {
         source: '/blog/:slug',
         destination: '/:slug',
         permanent: true,
