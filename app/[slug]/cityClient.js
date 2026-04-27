@@ -82,7 +82,7 @@ const CATEGORY_DISPLAY_MAP = {
     'Social Media': 'Social Media Marketing',
     'Content Writing': 'Content Writing',
     'Wordpress Development': 'WordPress Development',
-    'App Development': 'app-development',
+    'App Development': 'App Development',
 };
 
 const CATEGORY_CONFIG = {
