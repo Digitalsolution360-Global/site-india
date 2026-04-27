@@ -72,6 +72,7 @@ const CATEGORY_SERVICE_MAP = {
     'Social Media': 'social-media-marketing',
     'Content Writing': 'content-marketing',
     'Wordpress Development': 'wordpress-development',
+    'App Development': 'app-development',
 };
 
 const CATEGORY_DISPLAY_MAP = {
@@ -81,6 +82,7 @@ const CATEGORY_DISPLAY_MAP = {
     'Social Media': 'Social Media Marketing',
     'Content Writing': 'Content Writing',
     'Wordpress Development': 'WordPress Development',
+    'App Development': 'app-development',
 };
 
 const CATEGORY_CONFIG = {
@@ -375,6 +377,58 @@ const CATEGORY_CONFIG = {
             { value: '10K+', label: 'free themes to choose from' }
         ],
         extras: null
+    },
+    'App Development': {
+        theme: {
+            primary: 'blue-600', light: 'blue-50', dark: 'blue-900', border: 'blue-200', accent: 'blue-100',
+            gradient: 'from-slate-900/95 via-slate-800/90 to-blue-900/70',
+            button: 'bg-blue-600 hover:bg-blue-700',
+            ctaBg: 'bg-linear-to-r from-slate-900 to-blue-900',
+            ctaText: 'text-blue-600',
+            ctaLight: 'text-blue-100',
+            iconText: 'text-blue-600',
+            iconBg: 'bg-blue-100',
+            badgeBg: 'bg-blue-100',
+            badgeText: 'text-blue-800',
+            statBg: 'bg-blue-50',
+            formRing: 'focus:ring-blue-500',
+            ratingsBase: 2540,
+            projectsBase: 256,
+        },
+        backLink: '/market-we-serve',
+        backLabel: 'Markets We Serve',
+        heroImage: '/google-my-business-company-digitalsolution360.webp',
+        benefits: [
+            { icon: IconBrandGoogle, title: 'Google Visibility', desc: 'Get found on Google Search and Maps by local customers.' },
+            { icon: IconStar, title: 'Reputation Management', desc: 'Build trust with positive reviews and ratings.' },
+            { icon: IconPhoto, title: 'Visual Appeal', desc: 'Showcase your business with high-quality photos and virtual tours.' },
+            { icon: IconMessageCircle, title: 'Customer Engagement', desc: 'Interact with customers through posts, Q&A, and messaging.' },
+            { icon: IconChartBar, title: 'Performance Insights', desc: 'Track how customers find and interact with your listing.' },
+            { icon: IconMapPin, title: 'Local SEO Boost', desc: 'Improve your local search rankings and map presence.' }
+        ],
+        services: [
+            { title: 'GMB Profile Setup', features: ['Account creation & verification', 'Business information setup', 'Category optimization', 'Service area configuration'] },
+            { title: 'Profile Optimization', features: ['Keyword-rich descriptions', 'Photo & video management', 'Product/Service listing', 'Attribute optimization'] },
+            { title: 'Review Management', features: ['Review monitoring', 'Response management', 'Review generation strategy', 'Reputation tracking'] },
+            { title: 'GMB Posts & Updates', features: ['Regular post creation', 'Event & offer posts', 'Product showcasing', 'Engagement tracking'] },
+            { title: 'Local SEO Integration', features: ['Citation building', 'NAP consistency', 'Local link building', 'Schema markup'] },
+            { title: 'Analytics & Reporting', features: ['Monthly performance reports', 'Competitor analysis', 'Search query insights', 'Customer action tracking'] }
+        ],
+        stats: [
+            { value: '46%', label: 'of Google searches are local' },
+            { value: '88%', label: 'visit a business within 24hrs' },
+            { value: '76%', label: 'of local searches lead to a visit' },
+            { value: '5X', label: 'more views with optimized GMB' }
+        ],
+        extras: {
+            type: 'whyChooseUs',
+            items: [
+                { icon: IconAward, title: 'Certified Experts', desc: 'Google-certified professionals managing your profile.' },
+                { icon: IconClock, title: 'Quick Turnaround', desc: 'Fast setup and optimization within days.' },
+                { icon: IconHeadset, title: 'Dedicated Support', desc: 'Personal account manager for your business.' },
+                { icon: IconTrendingUp, title: 'Proven Results', desc: 'Consistent growth in visibility and engagement.' }
+            ]
+        },
     }
 };
 
@@ -421,6 +475,13 @@ const CATEGORY_META = {
         keywordsTemplate: 'WordPress development company in {cityName}, WordPress developer in {cityName}, custom WordPress themes in {cityName}, WooCommerce development in {cityName}, WordPress website design in {cityName}, WordPress experts, WordPress plugin development in {cityName}, WordPress agency in {cityName}',
         ogImage: 'https://www.digitalsolution360.in/wordpress-og.webp',
         breadcrumbName: 'WordPress Development {cityName}',
+    },
+    'App Development': {
+        titleTemplate: 'Best App Development Company in {cityName} | DigitalSolution360 Mobile Experts',
+        description: 'Partner with DigitalSolution360 for premier App Development {cityName}. We build high-performance, custom mobile apps that drive engagement and maximize your business ROI effectively.',
+        keywordsTemplate: 'App development company in {cityName}, App developer in {cityName}, App development agency in {cityName}',
+        ogImage: 'https://www.digitalsolution360.in/wordpress-og.webp',
+        breadcrumbName: 'App Development {cityName}',
     },
 };
 
@@ -469,6 +530,7 @@ export default function CityClientPage() {
                 'Social Media': 'social-media',
                 'Content Writing': 'content-writing',
                 'Wordpress Development': 'wordpress',
+                'App Development': 'app',
             };
             const endpoint = marketMap[city.category_name];
             if (endpoint) {
