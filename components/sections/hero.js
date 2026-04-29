@@ -65,9 +65,9 @@ function HeroSection() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className='text-4xl md:text-5xl font-bold text-gray-900 leading-tight'
             >
-              Website Development Company Offering
+              Digital Solution 360: India’s Leading Digital Marketing 
               <span className='block text-blue-600 mt-2'>
-                Complete Digital Marketing Services
+                & Web Development Company
               </span>
             </motion.h1>
 
@@ -78,7 +78,23 @@ function HeroSection() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className='text-lg text-gray-600 max-w-2xl'
             >
-              Digitalsolution360 is a professional website development company providing high-quality website development services and complete digital marketing services for businesses looking to grow online. We specialize in building SEO friendly websites that improve online visibility and generate consistent business leads.
+              In an era of AI-driven searches and video-based information, Digital Solution 360 stands as a beacon of hope for businesses and entrepreneurs who have a dream to build and run their own websites.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className='text-lg text-gray-600 max-w-2xl'
+            >
+              To complete your dream, our Digital Marketing Company in India is the best option. Here, we don’t just build your websites, but create high-performance ecosystems for converting your audience into your permanent buying partners.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className='text-lg text-gray-600 max-w-2xl'
+            >
+              Whether it’s about tier-1 cities, such as Mumbai, Delhi, Bangalore, or tier-2 cities, we provide the perfect blend of technology and elegance in our web development services. Also, everything we provide is backed by proven Online Marketing Solutions.
             </motion.p>
 
             {/* CTA Buttons */}

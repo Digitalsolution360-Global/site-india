@@ -138,11 +138,24 @@ function CTASection() {
 
             {/* Description */}
             <p className='text-lg md:text-xl text-blue-100 leading-relaxed'>
-              Ready to build a professional business website that generates leads and grows your brand online? Digitalsolution360 is a trusted website development company offering SEO friendly website development and digital marketing services designed to help businesses succeed online.
+              The digital world is evolving every day with technology and upgrades. That’s why you need a comprehensive Online Marketing Solution from Digital Solution 360. We help your business to grow online. 
             </p>
-
+            <p className='text-lg md:text-xl text-blue-100 leading-relaxed'>
+            Transform your vision into a digital reality. Improve Google ranking With Us!
+            </p>
+            {/* Heading */}
+            <h3 className='text-2xl md:text-3xl lg:text-6xl font-bold leading-tight'>
+              Conclusion
+            </h3>
+            {/* Description */}
+            <p className='text-lg md:text-xl text-blue-100 leading-relaxed'>
+              In 2026, industries and businesses are going global with their digital presence. However, it requires expert guidance to Increase website traffic. That’s why you require support from a trusted source, coming from Digital Solution 360. Whether it is a busy Delhi market or wanting to grow business from Jaipur and Indore, we are India's trusted choice for digital excellence. 
+            </p>
+            <p className='text-lg md:text-xl text-blue-100 leading-relaxed'>
+            Get the ROI based digital marketing – Book your slot now!
+            </p>
             {/* Benefits List */}
-            <div className='space-y-4 pt-4'>
+            {/* <div className='space-y-4 pt-4'>
               {[
                 'Business website, ecommerce, or custom website solutions',
                 'SEO friendly development for better search rankings',
@@ -163,7 +176,7 @@ function CTASection() {
                   <span className='text-blue-50'>{benefit}</span>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
 
             {/* Contact Info */}
             <div className='space-y-3 pt-4'>

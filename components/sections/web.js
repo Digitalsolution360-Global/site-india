@@ -19,43 +19,59 @@ function WebDevSection() {
   const digitalServices = [
     {
       icon: IconSearch,
-      title: 'Search Engine Optimization (SEO)',
-      description: 'Our SEO services help websites rank higher on search engines and attract targeted organic traffic. We use on-page SEO, technical SEO, and content optimization strategies to improve rankings and visibility.',
+      title: 'Local SEO Services',
+      description: 'Easy to dominate your local market with the best Search Engine Optimization (SEO) and Google My Business Optimization.',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
       link: '/seo'
     },
     {
       icon: IconMapPin,
-      title: 'Google Business Profile (GMB) Optimization',
-      description: 'Our GMB optimization services help businesses improve local search visibility and attract more customers. We optimize business information, service details, images, and regular updates to improve local rankings.',
+      title: 'Social Media Marketing (SMM)',
+      description: 'Beautifully handle every social media platform, like Facebook, Instagram, LinkedIn, and other Media & Advertising Services, with targeted content.',
       color: 'text-green-600',
       bgColor: 'bg-green-50',
       link: '/digital-marketing/google-business-profile-optimization'
     },
     {
       icon: IconBrandGoogle,
-      title: 'Google Ads Management',
-      description: 'Our Google Ads management services help businesses generate instant leads through targeted advertising campaigns. We manage keyword research, campaign setup, optimization, and performance tracking.',
+      title: 'Google Ads/PPC Advertising',
+      description: 'Use high-intent keywords targeting the right audience and invest in ROI-based ad spend.',
       color: 'text-red-600',
       bgColor: 'bg-red-50',
       link: '/digital-marketing/google-ads-management'
     },
     {
       icon: IconBrandInstagram,
-      title: 'Social Media Marketing',
-      description: 'Our social media marketing services help businesses build brand awareness and engage customers through popular social media platforms.',
+      title: 'Content Marketing',
+      description: 'Build a stronger impression through strategic content and keyword implementation.',
       color: 'text-pink-600',
       bgColor: 'bg-pink-50',
       link: '/social-media-marketing'
     },
     {
       icon: IconTargetArrow,
-      title: 'Lead Generation Services',
-      description: 'We combine SEO, Google Ads, Google Business Profile optimization, and social media marketing strategies to attract potential customers and increase business inquiries.',
+      title: 'Brand & Creative Services',
+      description: 'Design creative responses with authenticity and bring publicity to clients.',
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
       link: '/digital-marketing/lead-generation-services'
+    },
+    {
+      icon: IconSearch,
+      title: 'Email Marketing',
+      description: 'Prepare productive emails and send to the required audience as required for a client’s demands.',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
+      link: '/'
+    },
+    {
+      icon: IconMapPin,
+      title: 'Lead Generation Service',
+      description: 'Better traffic with the right tunnels leading to generate leads online.',
+      color: 'text-green-600',
+      bgColor: 'bg-green-50',
+      link: '/'
     }
   ];
 
@@ -63,8 +79,8 @@ function WebDevSection() {
     {
       step: '01',
       icon: IconClipboardList,
-      title: 'Planning',
-      description: 'We analyze business requirements and create a strategy for business website development that ensures strong performance and search engine visibility.',
+      title: 'Strategy',
+      description: 'Analyze your business and create a custom blueprint.',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
       borderColor: 'border-blue-200'
@@ -72,8 +88,8 @@ function WebDevSection() {
     {
       step: '02',
       icon: IconPalette,
-      title: 'Design',
-      description: 'We create modern website design layouts and responsive website design focused on user experience and engagement.',
+      title: 'Design and Prototyping',
+      description: 'Creative design with the best UI/UX addition to reflect your brand’s identity.',
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-200'
@@ -81,8 +97,8 @@ function WebDevSection() {
     {
       step: '03',
       icon: IconCode,
-      title: 'Development',
-      description: 'Our developers build fast and secure websites using SEO friendly website development techniques for better search engine rankings.',
+      title: 'Development & Integration',
+      description: 'Write the right, clean, and scalable code to integrate CRM tools and necessary APIs.',
       color: 'text-green-600',
       bgColor: 'bg-green-50',
       borderColor: 'border-green-200'
@@ -90,8 +106,8 @@ function WebDevSection() {
     {
       step: '04',
       icon: IconTestPipe,
-      title: 'Testing',
-      description: 'We perform complete website testing and optimization to ensure smooth performance across all devices and browsers.',
+      title: 'Testing & Optimization',
+      description: ' Continuous QA testing to boost integrity, performance, and speed across devices.',
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200'
@@ -99,8 +115,8 @@ function WebDevSection() {
     {
       step: '05',
       icon: IconRocket,
-      title: 'Launch',
-      description: 'Your professional business website is launched after final optimization to ensure maximum performance and search engine readiness.',
+      title: 'Deployment & Growth',
+      description: 'Launch your site and initiate all the basics to advanced sessions for a better marketing push.',
       color: 'text-red-600',
       bgColor: 'bg-red-50',
       borderColor: 'border-red-200'
@@ -156,7 +172,7 @@ function WebDevSection() {
           </h2>
 
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
-            Digitalsolution360 is a professional digital marketing company providing complete online marketing solutions. After building your website, we help your business grow with strategic digital marketing services designed to increase visibility and leads.
+            Beyond the website development, we work as a unit as a trusted and fully-fledged Digital Marketing Company in India, strongly generating the best leads to your business.
           </p>
         </motion.div>
 
@@ -193,7 +209,9 @@ function WebDevSection() {
             );
           })}
         </motion.div>
-
+        <p className='text-lg text-gray-600 mb-6'>
+           Start generating high-quality leads today with Digital Solution 360 in India.
+          </p>
         {/* Development Process */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -217,7 +235,7 @@ function WebDevSection() {
           </h2>
 
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
-            Our structured website development process ensures that every professional business website is developed efficiently with a focus on performance, user experience, and search engine optimization.
+            Our experts utilize the best ways to build precision and launch your website with the right impact. That’s why we follow the 5-step process, ensuring your project stays on track with achieving expectations.
           </p>
         </motion.div>
 
@@ -284,7 +302,7 @@ function WebDevSection() {
           className='text-center mt-16'
         >
           <p className='text-lg text-gray-600 mb-6'>
-            Ready to build a professional website that generates leads and grows your brand?
+            Get the best Online Business Growth Services – seal your deal with Digital Solution 360!
           </p>
           <a
             href='/contact-us'

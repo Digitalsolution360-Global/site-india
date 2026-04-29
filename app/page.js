@@ -13,16 +13,16 @@ import Script from "next/script";
 import FloatCta from "@/components/sections/floatCta";
 
 export const metadata = {
-  title: "Digital Solution 360 | Best Digital Marketing & SEO Company in India",
-  description: "Digital Solution 360 is a leading digital marketing company in India offering SEO, website development, Google My Business optimization, social media marketing, and app development services to grow your business online.",
+  title: "Top Digital Marketing Company in India | Grow Business Online 2026",
+  description: "Scale your brand with India's best digital marketing agency. We offer ROI-based SEO, PPC, and web development services for 2026 business growth.",
   keywords: "digital marketing company india, seo services india, website development company, gmb optimization service, social media marketing agency, digital marketing agency india, online marketing services",
   robots: "index, follow",
   alternates: {
     canonical: "https://www.digitalsolution360.in",
   },
   openGraph: {
-    title: "Digital Solution 360 | Best Digital Marketing & SEO Company in India",
-    description: "Digital Solution 360 is a leading digital marketing company in India offering SEO, website development, Google My Business optimization, social media marketing, and app development services to grow your business online.",
+    title: "Top Digital Marketing Company in India | Grow Business Online 2026",
+    description: "Scale your brand with India's best digital marketing agency. We offer ROI-based SEO, PPC, and web development services for 2026 business growth.",
     url: "https://www.digitalsolution360.in",
     siteName: "Digitalsolution360",
     type: "website",
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Solution 360 | Best Digital Marketing & SEO Company in India",
-    description: "Digital Solution 360 is a leading digital marketing company in India offering SEO, website development, Google My Business optimization, social media marketing, and app development services to grow your business online.",
+    title: "Top Digital Marketing Company in India | Grow Business Online 2026",
+    description: "Scale your brand with India's best digital marketing agency. We offer ROI-based SEO, PPC, and web development services for 2026 business growth.",
   },
 };
 

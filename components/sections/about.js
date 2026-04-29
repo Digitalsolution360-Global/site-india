@@ -19,25 +19,25 @@ function AboutSection() {
   const features = [
     {
       icon: IconCode,
-      title: 'Professional Developers',
-      description: 'Experienced website developers delivering high-quality, conversion-focused websites'
+      title: 'Data-Driven Strategies',
+      description: 'Collect real-time analytics and predictive AI modeling in every campaign.'
     },
     {
       icon: IconSeo,
-      title: 'SEO Friendly Websites',
-      description: 'Every website optimized for search engines with proper structure and fast loading'
+      title: 'Pan-India Expertise',
+      description: 'Operational across different cities for  Tier-1 corporate needs and Tier-2 localized market nuances.'
     },
     {
       icon: IconCoin,
-      title: 'Affordable Services',
-      description: 'Competitive website development pricing designed for startups and growing businesses'
-    },
-    {
-      icon: IconDeviceMobile,
-      title: 'Mobile Responsive Design',
-      description: 'Fully responsive websites that work flawlessly on all devices and screen sizes'
+      title: 'End-to-End Solution',
+      description: 'Handle the entire digital lifecycle in the entire line of code to final conversion.'
     }
   ];
+  // {
+  //     icon: IconDeviceMobile,
+  //     title: 'Mobile Responsive Design',
+  //     description: 'Fully responsive websites that work flawlessly on all devices and screen sizes'
+  //   }
 
   const stats = [
     {
@@ -102,12 +102,14 @@ function AboutSection() {
             {/* Description */}
             <div className='space-y-4 text-gray-600 text-lg leading-relaxed'>
               <p>
-                <span className='font-semibold text-gray-900'>Digitalsolution360</span> is a trusted website development company focused on building professional and conversion-focused websites. We provide customized website development services for startups, small businesses, and growing companies. A professionally developed website improves business credibility and helps attract potential customers.
-              </p>
-              <p>
-                Our business website development services focus on performance, user experience, and search engine optimization. Every website created by our website development company is optimized for speed, security, and usability. We ensure that websites are easy to navigate and designed to convert visitors into customers.
+                Our main objective is to provide digital growth to our clients. As a leading Digital Marketing Agency, we aim to empower Indian businesses that seek our help as they get the best and global-standard technology. 
               </p>
             </div>
+            {/* Heading */}
+            <h2 className='text-2xl md:text-3xl font-bold text-gray-900 leading-tight'>
+              Why
+              <span className='block text-blue-600 mt-2'>Choose Us</span>
+            </h2>
 
             {/* Features Grid */}
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4'>
@@ -135,7 +137,9 @@ function AboutSection() {
                 );
               })}
             </div>
-
+            <p className='text-lg text-gray-600 mb-6'>
+              Partner with an agency that prioritizes your ROI. Learn More About Our Team!
+            </p>
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

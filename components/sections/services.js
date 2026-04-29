@@ -16,8 +16,8 @@ function ServiceSection() {
   const services = [
     {
       icon: IconDeviceLaptop,
-      title: 'Business Website Development',
-      description: 'Professional business websites designed to improve credibility, attract customers, and deliver excellent user experience with fast-loading, secure pages.',
+      title: 'Custom Web Development Services',
+      description: 'We design custom-made and high-speed websites, including your business’s niche, with the use of modern frameworks and the latest security.',
       link: '/website-development',
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-blue-50',
@@ -25,8 +25,8 @@ function ServiceSection() {
     },
     {
       icon: IconBuildingStore,
-      title: 'Ecommerce Website Development',
-      description: 'Complete ecommerce websites with payment integration, product management, and optimized checkout flows to help you sell products and services online.',
+      title: 'E-commerce Website Development',
+      description: 'Upscale your online store with great features, super-fast loading speed, smooth operations, and enhanced security for high-volume transactions.',
       link: '/website-development/ecommerce-website-development',
       color: 'from-purple-500 to-pink-500',
       bgColor: 'bg-purple-50',
@@ -34,8 +34,8 @@ function ServiceSection() {
     },
     {
       icon: IconBrandWordpress,
-      title: 'WordPress Website Development',
-      description: 'Custom WordPress websites built with modern themes and plugins for easy content management, scalability, and SEO-friendly performance.',
+      title: 'CMS Development (WordPress, Laravel)',
+      description: 'Manage the entire content with the intuitive CMS platforms and optimize everything to boost web vitals and security protocols.',
       link: '/website-development/wordpress-website-development',
       color: 'from-green-500 to-emerald-500',
       bgColor: 'bg-green-50',
@@ -43,8 +43,8 @@ function ServiceSection() {
     },
     {
       icon: IconCode,
-      title: 'Custom Website Development',
-      description: 'Tailored website solutions built from scratch to meet unique business requirements with custom functionality, design, and performance optimization.',
+      title: 'UI/UX Design & Brand Strategy',
+      description: 'Smooth “Human-Centered Design” to create an engaged interface with our audience to lower the bounce rates and build better engagement.',
       link: '/website-development/custom-website-development',
       color: 'from-orange-500 to-red-500',
       bgColor: 'bg-orange-50',
@@ -52,23 +52,24 @@ function ServiceSection() {
     },
     {
       icon: IconFileDescription,
-      title: 'Landing Page Development',
-      description: 'High-converting landing pages designed to capture leads, promote services, and drive specific business actions with compelling design and clear CTAs.',
+      title: 'CRM Development & Automation Solutions',
+      description: 'Integrate smart CRM systems and automation to build a strong impression for sales and give genuine leads to clients efficiently.',
       link: '/website-development/landing-page-development',
       color: 'from-pink-500 to-rose-500',
       bgColor: 'bg-pink-50',
       iconColor: 'text-pink-600'
-    },
-    {
-      icon: IconRefresh,
-      title: 'Website Redesign Services',
-      description: 'Redesign existing websites to improve performance, modernize design, enhance user experience, and boost search engine rankings.',
-      link: '/website-development/website-redesign-services',
-      color: 'from-indigo-500 to-blue-500',
-      bgColor: 'bg-indigo-50',
-      iconColor: 'text-indigo-600'
     }
   ];
+
+    // {
+    //   icon: IconRefresh,
+    //   title: 'Website Redesign Services',
+    //   description: 'Redesign existing websites to improve performance, modernize design, enhance user experience, and boost search engine rankings.',
+    //   link: '/website-development/website-redesign-services',
+    //   color: 'from-indigo-500 to-blue-500',
+    //   bgColor: 'bg-indigo-50',
+    //   iconColor: 'text-indigo-600'
+    // }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -118,7 +119,7 @@ function ServiceSection() {
           </h2>
 
           <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
-            Digitalsolution360 provides complete website development services designed to meet modern business requirements. Our website development company builds websites that are fast, secure, and optimized for search engines.
+            As a reputable agency, Digital Solution 360 understands how to bridge the gaps between aesthetic brilliance and technical precision. That’s how our Website Development Company focuses on different factors of building your digital presence, starting with speed, security, and scalability. 
           </p>
         </motion.div>
 
@@ -196,7 +197,7 @@ function ServiceSection() {
           className='text-center mt-16'
         >
           <p className='text-lg text-gray-600 mb-6'>
-            Our website development services include responsive design, SEO optimization, and fast loading speed to ensure the best performance.
+           Ready to build a future-proof website? Get a Free Technical Audit Today!
           </p>
           <Link
             href='/contact-us'

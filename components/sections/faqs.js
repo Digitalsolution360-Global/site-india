@@ -9,52 +9,24 @@ function FaqSection() {
 
   const faqs = [
     {
-      question: "What does a website development company do?",
-      answer: "A website development company designs and develops professional websites that help businesses grow online."
+      question: "How long does it take for an SEO Company in Delhi NCR to show results?",
+      answer: "With expert guidance, users can expect results within 6 months. Our localized experts ensure success with faster responses."
     },
     {
-      question: "Why should I hire a website development company?",
-      answer: "A professional website development company creates high-quality websites that improve credibility and attract customers."
+      question: "What makes you the best Digital Marketing Company in India for small businesses?",
+      answer: "As we provide the budget-friendly Online Marketing Solutions in tier-2 cities of India, this makes the right choice for every type of business."
     },
     {
-      question: "Do you create SEO friendly websites?",
-      answer: "Yes, Digitalsolution360 specializes in SEO friendly website development designed for better search rankings."
+      question: "Does your Website Development Company provide Shopify / WooCommerce Development support?",
+      answer: "Yes, integration of Shopify or WooCommerce is assured with our end-to-end development and API integrations. This is how we scale your local shops."
     },
     {
-      question: "How long does website development take?",
-      answer: "Most websites take 1 to 3 weeks depending on project requirements."
+      question: "Why should I invest in Local SEO Services in 2026?",
+      answer: "Local SEO services can boost your business’s appearance across search engines. The rise of voice search is evolving with technology. That’s how we merge Local SEO with Google Maps and search results."
     },
     {
-      question: "Do you develop ecommerce websites?",
-      answer: "Yes, we develop complete ecommerce websites with payment integration."
-    },
-    {
-      question: "Do you redesign websites?",
-      answer: "Yes, we redesign existing websites to improve performance and design."
-    },
-    {
-      question: "Do you provide SEO services?",
-      answer: "Yes, we provide professional SEO services for businesses."
-    },
-    {
-      question: "Is Digitalsolution360 a digital marketing company?",
-      answer: "Yes, Digitalsolution360 is a complete digital marketing company."
-    },
-    {
-      question: "Are websites mobile friendly?",
-      answer: "Yes, all websites are fully mobile responsive."
-    },
-    {
-      question: "Do you provide support after website launch?",
-      answer: "Yes, we provide long-term website support."
-    },
-    {
-      question: "Is website development affordable?",
-      answer: "Yes, we offer affordable website development services for businesses."
-    },
-    {
-      question: "Why choose Digitalsolution360 website development company?",
-      answer: "Digitalsolution360 provides professional website development with SEO-friendly design and reliable support."
+      question: "How do you ensure ROI-based digital marketing?",
+      answer: "Digital Solution 360 ensures our ad spend is optimized for profit. That’s why our team focused on high-intent keywords to summon traffic."
     }
   ];
 
