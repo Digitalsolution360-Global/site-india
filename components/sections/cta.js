@@ -144,7 +144,7 @@ function CTASection() {
             Transform your vision into a digital reality. Improve Google ranking With Us!
             </p>
             {/* Heading */}
-            <h3 className='text-2xl md:text-3xl lg:text-6xl font-bold leading-tight'>
+            <h3 className='text-2xl md:text-3xl font-bold leading-tight'>
               Conclusion
             </h3>
             {/* Description */}
