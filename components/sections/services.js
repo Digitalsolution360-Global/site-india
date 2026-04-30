@@ -58,19 +58,17 @@ function ServiceSection() {
       color: 'from-pink-500 to-rose-500',
       bgColor: 'bg-pink-50',
       iconColor: 'text-pink-600'
+    },
+    {
+      icon: IconRefresh,
+      title: 'Website Redesign Services',
+      description: 'Redesign existing websites to improve performance, modernize design, enhance user experience, and boost search engine rankings.',
+      link: '/website-development/website-redesign-services',
+      color: 'from-indigo-500 to-blue-500',
+      bgColor: 'bg-indigo-50',
+      iconColor: 'text-indigo-600'
     }
   ];
-
-    // {
-    //   icon: IconRefresh,
-    //   title: 'Website Redesign Services',
-    //   description: 'Redesign existing websites to improve performance, modernize design, enhance user experience, and boost search engine rankings.',
-    //   link: '/website-development/website-redesign-services',
-    //   color: 'from-indigo-500 to-blue-500',
-    //   bgColor: 'bg-indigo-50',
-    //   iconColor: 'text-indigo-600'
-    // }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
