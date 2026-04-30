@@ -36,7 +36,7 @@ function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section className='min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 pt-24 mt-20 lg:pt-0'>
+    <section className='min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 pt-24 md:mt-24 lg:pt-0'>
       <div className='max-w-7xl w-full mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center'>
           {/* Left Side - Text Content */}
