@@ -162,8 +162,8 @@ function Footer() {
                             </li>
                             <li className='flex items-center gap-3'>
                                 <IconMail className='w-5 h-5 text-blue-500 shrink-0' stroke={1.5} />
-                                <a href='mailto:info@digitalsolution360.com' className='text-gray-400 hover:text-blue-500 transition-colors duration-300'>
-                                    info@digitalsolution360.com
+                                <a href='mailto:info@digitalsolution360.in' className='text-gray-400 hover:text-blue-500 transition-colors duration-300'>
+                                    info@digitalsolution360.in
                                 </a>
                             </li>
                         </ul>
