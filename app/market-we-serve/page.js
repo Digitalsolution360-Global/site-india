@@ -12,6 +12,7 @@ import {
     IconBuildingStore,
     IconSearch,
     IconCode,
+    IconDeviceMobile
     IconSpeakerphone,
     IconArrowRight,
     IconBuilding,
@@ -108,7 +109,15 @@ export default function MarketWeServePage() {
             dbCategory: 'Social Media',
             description: 'Expert social media management and marketing to grow your brand online.',
             color: 'pink',
-        }
+        },
+        {
+        icon: IconDeviceMobile, 
+        title: 'App Development',
+        slug: 'app-development',
+        dbCategory: 'App Development',
+        description: 'Custom Android and iOS app development solutions for startups and businesses.',
+        color: 'green',
+    }
     ];
 
     const colorMap = {
