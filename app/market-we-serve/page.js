@@ -12,7 +12,7 @@ import {
     IconBuildingStore,
     IconSearch,
     IconCode,
-    IconDeviceMobile
+    IconDeviceMobile,
     IconSpeakerphone,
     IconArrowRight,
     IconBuilding,
