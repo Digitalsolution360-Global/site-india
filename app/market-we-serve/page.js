@@ -116,7 +116,7 @@ export default function MarketWeServePage() {
         slug: 'app-development',
         dbCategory: 'App Development',
         description: 'Custom Android and iOS app development solutions for startups and businesses.',
-        color: 'green',
+        color: 'purple',
     }
     ];
 
