@@ -117,6 +117,296 @@ export default function StaticServicePage({
                     </motion.div>
                 </div>
             </section>
+            {pathname === '/aws-training' && (<>
+            {/* AWS Intro + Syllabus Section */}
+<section className='py-16 px-4 md:px-8 lg:px-16 bg-linear-to-br from-pink-50 to-white'>
+  <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-10'>
+
+    <div className='space-y-8'>
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        
+        <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
+          AWS Training and Certification Course in India
+        </h2>
+
+        <div className='space-y-4 text-gray-700 leading-relaxed'>
+          <p>When it comes to AWS training, digital solutions offer unparalleled benefits. Embrace the flexibility to learn at your own pace, whenever and wherever it suits you. Interactive labs and simulations provide hands-on experience, ensuring practical skills development.</p>
+          <p>AWS training with digital solutions is a game-changer for aspiring cloud professionals. With immersive virtual labs and simulations, learners gain practical experience working with AWS technologies in a risk-free environment.</p>
+          <p>Learn from certified experts, access hands-on labs, and receive valuable resources to propel your career forward. Choose us for top-notch training that opens doors to endless opportunities.</p>
+        </div>
+
+      </motion.div>
+
+      {/* Syllabus */}
+      <div className='space-y-8'>
+        <h3 className='text-2xl font-semibold text-gray-900'>AWS Solution Architect-Associate (AWS SAA-C03)</h3>
+
+        <p className='text-gray-700'>
+          <strong>Introduction:</strong> A certified AWS Solutions Architect designs cloud architecture and helps implement it effectively. This course starts your journey as a cloud engineer or cloud architect.
+        </p>
+
+        <h3 className='text-xl font-semibold text-gray-900'>Syllabus Content</h3>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700'>
+          {[
+            {
+              title: "1. Core Elements of Cloud Architecture",
+              items: ["Introduction to Cloud Computing","Crux of Virtualization","Key Concepts of Virtualization","Basics of Networking and Network Devices","Basics of Servers and Server OS"]
+            },
+            {
+              title: "2. Fundamental Pillars of Cloud Computing",
+              items: ["Private Cloud","Public Cloud","Private Cloud vs. Public Cloud","Introduction to IaaS, PaaS, SaaS"]
+            },
+            {
+              title: "3. Compute Theory - Lab",
+              items: ["Create Free Tier AWS account","AWS Console Overview","Create EC2 Windows & Linux instances","Extend disks, create AMI, snapshots","Configure Apache, upgrade memory & storage"]
+            },
+            {
+              title: "4. Networking Theory-Lab",
+              items: ["AWS VPC, Subnet, Firewalls, Gateway","Create VPC, subnets, internet gateway & routing table","Configure EC2 connectivity, Elastic IP","Public & private subnet, NAT Gateway","VPC Peering (same & different region)"]
+            },
+            {
+              title: "5. Storage Theory-Lab",
+              items: ["S3 Bucket creation, versioning & presigned URLs","Create EFS & mount to Linux","S3 lifecycle management to Glacier","Create S3 Glacier & upload data"]
+            },
+            {
+    title: "6. Databases Theory-Lab",
+    items: [
+      "Configure MySQL and Test",
+      "Configure DynamoDB and Test"
+    ]
+  },
+  {
+    title: "7. Load Balancer Theory-Lab",
+    items: [
+      "EC2 Windows & Linux instances with IIS/Apache",
+      "Create application & network load balancers and test"
+    ]
+  },
+  {
+    title: "8. Route 53 Lab",
+    items: [
+      "Create hosted zones and records",
+      "Host static websites using Route 53",
+      "Configure alias creation"
+    ]
+  },
+  {
+    title: "9. Security Lab",
+    items: [
+      "Configure IAM users, policies, groups & permissions",
+      "Multi-factor authentication using Google Authenticator"
+    ]
+  },
+  {
+    title: "10. CloudWatch Lab",
+    items: [
+      "Setup alarms for different metrics",
+      "Configure CloudWatch Events",
+      "Monitor RAM utilization"
+    ]
+  },
+  {
+    title: "11. CloudFront Lab",
+    items: [
+      "Create a sample website and CloudFront distribution",
+      "Configure GEO restrictions"
+    ]
+  },
+  {
+    title: "12. Advanced Topics (Theory + Labs)",
+    items: [
+      "Elastic Beanstalk, CloudFormation",
+      "AWS Lightsail, Lambda",
+      "Elastic Container Service, AWS KMS",
+      "CloudTrail, Elasticache, Snowball"
+    ]
+  }
+          ].map((sec, i) => (
+            <div key={i} className='bg-white p-5 rounded-xl shadow-md border border-gray-100'>
+              <h4 className='text-lg font-semibold mb-2 text-gray-900'>{sec.title}</h4>
+              <ul className='list-disc list-inside space-y-1'>
+                {sec.items.map((it, idx) => <li key={idx}>{it}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{/* Overview Grid */}
+<section className='py-16 px-4 md:px-8 lg:px-16 bg-gray-50'>
+  <div className='max-w-6xl mx-auto'>
+    
+    <motion.div className='mb-12 text-center' initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}>
+      <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
+        A Comprehensive Overview of AWS Training
+      </h2>
+    </motion.div>
+
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+      {[
+  {
+    title: "Introduction to AWS",
+    desc: "Understanding the basics of AWS, its architecture, and core services."
+  },
+  {
+    title: "Compute Services",
+    desc: "Exploring EC2 instances, serverless computing with AWS Lambda, and container services like ECS and EKS."
+  },
+  {
+    title: "Storage Solutions",
+    desc: "Learning about S3 for object storage, EBS for block storage, and Glacier for long-term archival."
+  },
+  {
+    title: "Networking",
+    desc: "Understanding VPC (Virtual Private Cloud), subnets, security groups, and networking components in AWS."
+  },
+  {
+    title: "Database Services",
+    desc: "Exploring various database options such as RDS, DynamoDB, Aurora, and ElastiCache."
+  },
+  {
+    title: "Security and Identity",
+    desc: "Managing access control, security groups, IAM users, and roles for secure AWS usage."
+  },
+  {
+    title: "Monitoring and Management",
+    desc: "Utilizing AWS CloudWatch for monitoring and AWS Systems Manager for resource management."
+  },
+  {
+    title: "Serverless Computing",
+    desc: "Leveraging AWS Lambda and API Gateway for building serverless applications."
+  },
+  {
+    title: "DevOps and Deployment",
+    desc: "Learning about CI/CD pipelines, CodeDeploy, and AWS Elastic Beanstalk for efficient application deployment."
+  },
+  {
+    title: "Scalability and Load Balancing",
+    desc: "Understanding auto-scaling, Elastic Load Balancer, and CloudFront for high availability and performance."
+  }
+].map((item, i) => (
+        <motion.div
+      key={i}
+      className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition"
+    >
+      <h4 className="text-xl font-semibold mb-2 text-gray-900">
+        {item.title}
+      </h4>
+      <p className="text-gray-600">{item.desc}</p>
+    </motion.div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+{/* Key Features */}
+<section className='py-16 px-4 md:px-8 lg:px-16'>
+  <div className='max-w-6xl mx-auto text-center'>
+    
+    <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>AWS Training Key Features</h2>
+    <p className='text-gray-600 mb-8'>Our AWS training program offers hands-on experience, expert guidance, and industry-relevant curriculum.</p>
+
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700'>
+      {[
+        "30+ Hours Course Duration",
+        "Industry Expert Faculties",
+        "Completed 159+ Batches",
+        "100% Job Oriented Training",
+        "Free Demo Class Available",
+        "Certification Guidance"
+      ].map((item, i) => (
+        <div key={i} className='bg-white p-4 rounded-xl shadow-md border border-gray-100'>
+          {item}
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+{/* Testimonials */}
+<section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+
+    {/* Section Header */}
+    <div className="text-center mb-12">
+      <h3 className="text-blue-600 font-medium mb-2">Testimonial</h3>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+        AWS Training Courses Review
+      </h2>
+    </div>
+
+    {/* Testimonials Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      {[
+        {
+          text: "I highly recommend AWS training to anyone looking to upskill in cloud technologies. The website offers a wide range of courses taught by industry experts.",
+          name: "Himandri Mallick",
+          role: "Fullstack Developer",
+          img: "/frontend/img/Himandri-Mallick.webp"
+        },
+        {
+          text: "Enrolling in AWS training was the best decision I made for my business. The website provided in-depth tutorials and resources that helped me migrate my infrastructure to AWS.",
+          name: "Tarun",
+          role: "Digital Marketer",
+          img: "/frontend/img/tarun.webp"
+        },
+        {
+          text: "As an IT professional, staying updated with the latest technologies is crucial. AWS training website offered me a comprehensive learning experience with its well-structured courses.",
+          name: "Nilesh Kumar",
+          role: "Network Engineer",
+          img: "/frontend/img/Nilesh.webp"
+        },
+        {
+          text: "AWS training completely transformed my career. The comprehensive courses provided by the website equipped me with the skills and knowledge to excel in cloud computing.",
+          name: "Sekhar Karimbedu",
+          role: "Web Designer",
+          img: "/frontend/img/testi2.jpg"
+        }
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition"
+        >
+          {/* Top Row */}
+          <div className="flex justify-between items-center mb-3">
+            <span className="text-blue-600 text-2xl">❝</span>
+            <div className="flex text-yellow-400">
+              {"★★★★★".split("").map((star, index) => (
+                <span key={index}>{star}</span>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-gray-700 mb-4">{item.text}</p>
+
+          {/* User */}
+          <div className="flex items-center gap-3">
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-12 h-12 rounded-full object-cover"
+            />
+            <div>
+              <h4 className="font-semibold">{item.name}</h4>
+              <p className="text-sm text-gray-500">{item.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
+            </>)}
             {pathname === '/aws-training-bangalore' && (<>
     {/* Intro Section */}
 <section className='py-16 px-4 md:px-8 lg:px-16 bg-linear-to-br from-pink-50 to-white'>
@@ -711,7 +1001,7 @@ export default function StaticServicePage({
                         {/* Left: 70% */}
                         <div className='w-full lg:w-[70%]'>
 
-                            {(pathname !== '/social-media' && pathname !== '/crm-development' && pathname !== '/aws-training-bangalore') && (<>
+                            {(pathname !== '/social-media' && pathname !== '/crm-development' && pathname !== '/aws-training-bangalore' && pathname !== '/aws-training') && (<>
 
                                 {/* What's Included */}
                                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
