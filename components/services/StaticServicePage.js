@@ -117,6 +117,195 @@ export default function StaticServicePage({
                     </motion.div>
                 </div>
             </section>
+            {pathname === '/aws-training-bangalore' && (<>
+    {/* Intro Section */}
+<section className='py-16 px-4 md:px-8 lg:px-16 bg-linear-to-br from-pink-50 to-white'>
+  <div className='max-w-4xl mx-auto'>
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+      
+      <div className='space-y-4 text-gray-700 leading-relaxed'>
+        <p className="text-lg">
+          Since the majority of businesses are switching from internal databases to cloud settings, AWS has become the new standard in today's society. The process of moving data into and out of the cloud environment is one of the most difficult processes in the aforementioned transformation. By offering a variety of data-moving services, each of which offers varying degrees of speed, security, cost, and performance, AWS addresses this issue. Build a career in AWS and start exploring a new world.
+        </p>
+      </div>
+
+    </motion.div>
+  </div>
+</section>
+
+{/* Why Choose Section */}
+<section className='py-16 px-4 md:px-8 lg:px-16'>
+  <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center'>
+
+    <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+      
+      <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
+        Why Choose AWS Training in Bangalore as a career
+      </h2>
+
+      <p className='text-gray-700 leading-relaxed mb-4'>
+        We all know that the world is changing and slowly sifting on technology. Everything is dependent on cloud computing nowadays. From buying things to wearing clothes we totally depend on technology. All such online platforms slowly move on AWS servers Choosing AWS (Amazon Web Services) training as a career can be a strategic move due to the growing demand for cloud computing expertise and the widespread adoption of AWS services across various industries. Here are several compelling reasons to consider AWS training as a career choice:
+      </p>
+
+      <h3 className='font-semibold mb-3'>Reason to choose AWS Training program from Bangalore</h3>
+
+      <ul className='list-disc pl-5 text-gray-700 space-y-2'>
+        <li>High Demand</li>
+        <li>Lucrative Salaries:</li>
+        <li>Career Growth</li>
+        <li>Global Recognition:</li>
+        <li>Transferable Skills:</li>
+      </ul>
+
+    </motion.div>
+
+    <motion.img
+      src="https://www.digitalsolution360-in-900030.hostingersite.com/public/frontend/img/aws-ban.png"
+      className="rounded-xl shadow-lg"
+      initial={{ opacity: 0, x: 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    />
+
+  </div>
+</section>
+
+{/* Benefits Section */}
+<section className='py-16 px-4 md:px-8 lg:px-16 bg-gray-50'>
+  <div className='max-w-6xl mx-auto'>
+    
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
+      <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+        Benefit of AWS Training in Bangalore
+      </h2>
+
+      <p className='text-gray-700 leading-relaxed mb-8'>
+        Opting for AWS (Amazon Web Services) training in Bangalore offers several distinct benefits due to the city's technological ecosystem, IT industry, and reputation as a hub for innovation. Here are some of the key advantages of pursuing AWS training in Bangalore:
+      </p>
+    </motion.div>
+
+    <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+      {[
+        {
+          title: "IT Hub and Opportunities:",
+          desc: 'India," boasts a thriving IT industry with a multitude of tech companies, startups, and enterprises'
+        },
+        {
+          title: "Job Market Demand:",
+          desc: "The demand for AWS professionals is consistently high due to the increasing adoption of cloud technologies. Certification Preparation: AWS certifications are highly respected in the industry and can boost your career prospects."
+        },
+        {
+          title: "Hands-on Experience:",
+          desc: "The prevalence of tech companies and startups in Bangalore provides ample opportunities to gain hands-on experience with AWS implementations."
+        },
+        {
+          title: "Global Recognition:",
+          desc: "An AWS certification earned in Bangalore is globally recognized, allowing you to explore job opportunities not only in India but also internationally."
+        }
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className='bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300'
+        >
+          <h4 className='font-bold mb-2 text-gray-900'>{item.title}</h4>
+          <p className='text-gray-600 text-sm'>{item.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+{/* Eligibility Section */}
+<section className='py-16 px-4 md:px-8 lg:px-16'>
+  <div className='max-w-5xl mx-auto space-y-6'>
+    
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+      
+      <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
+        AWS Eligibility criteria
+      </h2>
+
+      <p className='text-gray-700'>
+        As an enduring and reliable provider of cloud services, AWS has recently dominated the world of cloud computing...
+      </p>
+
+      <div className='space-y-4 mt-4'>
+        {[
+          "AWS Certified Cloud Practitioner – Foundational Certification",
+          "AWS Certified Solutions Architect – Associate",
+          "AWS Certified Developer – Associate",
+          "AWS Certified SysOps Administrator – Associate",
+          "AWS Certified Solutions Architect – Professional"
+        ].map((item, i) => (
+          <div key={i} className='p-4 bg-white rounded-xl shadow-sm border border-gray-100'>
+            <h4 className='font-bold text-gray-900'>{item}</h4>
+          </div>
+        ))}
+      </div>
+
+    </motion.div>
+
+  </div>
+</section>
+
+{/* Features + Future */}
+<section className='py-16 px-4 md:px-8 lg:px-16 bg-gray-50'>
+  <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-10'>
+
+    <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+      
+      <h2 className='text-2xl font-bold mb-3'>Features</h2>
+      <ul className='list-disc pl-5 text-gray-700 space-y-2'>
+        <li>Real-Time Experts as Trainers</li>
+        <li>LIVE Project</li>
+        <li>Certification</li>
+        <li>Affordable Fees</li>
+        <li>Flexibility</li>
+        <li>Placement Support</li>
+      </ul>
+
+      <h2 className='text-2xl font-bold mt-8 mb-3'>Job Opportunities for AWS Professionals in 2023</h2>
+      <ul className='list-disc pl-5 text-gray-700 space-y-2'>
+        <li>AWS Cloud Administrator</li>
+        <li>Cloud Infrastructure Engineer</li>
+        <li>AWS DevOps Engineer</li>
+        <li>AWS Administrator</li>
+        <li>Cloud Engineer</li>
+        <li>Cloud Architect</li>
+        <li>Cloud Consultant</li>
+      </ul>
+
+    </motion.div>
+
+    <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+      
+      <h2 className='text-2xl font-bold mb-3'>Future After completion of AWS training from Bangalore</h2>
+      
+      <p className='text-gray-700 mb-4'>
+        Completing AWS (Amazon Web Services) training in Bangalore can open up a range of promising opportunities...
+      </p>
+
+      <ul className='list-disc pl-5 text-gray-700 space-y-2'>
+        <li>Cloud Engineer</li>
+        <li>DevOps Engineer</li>
+        <li>Solutions Architect</li>
+        <li>Cloud Consultant</li>
+        <li>Freelancing</li>
+        <li>Global Opportunities</li>
+      </ul>
+
+    </motion.div>
+
+  </div>
+</section>
+
+            </>)}
             {pathname === '/social-media' && (<>
                 {/* Intro Section */}
                 <section className='py-16 px-4 md:px-8 lg:px-16 bg-linear-to-br from-pink-50 to-white'>
@@ -522,7 +711,7 @@ export default function StaticServicePage({
                         {/* Left: 70% */}
                         <div className='w-full lg:w-[70%]'>
 
-                            {(pathname !== '/social-media' && pathname !== '/crm-development') && (<>
+                            {(pathname !== '/social-media' && pathname !== '/crm-development' && pathname !== '/aws-training-bangalore') && (<>
 
                                 {/* What's Included */}
                                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='mb-12'>
