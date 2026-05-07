@@ -113,7 +113,7 @@ export default function MarketWeServePage() {
         {
         icon: IconDeviceMobile, 
         title: 'App Development',
-        slug: 'app-development',
+        slug: 'app',
         dbCategory: 'App Development',
         description: 'Custom Android and iOS app development solutions for startups and businesses.',
         color: 'purple',
