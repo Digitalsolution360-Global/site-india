@@ -24,6 +24,7 @@ const staticRoutes = [
   "/market-we-serve/social-media",
   "/market-we-serve/content-writing",
   "/market-we-serve/wordpress",
+  "/market-we-serve/app",
   "/privacy-policy",
   "/terms-conditions",
   // Category pages
