@@ -138,6 +138,7 @@ async function fetchAllCitySlugs() {
     "Social Media",
     "Content Writing",
     "Wordpress Development",
+    "App Development",
   ];
 
   try {
