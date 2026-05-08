@@ -177,6 +177,7 @@ async function fetchAllMetroCitySlugs() {
     "Social Media",
     "Content Writing",
     "Wordpress Development",
+    "App Development",
   ];
 
   try {
