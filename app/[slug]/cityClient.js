@@ -689,11 +689,21 @@ export default function CityClientPage() {
     const dynamicRatings = (city.city_id + 1000).toLocaleString('en-IN');
     const dynamicProjects = `${Math.floor((city.city_id + theme.projectsBase) / 4)}+`;
 
+   // Convert to slug
+    const convertToSlug = (text) => {
+        return text
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')      // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')  // Remove special characters
+            .replace(/\-\-+/g, '-');   // Replace multiple - with single -
+    };
+    const stateSlug = convertToSlug(stateName);
     // Build breadcrumb chain
     const breadcrumbItems = [
         { label: 'Home', href: '/' },
         { label: CATEGORY_DISPLAY_MAP[city.category_name], href: backLink },
-        { label: stateName, href: backLink },
+        { label: stateName, href: stateSlug },
     ];
     if (city.is_metrocity && city.parent_city) {
         breadcrumbItems.push({ label: city.parent_city, href: `/${city.parent_city_slug}` });
