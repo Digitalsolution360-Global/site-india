@@ -684,21 +684,11 @@ export default function CityClientPage() {
     const { theme, backLink, backLabel, heroImage, benefits, services, stats, extras } = config;
     const cityName = city.city;
     const stateName = city.state_name;
+    const stateSlug = city.state_slug;
 
     // Dynamic ratings & projects based on city_id
     const dynamicRatings = (city.city_id + 1000).toLocaleString('en-IN');
     const dynamicProjects = `${Math.floor((city.city_id + theme.projectsBase) / 4)}+`;
-
-   // Convert to slug
-    const convertToSlug = (text) => {
-        return text
-            .toLowerCase()
-            .trim()
-            .replace(/\s+/g, '-')      // Replace spaces with -
-            .replace(/[^\w\-]+/g, '')  // Remove special characters
-            .replace(/\-\-+/g, '-');   // Replace multiple - with single -
-    };
-    const stateSlug = convertToSlug(stateName);
     // Build breadcrumb chain
     const breadcrumbItems = [
         { label: 'Home', href: '/' },
