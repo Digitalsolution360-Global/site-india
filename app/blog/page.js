@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   IconSearch,
   IconCalendar,
@@ -32,16 +31,13 @@ export default function BlogPage() {
   const [total, setTotal] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+
 
   useEffect(() => {
-    // Check if any query params exist
-    if (searchParams.toString()) {
-      router.replace(pathname);
-    }
-  }, [searchParams, pathname, router]);
+    const cleanUrl = window.location.pathname;
+
+    window.history.replaceState({}, "", cleanUrl);
+  }, []); 
 
   // Fetch categories once
   useEffect(() => {
