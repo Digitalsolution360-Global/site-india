@@ -99,8 +99,8 @@ const ROOT_SUBSERVICE_META = {
     keywords: "wordpress, development, wordpress development services, DigitalSolution 360",
   },
   "shopify-development": {
-    title: "Shopify Development Services | DigitalSolution 360",
-    description: "Professional shopify development services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    title: "Top Shopify Website Development Company in India | Digital Solution 360",
+    description: "Partner with Digital Solution 360, a trusted Shopify Website Development Company in India, for custom store setup, design, and high-performance ecommerce solutions.",
     keywords: "shopify, development, shopify development services, DigitalSolution 360",
   },
   "landing-page-design": {

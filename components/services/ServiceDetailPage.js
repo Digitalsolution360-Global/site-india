@@ -9,7 +9,8 @@ import Footer from '@/components/layout/footer';
 import serviceCategories from '@/app/services/serviceData';
 import UiUxContent, { UiUxFaqs } from "./services-content/UiUxDesign";
 import WordpressContent, { WordpressFaqs } from "./services-content/WordpressDevlopment";
-import WebDesignContent, { WebDesignFaqs } from "./services-content/WebDesign";
+import WebDesignContent, { WebDesignFaqs } from "./services-content/WebDesign"
+import ShopifyContent, { ShopifyFaqs } from "./services-content/ShopifyDevelopment";
 import {
     IconArrowRight, IconArrowLeft, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
@@ -76,6 +77,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
     : 
     resolvedServiceSlug === "wordpress-development"
     ? WordpressFaqs
+    : 
+    resolvedServiceSlug === "shopify-development"
+    ? ShopifyFaqs
     : 
     resolvedServiceSlug === "web-design"
     ? WebDesignFaqs
@@ -156,6 +160,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                       ): 
                         resolvedServiceSlug === "wordpress-development" ?(
                            <WordpressContent/>
+                      ): 
+                        resolvedServiceSlug === "shopify-development" ?(
+                           <ShopifyContent/>
                       ):
                         resolvedServiceSlug === "web-design" ?(
                            <WebDesignContent/>
