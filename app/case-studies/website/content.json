@@ -429,6 +429,125 @@
   ],
   "isLink": true,
   "link": "https://www.aerospacealuminum.in/"
+},
+{
+  "id": 17,
+  "title": "Max Photo Studio",
+  "subtitle": "Professional Photography Portfolio & Booking Platform",
+  "description": "Max Photo Studio is a dynamic photography website developed using modern technologies like Next.js for fast performance, enhanced security, and an improved user experience. The platform is designed to professionally showcase photography services, portfolios, galleries, and customer enquiries while delivering smooth performance across all devices.",
+  "image": "/portfolio/website/maxphotostudio.webp",
+  "tags": [
+    "Photography Website",
+    "Portfolio Showcase",
+    "Next.js Development",
+    "Creative Studio",
+    "Booking Platform"
+  ],
+  "highlights": [
+    "Dynamic & Responsive Website Design",
+    "Developed Using Next.js Technology",
+    "Fast Loading & SEO-Friendly Structure",
+    "Professional Photography Portfolio Showcase",
+    "Mobile-Friendly User Experience",
+    "Secure & Scalable Platform",
+    "Easy Gallery & Content Management",
+    "Customer Enquiry & Booking System",
+    "User-Friendly Admin Panel",
+    "Improved Online Branding & Visibility"
+  ],
+  "isLink": true,
+  "link": "https://www.maxphotostudio.in/"
+}, 
+{
+  "id": 18,
+  "title": "Deb Air Express",
+  "subtitle": "Courier & Cargo Tracking Management Platform",
+  "description": "Deb Air Express is a dynamic courier and cargo website developed using modern technologies like Next.js for fast performance, enhanced security, and an improved user experience. The platform is fully responsive, SEO-friendly, and designed to efficiently manage courier services, shipment tracking, and customer enquiries.",
+  "image": "/portfolio/website/debairexpress.webp",
+  "tags": [
+    "Courier Website",
+    "Cargo Management",
+    "Next.js Development",
+    "Tracking System",
+    "Logistics Platform"
+  ],
+  "highlights": [
+    "Dynamic & Mobile-Friendly Website",
+    "Developed Using Next.js Technology",
+    "Fast Loading & SEO-Friendly Structure",
+    "Real-Time Courier Tracking System",
+    "Track Courier Status Using LR or Tracking Number",
+    "Easy Shipment Status Updates",
+    "Secure & Scalable Platform",
+    "User-Friendly Admin Panel",
+    "Manage Bookings & Tracking Details",
+    "Easy Enquiry & Content Management",
+    "Better Customer Experience & Support"
+  ],
+  "isLink": true,
+  "link": "https://www.debairexpress.in/"
+},
+{
+  "id": 19,
+  "title": "Midflora Herbal",
+  "subtitle": "Cosmetic & Herbal Product Showcase Platform",
+  "description": "Midflora Herbal is a dynamic cosmetic manufacturing website developed with modern web technologies and an easy-to-manage admin panel. The platform is designed to professionally showcase cosmetic and herbal products while efficiently managing customer enquiries, improving user experience, and supporting business growth.",
+  "image": "/portfolio/website/midfloraherbal.webp",
+  "tags": [
+    "Cosmetic Website",
+    "Herbal Products",
+    "Product Showcase",
+    "Admin Panel",
+    "B2B & B2C Management"
+  ],
+  "highlights": [
+    "Dynamic & Responsive Website Design",
+    "Professional Product Showcase",
+    "Mobile-Friendly Design",
+    "SEO-Friendly Structure",
+    "Fast & Secure Performance",
+    "Easy Product & Content Management",
+    "User-Friendly Admin Panel",
+    "Better Brand Visibility Online",
+    "Bulk Enquiry Form for Distributors & Wholesalers",
+    "Centralized Enquiry Management System",
+    "Quick Response to Customer Enquiries",
+    "Easy Lead Tracking & Follow-Up",
+    "Time-Saving & Organized Business Operations"
+  ],
+  "isLink": true,
+  "link": "https://www.midfloraherbal.com/"
+},
+{
+  "id": 20,
+  "title": "Jiwan Shaadi",
+  "subtitle": "Matrimonial Website & Mobile App Platform",
+  "description": "Jiwan Shaadi is a dynamic matrimonial platform built with modern web technologies and a centralized database system. The website and mobile app share the same database, allowing users to seamlessly manage profiles, upload photos, and access accounts across both platforms with real-time synchronization.",
+  "image": "/portfolio/website/jiwanshaadi.webp",
+  "tags": [
+    "Matrimonial Website",
+    "Mobile App Integration",
+    "Centralized Database",
+    "User Management",
+    "Matchmaking Platform"
+  ],
+  "highlights": [
+    "Dynamic & Mobile-Friendly Website",
+    "Same Database for Website & App",
+    "Real-Time Data Synchronization",
+    "Easy Profile Management",
+    "Secure Login & Data Handling",
+    "SEO-Friendly Structure",
+    "Better Performance & Scalability",
+    "Easy Admin Panel Management",
+    "Single Database for Both Platforms",
+    "Real-Time Updates on Website & App",
+    "Same Login for Website & Mobile App",
+    "Easy Maintenance & Data Management",
+    "Faster, Secure & Cost-Effective System"
+  ],
+  "isLink": true,
+  "link": "https://www.jiwanshaadi.com/"
 }
   ]
 }
