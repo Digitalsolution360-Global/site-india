@@ -109,8 +109,8 @@ const ROOT_SUBSERVICE_META = {
     keywords: "landing, page, design, landing page design services, DigitalSolution 360",
   },
   "local-seo": {
-    title: "Local Seo Services | DigitalSolution 360",
-    description: "Professional local seo services by DigitalSolution 360 to help businesses grow with effective digital strategies and solutions.",
+    title: "Local SEO Services | Best Local SEO Company for GMB & Maps Growth",
+    description: "Digital Solution 360: Your trusted Local SEO Agency in India. From GMB Optimization Services to hyper-local citations, we help businesses dominate 'near me' searches. Claim your local spot now!",
     keywords: "local, seo, local seo services, DigitalSolution 360",
   },
   "ecommerce-seo": {

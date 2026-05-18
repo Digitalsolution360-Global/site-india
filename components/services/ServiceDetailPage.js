@@ -11,6 +11,7 @@ import UiUxContent, { UiUxFaqs } from "./services-content/UiUxDesign";
 import WordpressContent, { WordpressFaqs } from "./services-content/WordpressDevlopment";
 import WebDesignContent, { WebDesignFaqs } from "./services-content/WebDesign"
 import ShopifyContent, { ShopifyFaqs } from "./services-content/ShopifyDevelopment";
+import LocalSeoContent, { LocalSeoFaqs } from "./services-content/LocalSeo";
 import {
     IconArrowRight, IconArrowLeft, IconCheck, IconPlus, IconMinus,
     IconStarFilled, IconChecks, IconSend, IconPhone, IconUser, IconMail
@@ -80,6 +81,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
     : 
     resolvedServiceSlug === "shopify-development"
     ? ShopifyFaqs
+    :
+    resolvedServiceSlug === "local-seo"
+    ? LocalSeoFaqs
     : 
     resolvedServiceSlug === "web-design"
     ? WebDesignFaqs
@@ -163,6 +167,9 @@ export default function ServiceDetailPage({ categorySlug, serviceSlug }) {
                       ): 
                         resolvedServiceSlug === "shopify-development" ?(
                            <ShopifyContent/>
+                      ):
+                      resolvedServiceSlug === "local-seo" ?(
+                           <LocalSeoContent/>
                       ):
                         resolvedServiceSlug === "web-design" ?(
                            <WebDesignContent/>
