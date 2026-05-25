@@ -126,7 +126,7 @@ function BlogSection() {
                   {/* Blog Image */}
                   <div className='relative h-56 overflow-hidden bg-gray-200'>
                     <img
-                      src={blog.image || '/blogs/blog-img1.png'}
+                      src={blog.image || '/blogs/blog-img1.webp'}
                       alt={blog.title}
                       className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
                       onError={(e) => {

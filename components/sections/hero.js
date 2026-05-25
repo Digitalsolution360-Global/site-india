@@ -9,7 +9,7 @@ function HeroSection() {
 
   const slides = [
     {
-      image: '/blog-img1.png',
+      image: '/blog-img1.webp',
       alt: 'Digital Marketing Solutions'
     },
     {
