@@ -132,7 +132,7 @@
     },
     {
       "id": 6,
-      "title": "Andheri Dental Care",
+      "title": "Andheri Dental",
       "subtitle": "Modern Dental Clinic Website",
       "description": "Developed from scratch using Frontend, HTML5, CSS3, Bootstrap 5, Responsive Design, and JavaScript to ensure complete control over design and performance.",
       "image": "/portfolio/website/andheridentalcare.png",
@@ -154,7 +154,7 @@
         "Engaging Visuals & Animations - Professional look that enhances user experience"
       ],
       "isLink": true,
-      "link": "https://andheridentalcare.com"
+      "link": "https://andheridental.com"
     },
     {
       "id": 7,
@@ -272,7 +272,7 @@
       "title": "Raj Nursing Home",
       "subtitle": "Local SEO Boost",
       "description": "Developed from scratch using HTML5, CSS3, Bootstrap 5, and JavaScript to ensure complete control over design and performance.",
-      "image": "/portfolio/website/raj-nursing-home.webp",
+      "image": "/portfolio/website/rajnursinghome.webp",
       "tags": [
         "HTML5",
         "CSS3",
